@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FoolOrGeniusConsoleApp
 {
@@ -20,7 +14,6 @@ namespace FoolOrGeniusConsoleApp
             questions[4] = "Пять свечей горело, две потухли. Сколько свечей осталось?";
             return questions;
         }
-
         static string [] GetDiagnoses()
         {
             string[] diagnoses = new string[6];
@@ -34,7 +27,6 @@ namespace FoolOrGeniusConsoleApp
 
             return diagnoses;
         }
-
         static int [] GetAnswers(int countQuestions)
         {
             int[] answers = new int[countQuestions];
@@ -44,24 +36,20 @@ namespace FoolOrGeniusConsoleApp
             answers[3] = 60;
             answers[4] = 2;
             return answers;
-
         }
 
-        static void ShuffleArray<T>(ref T[] array, int? seed = null) //seed параметр кот иниц генслчис. 
+        static void ShuffleArray<T>(ref T[] array, int? seed = null) 
         {
             var random = new Random(seed??DateTime.Now.Millisecond);
 
-            // Начиная с последнего элемента массива
             for (int i = array.Length - 1; i > 0; i--)
             {
-                // Генерация случайного индекса от 0 до i (включительно)
                 int randomIndex = random.Next(0, i + 1);
 
-                // Обмен значениями между текущим элементом и элементом с случайным индексом
                 T temp = array[i];
                 array[i] = array[randomIndex];
                 array[randomIndex] = temp;
-                
+   
             }
         }
         private static bool GetUserChoice(string message)
@@ -104,23 +92,14 @@ namespace FoolOrGeniusConsoleApp
                 Console.WriteLine("Как тебя зовут?");
                 string userName = Console.ReadLine();
 
-
                 for (int i = 0; i < countQuestions; i++)
                 {
-
                     Console.WriteLine("Вопрос №" + (i + 1));
-
-                    //int randomQuestionIndex = random.Next(0, countQuestions);
                     Console.WriteLine(questions[i]);
 
-                    //Console.WriteLine(questions[randomQuestionIndex]);
-                   // var userAnswer = Convert.ToInt32(Console.ReadLine());
                     int rightAnswer = answers[i];
-
                     bool successTry = false;
 
-                    //try
-                    //{
                     while (!successTry) 
                     {
                         successTry = int.TryParse(Console.ReadLine(), out var userAnswer);
@@ -135,33 +114,7 @@ namespace FoolOrGeniusConsoleApp
                             Console.WriteLine("Неверный ввод. Введите число");
                         }
                     } 
-                    //}
-                    //if (userAnswer == rightAnswer)
-                    //{
-                    //    countRightAnswers++;
-                    //}
-
                 }
-
-                //Random random = new Random();
-
-                //for (int i = 0; i < countQuestions; i++)
-                //{
-                //    Console.WriteLine("Вопрос №" + (i + 1));
-
-                //    int randomQuestionIndex = random.Next(0, countQuestions);
-                //    Console.WriteLine(questions[randomQuestionIndex]);
-
-                //    int userAnswer = Convert.ToInt32(Console.ReadLine());
-
-                //    int rightAnswer = answers[randomQuestionIndex];
-
-                //    if (userAnswer == rightAnswer)
-                //    {
-                //        countRightAnswers++;
-                //    }
-                //}
-
                 Console.WriteLine("Количество правильных ответов: " + countRightAnswers);
                 Console.WriteLine(GetDiagnoses());
                 Console.WriteLine(userName + ", " + "ваш диагноз:" + diagnoses[countRightAnswers]);
@@ -174,7 +127,5 @@ namespace FoolOrGeniusConsoleApp
                 Console.ReadLine();
             }
         }
-
-       
     }
 }
