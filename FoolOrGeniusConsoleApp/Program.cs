@@ -86,6 +86,14 @@ namespace FoolOrGeniusConsoleApp
             return userAnswer;
 
         }
+
+        static string CalculateDiagnose(int countQuestions, int countRightAnswers)
+        {
+            string[] diagnoses = GetDiagnoses();
+            int percentRightAnswers = countRightAnswers * 100 / countQuestions;
+
+            return diagnoses [percentRightAnswers/20];
+        }
         static void Main(string[] args)
         {
             while (true)
@@ -93,7 +101,7 @@ namespace FoolOrGeniusConsoleApp
                 int countQuestions = 5;
                 string[] questions = GetQuestions(countQuestions);
                 int[] answers = GetAnswers(countQuestions);
-                string[] diagnoses = GetDiagnoses();
+                
 
                 var seed = DateTime.Now.Millisecond;
 
@@ -111,7 +119,6 @@ namespace FoolOrGeniusConsoleApp
                     Console.WriteLine(questions[i]);
 
                     int rightAnswer = answers[i];
-                    bool successTry = false;
 
                     int userAnswer = GetUserAnswer();
                     if (userAnswer == rightAnswer)
@@ -121,8 +128,10 @@ namespace FoolOrGeniusConsoleApp
 
                 }
                 Console.WriteLine("Количество правильных ответов: " + countRightAnswers);
+
+                string diagnose = CalculateDiagnose(countQuestions, countRightAnswers);
                 Console.WriteLine(GetDiagnoses());
-                Console.WriteLine(userName + ", " + "ваш диагноз:" + diagnoses[countRightAnswers]);
+                Console.WriteLine(userName + ", " + "ваш диагноз:" + diagnose);
 
                 bool userChoice=GetUserChoice("Хотите начать сначала?");
                 if (userChoice == false)
@@ -132,7 +141,5 @@ namespace FoolOrGeniusConsoleApp
                 Console.ReadLine();
             }
         }
-
-        
     }
 }
