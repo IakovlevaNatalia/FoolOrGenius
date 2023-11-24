@@ -37,6 +37,10 @@ namespace FoolOrGeniusConsoleApp
             answers[4] = 2;
             return answers;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
         static void ShuffleArray<T>(ref T[] array, int? seed = null) 
         {
             var random = new Random(seed??DateTime.Now.Millisecond);
@@ -48,6 +52,10 @@ namespace FoolOrGeniusConsoleApp
                 T temp = array[i];
                 array[i] = array[randomIndex];
                 array[randomIndex] = temp;
+<<<<<<< HEAD
+=======
+   
+>>>>>>> origin/main
             }
         }
         private static bool GetUserChoice(string message)
@@ -104,7 +112,6 @@ namespace FoolOrGeniusConsoleApp
                 Console.WriteLine("Как тебя зовут?");
                 string userName = Console.ReadLine();
 
-
                 for (int i = 0; i < countQuestions; i++)
                 {
                     Console.WriteLine("Вопрос №" + (i + 1));
@@ -113,12 +120,29 @@ namespace FoolOrGeniusConsoleApp
                     int rightAnswer = answers[i];
                     bool successTry = false;
 
+<<<<<<< HEAD
                     int userAnswer = GetUserAnswer();
                     if (userAnswer == rightAnswer)
                     {
                         countRightAnswers++;
                     }
 
+=======
+                    while (!successTry) 
+                    {
+                        successTry = int.TryParse(Console.ReadLine(), out var userAnswer);
+
+                        if (successTry)
+                        {
+                            if (userAnswer == rightAnswer)
+                                countRightAnswers++;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Неверный ввод. Введите число");
+                        }
+                    } 
+>>>>>>> origin/main
                 }
                 Console.WriteLine("Количество правильных ответов: " + countRightAnswers);
                 Console.WriteLine(GetDiagnoses());
@@ -132,7 +156,10 @@ namespace FoolOrGeniusConsoleApp
                 Console.ReadLine();
             }
         }
+<<<<<<< HEAD
 
         
+=======
+>>>>>>> origin/main
     }
 }
