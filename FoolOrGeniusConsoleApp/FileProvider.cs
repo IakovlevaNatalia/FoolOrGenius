@@ -18,11 +18,15 @@ namespace FoolOrGeniusConsoleApp
             var value = sr.ReadToEnd();
             sr.Close();
             return value;
-
         }
         public static bool Exists(string fileName)
         {
             return File.Exists(fileName);
+        }
+
+        public static void Clear(string fileName)
+        {
+            File.WriteAllText(fileName, string.Empty);
         }
     }
 }

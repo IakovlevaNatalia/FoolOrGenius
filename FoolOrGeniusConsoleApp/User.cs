@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FoolOrGeniusConsoleApp
+﻿namespace FoolOrGeniusConsoleApp
 {
     internal class User
     {
@@ -16,7 +10,6 @@ namespace FoolOrGeniusConsoleApp
                 Name = name;
                 Diagnose = "Неизвестно";
         }
-
         public void AcceptRightAnswer()
         {
             CountRightAnswers++; 

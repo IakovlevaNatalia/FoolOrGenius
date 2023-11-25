@@ -1,10 +1,42 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 
 namespace FoolOrGeniusConsoleApp
 {
    internal class Program
     {
+        static void AddNewQuestion()
+        {
+            Console.WriteLine("Введите Ваш вопрос");
+            var text = Console.ReadLine();
+            Console.WriteLine("Введите ответ на вопрос");
+            var answer = GetNumber();
+
+            var newQuestion = new Question(text, answer);
+            QuestionsRepository.Add(newQuestion);
+        }
+
+        public static void RemoveQuestion()
+        {
+            Console.WriteLine("Введите номер вопроса, который хотите удалить");
+            var questios = QuestionsRepository.GetAll();
+
+            for (int i = 0; i < questios.Count; i++)
+            {
+                Console.WriteLine(i + 1 + ". " + questios[i].Text);
+            }
+
+            var removeQuestionNumber = GetNumber();
+            while (removeQuestionNumber<1 || removeQuestionNumber>questios.Count)
+            {
+                Console.WriteLine("Введите число от 1 до " + questios.Count);
+                removeQuestionNumber = GetNumber();
+            }
+
+            var removeQuestion = questios[removeQuestionNumber - 1];
+            QuestionsRepository.Remove(removeQuestion);
+
+        }
+
         static string [] GetDiagnoses()
         {
             var diagnoses = new string[6];
@@ -57,7 +89,6 @@ namespace FoolOrGeniusConsoleApp
                 }
             }
         }
-
         static string CalculateDiagnose(int countQuestions, int countRightAnswers)
         {
             var diagnoses = GetDiagnoses();
@@ -80,16 +111,14 @@ namespace FoolOrGeniusConsoleApp
             while (true)
             {
                 var questions = QuestionsRepository.GetAll();
-
                 var countQuestions = questions.Count;
-
 
                 Console.WriteLine("Как тебя зовут?");
                 var userName = Console.ReadLine();
-
                 var user = new User(userName); 
 
                 var Random = new Random();
+
                 for (int i = 0; i < countQuestions; i++)
                 {
                     Console.WriteLine("Вопрос №" + (i + 1));
@@ -105,7 +134,6 @@ namespace FoolOrGeniusConsoleApp
                     {
                        user.AcceptRightAnswer();
                     }
-
                     questions.RemoveAt(randomQuestionIndex);
                 }
                 Console.WriteLine("Количество правильных ответов: " + user.CountRightAnswers);
@@ -116,13 +144,11 @@ namespace FoolOrGeniusConsoleApp
                 Console.WriteLine(userName + ", " + "ваш диагноз:" + diagnose);
 
                 UserResultsRepository.Save(user);
-
-
                 var userChoice = GetUserChoice("Хотите посмотреть предыдущие результаты игры?");
 
                 if (userChoice)
                 {
-                    UserResultsRepository.Save(user);
+                    ShowUserResults();
                 }
 
                 userChoice = GetUserChoice("Хотите добавить новый вопрос?");
@@ -130,6 +156,13 @@ namespace FoolOrGeniusConsoleApp
                 if (userChoice)
                 {
                     AddNewQuestion();
+                }
+
+                userChoice = GetUserChoice("Хотите удалить существующий вопрос?");
+
+                if (userChoice)
+                {
+                    RemoveQuestion();
                 }
 
                 userChoice =GetUserChoice("Хотите начать сначала?");
@@ -140,17 +173,6 @@ namespace FoolOrGeniusConsoleApp
                 }
                 Console.ReadLine();
             }
-        }
-
-        private static void AddNewQuestion()
-        {
-            Console.WriteLine("Введите Ваш вопрос");
-            var text = Console.ReadLine();
-            Console.WriteLine("Введите ответ на вопрос");
-            var answer = GetNumber();
-
-            var newQuestion = new Question(text,answer);
-            QuestionsRepository.Add(newQuestion);
         }
     }
 }
