@@ -1,24 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
 
 namespace FoolOrGeniusConsoleApp
 {
    internal class Program
     {
-        static List<Question> GetQuestions()
-        {
-            var questions = new List<Question>();
-
-            questions.Add(new Question("Сколько будет два плюс два умноженное на два?", 6));
-            questions.Add(new Question("Бревно нужно распилить на 10 частей. Сколько распилов нужно сделать?", 9));
-            questions.Add(new Question("На двух руках 10 пальцев. Сколько пальцев на 5 руках?",25));
-            questions.Add(new Question("Укол делают каждые полчаса. Сколько нужно минут, чтобы сделать три укола?",60));
-            questions.Add(new Question("Пять свечей горело, две потухли. Сколько свечей осталось?",2));
-           
-            return questions;
-        }
         static string [] GetDiagnoses()
         {
             var diagnoses = new string[6];
@@ -32,20 +17,6 @@ namespace FoolOrGeniusConsoleApp
 
             return diagnoses;
         }
-
-        //static void ShuffleArray<T>(ref List <T> array, int? seed = null) 
-        //{
-        //    var random = new Random(seed??DateTime.Now.Millisecond);
-
-        //    for (int i = array.Count - 1; i > 0; i--)
-        //    {
-        //        var randomIndex = random.Next(0, i + 1);
-
-        //        T temp = array[i];
-        //        array[i] = array[randomIndex];
-        //        array[randomIndex] = temp;
-        //    }
-        //}
         private static bool GetUserChoice(string message)
         {
             while (true)
@@ -85,54 +56,29 @@ namespace FoolOrGeniusConsoleApp
 
             return diagnoses [percentRightAnswers/20];
         }
-
-        static void SaveUserResult (string userName, int countRightAnswers, string diagnose)
-        {
-            var value = $"{userName}#{countRightAnswers}#{diagnose}";
-            AppendToFile("userResults.txt", value);
-        }
-
-        static void AppendToFile(string fileName, string value)
-        {
-            var sw = new StreamWriter(fileName, true, Encoding.UTF8);
-            sw.WriteLine(value);
-            sw.Close();
-        }
-
         private static void ShowUserResults()
         {
-            var sr = new StreamReader("userResults.txt", Encoding.UTF8);
+            var result = UserResultsRepository.GetUserResults();
+            Console.WriteLine("{0,-20}{1,18}{2,15}", "Имя", "Количество парвильных ответов", "Диагноз");
 
-            Console.WriteLine("{0,-20} {1,18} {2,15}", "Имя", "Количество правильных ответов", "Диагноз");
-
-            while (!sr.EndOfStream)
+            foreach (var user in result)
             {
-                var line = sr.ReadLine();
-                var value = line.Split('#');
-                var name = value [0];
-                var countRightAnswers = Convert.ToInt32(value[1]);
-                var diagnose = value [2];
-
-                Console.WriteLine("{0,-20} {1,18} {2,15}", name, countRightAnswers, diagnose);
+                Console.WriteLine("{0,-20}{1,18}{2,15}", user.Name, user.CountRightAnswers, user.Diagnose);
             }
-            sr.Close();
-
         }
         static void Main(string[] args)
         {
             while (true)
             {
-                var questions = GetQuestions();
+                var questions = QuestionsRepository.GetAll();
+
                 var countQuestions = questions.Count;
 
-                //var seed = DateTime.Now.Millisecond;
-
-                //ShuffleArray(ref questions, seed);
-                //ShuffleArray(ref answers, seed);
-                var countRightAnswers = 0;
 
                 Console.WriteLine("Как тебя зовут?");
                 var userName = Console.ReadLine();
+
+                var user = new User(userName); 
 
                 var Random = new Random();
                 for (int i = 0; i < countQuestions; i++)
@@ -148,24 +94,26 @@ namespace FoolOrGeniusConsoleApp
                     var userAnswer = GetUserAnswer();
                     if (userAnswer == rightAnswer)
                     {
-                        countRightAnswers++;
+                       user.AcceptRightAnswer();
                     }
 
                     questions.RemoveAt(randomQuestionIndex);
                 }
-                Console.WriteLine("Количество правильных ответов: " + countRightAnswers);
+                Console.WriteLine("Количество правильных ответов: " + user.CountRightAnswers);
 
-                var diagnose = CalculateDiagnose(countQuestions, countRightAnswers);
+                var diagnose = CalculateDiagnose(countQuestions,user.CountRightAnswers);
+                user.Diagnose=diagnose;
                 Console.WriteLine(GetDiagnoses());
                 Console.WriteLine(userName + ", " + "ваш диагноз:" + diagnose);
 
-                SaveUserResult(userName, countRightAnswers, diagnose);
+                UserResultsRepository.SaveUserResult(user);
+
 
                 var userChoice = GetUserChoice("Хотите посмотреть предыдущие результаты игры?");
 
                 if (userChoice)
                 {
-                    ShowUserResults();
+                    UserResultsRepository.SaveUserResult(user);
                 }
 
                 userChoice=GetUserChoice("Хотите начать сначала?");
