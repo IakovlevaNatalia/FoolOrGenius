@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Windows.Markup;
 
 namespace FoolOrGeniusConsoleApp
 {
-    internal class Program
+   internal class Program
     {
-        static List<string> GetQuestions()
+        static List<Question> GetQuestions()
         {
-            var questions = new List<string>();
-            questions.Add("Сколько будет два плюс два умноженное на два?");
-            questions.Add("Бревно нужно распилить на 10 частей. Сколько распилов нужно сделать?");
-            questions.Add("На двух руках 10 пальцев. Сколько пальцев на 5 руках?");
-            questions.Add("Укол делают каждые полчаса. Сколько нужно минут, чтобы сделать три укола?");
-            questions.Add("Пять свечей горело, две потухли. Сколько свечей осталось?");
+            var questions = new List<Question>();
+
+            questions.Add(new Question("Сколько будет два плюс два умноженное на два?", 6));
+            questions.Add(new Question("Бревно нужно распилить на 10 частей. Сколько распилов нужно сделать?", 9));
+            questions.Add(new Question("На двух руках 10 пальцев. Сколько пальцев на 5 руках?",25));
+            questions.Add(new Question("Укол делают каждые полчаса. Сколько нужно минут, чтобы сделать три укола?",60));
+            questions.Add(new Question("Пять свечей горело, две потухли. Сколько свечей осталось?",2));
+           
             return questions;
         }
         static string [] GetDiagnoses()
@@ -31,16 +32,7 @@ namespace FoolOrGeniusConsoleApp
 
             return diagnoses;
         }
-        static List <int> GetAnswers()
-        {
-            var answers = new List<int>();
-            answers.Add(6);
-            answers.Add(9);
-            answers.Add(25);
-            answers.Add(60);
-            answers.Add(2);
-            return answers;
-        }
+
         //static void ShuffleArray<T>(ref List <T> array, int? seed = null) 
         //{
         //    var random = new Random(seed??DateTime.Now.Millisecond);
@@ -125,17 +117,13 @@ namespace FoolOrGeniusConsoleApp
             }
             sr.Close();
 
-
         }
         static void Main(string[] args)
         {
             while (true)
             {
-
                 var questions = GetQuestions();
-                var answers = GetAnswers();
                 var countQuestions = questions.Count;
-
 
                 //var seed = DateTime.Now.Millisecond;
 
@@ -153,9 +141,9 @@ namespace FoolOrGeniusConsoleApp
 
                     var randomQuestionIndex = Random.Next(0, questions.Count);
 
-                    Console.WriteLine(questions[randomQuestionIndex]);
+                    Console.WriteLine(questions[randomQuestionIndex].Text);
 
-                    var rightAnswer = answers[randomQuestionIndex];
+                    var rightAnswer = questions[randomQuestionIndex].Answer;
 
                     var userAnswer = GetUserAnswer();
                     if (userAnswer == rightAnswer)
@@ -164,7 +152,6 @@ namespace FoolOrGeniusConsoleApp
                     }
 
                     questions.RemoveAt(randomQuestionIndex);
-                    answers.RemoveAt(randomQuestionIndex);
                 }
                 Console.WriteLine("Количество правильных ответов: " + countRightAnswers);
 
