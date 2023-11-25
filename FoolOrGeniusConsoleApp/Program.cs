@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 namespace FoolOrGeniusConsoleApp
 {
@@ -38,15 +39,23 @@ namespace FoolOrGeniusConsoleApp
                 }
             }
         }
-        private static int GetUserAnswer()
+        private static int GetNumber()
         {
-            int userAnswer; 
-
-            while (!int.TryParse(Console.ReadLine(), out userAnswer))
+            while (true)
             {
-                Console.WriteLine("Неверный ввод. Введите число");
+                try
+                {
+                    return Convert.ToInt32(Console.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Введите число!");
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Введите число от -2*10^9 до 2*10^9!");
+                }
             }
-            return userAnswer;
         }
 
         static string CalculateDiagnose(int countQuestions, int countRightAnswers)
@@ -91,7 +100,7 @@ namespace FoolOrGeniusConsoleApp
 
                     var rightAnswer = questions[randomQuestionIndex].Answer;
 
-                    var userAnswer = GetUserAnswer();
+                    var userAnswer = GetNumber();
                     if (userAnswer == rightAnswer)
                     {
                        user.AcceptRightAnswer();
@@ -106,17 +115,24 @@ namespace FoolOrGeniusConsoleApp
                 Console.WriteLine(GetDiagnoses());
                 Console.WriteLine(userName + ", " + "ваш диагноз:" + diagnose);
 
-                UserResultsRepository.SaveUserResult(user);
+                UserResultsRepository.Save(user);
 
 
                 var userChoice = GetUserChoice("Хотите посмотреть предыдущие результаты игры?");
 
                 if (userChoice)
                 {
-                    UserResultsRepository.SaveUserResult(user);
+                    UserResultsRepository.Save(user);
                 }
 
-                userChoice=GetUserChoice("Хотите начать сначала?");
+                userChoice = GetUserChoice("Хотите добавить новый вопрос?");
+
+                if (userChoice)
+                {
+                    AddNewQuestion();
+                }
+
+                userChoice =GetUserChoice("Хотите начать сначала?");
 
                 if (userChoice == false)
                 {
@@ -124,6 +140,17 @@ namespace FoolOrGeniusConsoleApp
                 }
                 Console.ReadLine();
             }
+        }
+
+        private static void AddNewQuestion()
+        {
+            Console.WriteLine("Введите Ваш вопрос");
+            var text = Console.ReadLine();
+            Console.WriteLine("Введите ответ на вопрос");
+            var answer = GetNumber();
+
+            var newQuestion = new Question(text,answer);
+            QuestionsRepository.Add(newQuestion);
         }
     }
 }
