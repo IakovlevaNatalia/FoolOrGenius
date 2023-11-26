@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FoolOrGeniusLibrary
 {
-    internal class UserResultsRepository
+    public class UserResultsRepository
     {
 
         public static void Save(User user)

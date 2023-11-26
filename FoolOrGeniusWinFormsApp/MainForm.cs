@@ -12,6 +12,7 @@ namespace FoolOrGeniusWinFormsApp
         private User user;
         private int countQuestions;
         private int questionNumber=0;
+
         public mainForm()
         {
             InitializeComponent();
@@ -34,13 +35,16 @@ namespace FoolOrGeniusWinFormsApp
 
         private void mainForm_Load(object sender, EventArgs e)
         {
+            var welcomeForm=new WelcomeForm();
+            welcomeForm.ShowDialog();
+
+            user = new User(welcomeForm.userNameTextBox.Text);
+
             questions = QuestionsRepository.GetAll();
             countQuestions = questions.Count;
-            user = new User("Неизвестно");
-            questionNumber = 0;
+
             ShowNextQuestion();
         }
-
         private void nextbutton_Click(object sender, EventArgs e)
         {
             var userAnswer = Convert.ToInt32(UserAnswerTextBox.Text);
@@ -56,8 +60,11 @@ namespace FoolOrGeniusWinFormsApp
 
             if (endGame)
             {
-                user.Diagnose= DiagnoseCalculator.Calculate(countQuestions, user);
-                MessageBox.Show(user.Diagnose);
+                user.Diagnose= DiagnoseCalculator.Calculate(countQuestions, user.CountRightAnswers);
+
+                UserResultsRepository.Save(user);
+
+                MessageBox.Show(user.Name + ", Ваш диагноз: " + user.Diagnose);
                 return;
             }
             ShowNextQuestion();
