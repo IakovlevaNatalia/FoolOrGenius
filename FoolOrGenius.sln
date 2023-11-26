@@ -5,6 +5,10 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoolOrGeniusConsoleApp", "FoolOrGeniusConsoleApp\FoolOrGeniusConsoleApp.csproj", "{88D488AE-7484-4B13-8749-826E4E7652DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoolOrGeniusWinFormsApp", "FoolOrGeniusWinFormsApp\FoolOrGeniusWinFormsApp.csproj", "{1C721706-4042-4A1B-B113-2423C3158481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoolOrGeniusLibrary", "FoolOrGeniusLibrary\FoolOrGeniusLibrary.csproj", "{354DC396-ACDE-478B-93CE-192C2058D10E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{88D488AE-7484-4B13-8749-826E4E7652DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88D488AE-7484-4B13-8749-826E4E7652DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88D488AE-7484-4B13-8749-826E4E7652DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C721706-4042-4A1B-B113-2423C3158481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C721706-4042-4A1B-B113-2423C3158481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C721706-4042-4A1B-B113-2423C3158481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C721706-4042-4A1B-B113-2423C3158481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{354DC396-ACDE-478B-93CE-192C2058D10E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{354DC396-ACDE-478B-93CE-192C2058D10E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{354DC396-ACDE-478B-93CE-192C2058D10E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{354DC396-ACDE-478B-93CE-192C2058D10E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

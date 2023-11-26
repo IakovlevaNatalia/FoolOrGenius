@@ -1,4 +1,4 @@
-﻿namespace FoolOrGeniusConsoleApp
+﻿namespace FoolOrGeniusLibrary
 {
     public class User
     {
