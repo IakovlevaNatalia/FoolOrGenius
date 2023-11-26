@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoolOrGeniusLibrary;
+using System;
 
 namespace FoolOrGeniusConsoleApp
 {
@@ -37,18 +38,18 @@ namespace FoolOrGeniusConsoleApp
 
         }
 
-        public static string[] GetDiagnoses()
-        {
-            var diagnoses = new string[6];
+        //public static string[] GetDiagnoses()
+        //{
+        //    var diagnoses = new string[6];
 
-            diagnoses[0] = "Идиот";
-            diagnoses[1] = "Кретин";
-            diagnoses[2] = "Дурак";
-            diagnoses[3] = "Нормальный";
-            diagnoses[4] = "Талант";
-            diagnoses[5] = "Гений";
-            return diagnoses;
-        }
+        //    diagnoses[0] = "Идиот";
+        //    diagnoses[1] = "Кретин";
+        //    diagnoses[2] = "Дурак";
+        //    diagnoses[3] = "Нормальный";
+        //    diagnoses[4] = "Талант";
+        //    diagnoses[5] = "Гений";
+        //    return diagnoses;
+        //}
         private static bool GetUserChoice(string message)
         {
             while (true)
@@ -88,13 +89,14 @@ namespace FoolOrGeniusConsoleApp
                 }
             }
         }
-        static string CalculateDiagnose(int countQuestions, int countRightAnswers)
-        {
-            var diagnoses = GetDiagnoses();
-            var percentRightAnswers = countRightAnswers * 100 / countQuestions;
+        //static string CalculateDiagnose(int countQuestions, int countRightAnswers)
+        //{
+        //    var diagnoses = GetDiagnoses();
+        //    var percentRightAnswers = countRightAnswers * 100 / countQuestions;
 
-            return diagnoses [percentRightAnswers/20];
-        }
+        //    return diagnoses [percentRightAnswers/20];
+        //}
+
         private static void ShowUserResults()
         {
             var result = UserResultsRepository.GetUserResults();
@@ -137,12 +139,14 @@ namespace FoolOrGeniusConsoleApp
                 }
                 Console.WriteLine("Количество правильных ответов: " + user.CountRightAnswers);
 
-                user.Diagnose = CalculateDiagnose(countQuestions,user.CountRightAnswers);
+                var diagnose= DiagnoseCalculator.Calculate(countQuestions, user.CountRightAnswers));
+                user.Diagnose = diagnose;
           
                 Console.WriteLine(GetDiagnoses());
                 Console.WriteLine(userName + ", " + "ваш диагноз:" + user.Diagnose);
 
                 UserResultsRepository.Save(user);
+
                 var userChoice = GetUserChoice("Хотите посмотреть предыдущие результаты игры?");
 
                 if (userChoice)

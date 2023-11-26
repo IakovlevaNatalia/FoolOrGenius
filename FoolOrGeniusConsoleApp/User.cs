@@ -8,7 +8,7 @@
         public User(string name)
         {
                 Name = name;
-                Diagnose = "Неизвестно";
+           
         }
         public void AcceptRightAnswer()
         {

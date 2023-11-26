@@ -11,7 +11,6 @@ namespace FoolOrGeniusLibrary
             sw.WriteLine(value);
             sw.Close();
         }
-
         public static string GetValue(string fileName)
         {
             var sr = new StreamReader(fileName, Encoding.UTF8);
@@ -23,7 +22,6 @@ namespace FoolOrGeniusLibrary
         {
             return File.Exists(fileName);
         }
-
         public static void Clear(string fileName)
         {
             File.WriteAllText(fileName, string.Empty);
