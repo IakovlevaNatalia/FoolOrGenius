@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FoolOrGeniusConsoleApp
+namespace FoolOrGeniusLibrary
 {
     internal class UserResultsRepository
     {

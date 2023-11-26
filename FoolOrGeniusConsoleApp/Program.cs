@@ -2,7 +2,7 @@
 
 namespace FoolOrGeniusConsoleApp
 {
-   internal class Program
+   public class Program
     {
         static void AddNewQuestion()
         {
@@ -37,17 +37,16 @@ namespace FoolOrGeniusConsoleApp
 
         }
 
-        static string [] GetDiagnoses()
+        public static string[] GetDiagnoses()
         {
             var diagnoses = new string[6];
-           
+
             diagnoses[0] = "Идиот";
             diagnoses[1] = "Кретин";
             diagnoses[2] = "Дурак";
             diagnoses[3] = "Нормальный";
             diagnoses[4] = "Талант";
             diagnoses[5] = "Гений";
-
             return diagnoses;
         }
         private static bool GetUserChoice(string message)
@@ -138,10 +137,10 @@ namespace FoolOrGeniusConsoleApp
                 }
                 Console.WriteLine("Количество правильных ответов: " + user.CountRightAnswers);
 
-                var diagnose = CalculateDiagnose(countQuestions,user.CountRightAnswers);
-                user.Diagnose=diagnose;
+                user.Diagnose = CalculateDiagnose(countQuestions,user.CountRightAnswers);
+          
                 Console.WriteLine(GetDiagnoses());
-                Console.WriteLine(userName + ", " + "ваш диагноз:" + diagnose);
+                Console.WriteLine(userName + ", " + "ваш диагноз:" + user.Diagnose);
 
                 UserResultsRepository.Save(user);
                 var userChoice = GetUserChoice("Хотите посмотреть предыдущие результаты игры?");
