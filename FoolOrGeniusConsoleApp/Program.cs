@@ -15,7 +15,6 @@ namespace FoolOrGeniusConsoleApp
             var newQuestion = new Question(text, answer);
             QuestionsRepository.Add(newQuestion);
         }
-
         public static void RemoveQuestion()
         {
             Console.WriteLine("Введите номер вопроса, который хотите удалить");
@@ -37,19 +36,6 @@ namespace FoolOrGeniusConsoleApp
             QuestionsRepository.Remove(removeQuestion);
 
         }
-
-        //public static string[] GetDiagnoses()
-        //{
-        //    var diagnoses = new string[6];
-
-        //    diagnoses[0] = "Идиот";
-        //    diagnoses[1] = "Кретин";
-        //    diagnoses[2] = "Дурак";
-        //    diagnoses[3] = "Нормальный";
-        //    diagnoses[4] = "Талант";
-        //    diagnoses[5] = "Гений";
-        //    return diagnoses;
-        //}
         private static bool GetUserChoice(string message)
         {
             while (true)
@@ -73,30 +59,15 @@ namespace FoolOrGeniusConsoleApp
         }
         private static int GetNumber()
         {
-            while (true)
+            int number;
+
+            while (!InputValidator.TryParseToNumber(Console.ReadLine(), out number, out string errorMessage))
             {
-                try
-                {
-                    return Convert.ToInt32(Console.ReadLine());
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Введите число!");
-                }
-                catch (OverflowException)
-                {
-                    Console.WriteLine("Введите число от -2*10^9 до 2*10^9!");
-                }
+                Console.WriteLine(errorMessage);
             }
+
+            return number;
         }
-        //static string CalculateDiagnose(int countQuestions, int countRightAnswers)
-        //{
-        //    var diagnoses = GetDiagnoses();
-        //    var percentRightAnswers = countRightAnswers * 100 / countQuestions;
-
-        //    return diagnoses [percentRightAnswers/20];
-        //}
-
         private static void ShowUserResults()
         {
             var result = UserResultsRepository.GetUserResults();
@@ -111,41 +82,23 @@ namespace FoolOrGeniusConsoleApp
         {
             while (true)
             {
-                var questions = QuestionsRepository.GetAll();
-                var countQuestions = questions.Count;
+                Console.WriteLine("Hi! What is your name?");
+                var user = new User(Console.ReadLine());
+                var game = new Game(user);
 
-                Console.WriteLine("Как тебя зовут?");
-                var userName = Console.ReadLine();
-                var user = new User(userName); 
-
-                var Random = new Random();
-
-                for (int i = 0; i < countQuestions; i++)
+                while (!game.End())
                 {
-                    Console.WriteLine("Вопрос №" + (i + 1));
+                    var currentQuestion = game.GetNextQuestion();
 
-                    var randomQuestionIndex = Random.Next(0, questions.Count);
-
-                    Console.WriteLine(questions[randomQuestionIndex].Text);
-
-                    var rightAnswer = questions[randomQuestionIndex].Answer;
+                    Console.WriteLine(game.GetQuestionNumberText());
+                    Console.WriteLine(currentQuestion.Text);
 
                     var userAnswer = GetNumber();
-                    if (userAnswer == rightAnswer)
-                    {
-                       user.AcceptRightAnswer();
-                    }
-                    questions.RemoveAt(randomQuestionIndex);
+                    game.AcceptAnswer(userAnswer);
                 }
-                Console.WriteLine("Количество правильных ответов: " + user.CountRightAnswers);
 
-                var diagnose= DiagnoseCalculator.Calculate(countQuestions, user.CountRightAnswers));
-                user.Diagnose = diagnose;
-          
-                Console.WriteLine(GetDiagnoses());
-                Console.WriteLine(userName + ", " + "ваш диагноз:" + user.Diagnose);
-
-                UserResultsRepository.Save(user);
+                var message =game.CalculateDiagnose();  
+                Console.WriteLine(message);
 
                 var userChoice = GetUserChoice("Хотите посмотреть предыдущие результаты игры?");
 
