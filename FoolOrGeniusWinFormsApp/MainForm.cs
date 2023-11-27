@@ -7,11 +7,7 @@ namespace FoolOrGeniusWinFormsApp
 {
     public partial class mainForm : Form
     {
-        private List<Question> questions;
-        private Question currentQuestion;
-        private User user;
-        private int countQuestions;
-        private int questionNumber=0;
+       Game game;
 
         public mainForm()
         {
@@ -38,47 +34,40 @@ namespace FoolOrGeniusWinFormsApp
             var welcomeForm=new WelcomeForm();
             welcomeForm.ShowDialog();
 
-            user = new User(welcomeForm.userNameTextBox.Text);
-
-            questions = QuestionsRepository.GetAll();
-            countQuestions = questions.Count;
+            var user = new User(welcomeForm.userNameTextBox.Text);
+            game = new Game(user);
 
             ShowNextQuestion();
         }
         private void nextbutton_Click(object sender, EventArgs e)
         {
-            var userAnswer = Convert.ToInt32(UserAnswerTextBox.Text);
-            var rightAnswer = currentQuestion.Answer;
-
-            if (userAnswer == rightAnswer)
+            var parsed =
+                InputValidator.TryParseToNumber(UserAnswerTextBox.Text, out int userAnswer, out string errorMessage);
+            if (!parsed)
             {
-                user.AcceptRightAnswer();
+                MessageBox.Show(errorMessage);
             }
-            questions.Remove(currentQuestion);
-
-            var endGame = questions.Count == 0;
-
-            if (endGame)
+            else
             {
-                user.Diagnose= DiagnoseCalculator.Calculate(countQuestions, user.CountRightAnswers);
+                game.AcceptAnswer(userAnswer);
 
-                UserResultsRepository.Save(user);
-
-                MessageBox.Show(user.Name + ", Ваш диагноз: " + user.Diagnose);
-                return;
+                if (game.End())
+                {
+                    var message = game.CalculateDiagnose();
+                    MessageBox.Show(message);
+                }
+                else
+                {
+                    ShowNextQuestion();
+                }
             }
-            ShowNextQuestion();
         }
         private void ShowNextQuestion()
         {
-            var random = new Random();
-            var randomIndex = random.Next(0, questions.Count);
-            currentQuestion = questions[randomIndex];
+            var currentQuestion = game.GetNextQuestion();
             questionTextLabel.Text = currentQuestion.Text;
 
-            questionNumber++;
-            questionNumberLabel.Text= "Question №" +questionNumber;
-
+            questionNumberLabel.Text = game.GetQuestionNumberText();
         }
     }
 }

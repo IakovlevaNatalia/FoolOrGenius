@@ -1,4 +1,4 @@
-﻿using System;
+﻿using FoolOrGeniusLibrary;
 
 namespace FoolOrGeniusLibrary
 {
@@ -11,7 +11,6 @@ namespace FoolOrGeniusLibrary
 
             return diagnoses[percentRightAnswers / 20];
         }
-
         public static string [] GetDiagnoses ()
         {
             var diagnoses = new string[6];
