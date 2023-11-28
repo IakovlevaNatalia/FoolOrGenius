@@ -1,28 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace FoolOrGeniusLibrary
 {
     public class QuestionsRepository
     {
+       public static string Path = "questions.json";
        public static  List<Question> GetAll()
        {
            var questions = new List<Question>();
 
-            if (FileProvider.Exists("questions.txt"))
+            if (FileProvider.Exists(Path))
             {
-               var value = FileProvider.GetValue("questions.txt");
-               var lines = value.Split(new char [] {'\n'}, StringSplitOptions.RemoveEmptyEntries);
-               foreach (var line in lines)
-               {
-                   var values = line.Split('#');
-                   var text = values[0];
-                   var answer = Convert.ToInt32(values[1]);
-
-                   var question = new Question(text, answer);
-
-                   questions.Add(question);
-               }
+               var value = FileProvider.GetValue(Path);
+               questions = JsonConvert.DeserializeObject<List<Question>>(value);
             }
             else
             {
@@ -36,10 +27,11 @@ namespace FoolOrGeniusLibrary
             return questions;
        }
         public static void Add(Question newQuestion)
-       {
-           var value = $"{newQuestion.Text}#{newQuestion.Answer}";
-           FileProvider.Append("questions.txt", value);
-       }
+        {
+            var questions = GetAll();
+            questions.Add(newQuestion);
+            SaveQuestions(questions);
+        }
         public static void Remove(Question removeQuestion)
         {
             var questions = GetAll();
@@ -52,15 +44,12 @@ namespace FoolOrGeniusLibrary
                     break;
                 }
             }
-            FileProvider.Clear("questions.txt");
             SaveQuestions(questions);
         }
         private static void SaveQuestions(List<Question> questions)
         {
-            foreach (var question in questions)
-            {
-                Add(question);
-            }
+            var jsonData = JsonConvert.SerializeObject(questions);
+            FileProvider.Replace(Path, jsonData);
         }
     }
 }

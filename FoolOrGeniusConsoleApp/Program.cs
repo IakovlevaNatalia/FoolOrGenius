@@ -70,7 +70,7 @@ namespace FoolOrGeniusConsoleApp
         }
         private static void ShowUserResults()
         {
-            var result = UserResultsRepository.GetUserResults();
+            var result = UserResultsRepository.GetAll();
             Console.WriteLine("{0,-20}{1,18}{2,15}", "Имя", "Количество парвильных ответов", "Диагноз");
 
             foreach (var user in result)

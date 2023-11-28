@@ -52,7 +52,7 @@ namespace FoolOrGeniusLibrary
         {
             var diagnose = DiagnoseCalculator.Calculate(countQuestions, user.CountRightAnswers);
             user.Diagnose=diagnose;
-            UserResultsRepository.Save(user);
+            UserResultsRepository.Append(user);
 
             return user.Name + ", Ваш диагноз: " + user.Diagnose;
         }
