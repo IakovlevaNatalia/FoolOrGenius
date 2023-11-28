@@ -19,7 +19,7 @@ namespace FoolOrGeniusWinFormsApp
 
         private void ResultsForm_Load(object sender, EventArgs e)
         {
-            var results = UserResultsRepository.GetUserResults();
+            var results = UserResultsRepository.GetAll();
 
             foreach (var result in results)
             {

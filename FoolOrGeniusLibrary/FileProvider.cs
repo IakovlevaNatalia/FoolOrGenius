@@ -11,6 +11,12 @@ namespace FoolOrGeniusLibrary
             sw.WriteLine(value);
             sw.Close();
         }
+        public static void Replace (string fileName, string value) // перезапись файла. false означает что перезаписываем
+        {
+            var sw = new StreamWriter(fileName, false, Encoding.UTF8);
+            sw.WriteLine(value);
+            sw.Close();
+        }
         public static string GetValue(string fileName)
         {
             var sr = new StreamReader(fileName, Encoding.UTF8);
