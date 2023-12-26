@@ -51,5 +51,20 @@ namespace FoolOrGeniusLibrary
             var jsonData = JsonConvert.SerializeObject(questions);
             FileProvider.Replace(Path, jsonData);
         }
+
+        public static void Remove(string text)
+        {
+            var questions = GetAll();
+  
+            for (int i = 0; i < questions.Count; i++)
+            {
+                if (questions[i].Text == text)
+                {
+                    questions.RemoveAt(i);
+                    break;
+                }
+            }
+            SaveQuestions(questions);
+        }
     }
 }

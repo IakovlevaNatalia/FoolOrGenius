@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FoolOrGeniusWinFormsApp
@@ -51,6 +44,18 @@ namespace FoolOrGeniusWinFormsApp
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addNewQuestionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var newQuestionForm = new AddNewQuestionForm();
+            newQuestionForm.ShowDialog();
+        }
+
+        private void listOfAllQuestionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var questionListForm = new QuestionsListForm();
+            questionListForm.ShowDialog();
         }
     }
 }
