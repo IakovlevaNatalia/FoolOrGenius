@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewQuestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewQuestionForm.designer.cs">
+      <DependentUpon>AddNewQuestionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionsListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuestionsListForm.Designer.cs">
+      <DependentUpon>QuestionsListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ResultsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +78,9 @@
     <Compile Include="WelcomeForm.Designer.cs">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddNewQuestionForm.resx">
+      <DependentUpon>AddNewQuestionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -77,7 +92,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QuestionsListForm.resx">
+      <DependentUpon>QuestionsListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ResultsForm.resx">
       <DependentUpon>ResultsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +121,15 @@
       <Project>{354dc396-acde-478b-93ce-192c2058d10e}</Project>
       <Name>FoolOrGeniusLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
