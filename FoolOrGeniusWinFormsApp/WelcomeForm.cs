@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace FoolOrGeniusWinFormsApp
 {
@@ -9,10 +12,10 @@ namespace FoolOrGeniusWinFormsApp
         public WelcomeForm()
         {
             InitializeComponent();
-            this.passwordFieldTextBox.AutoSize = false;
-            this.passwordFieldTextBox.Size = new Size(300, 60);
-            this.userNameTextBox.AutoSize=false;
-            this.userNameTextBox.Size = new Size(300, 60);
+            this.passwordField.AutoSize = false;
+            this.passwordField.Size = new Size(300, 60);
+            this.userName.AutoSize=false;
+            this.userName.Size = new Size(300, 60);
         }
 
         private void userNameTextBox_TextChanged(object sender, EventArgs e)
@@ -22,8 +25,27 @@ namespace FoolOrGeniusWinFormsApp
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            Close();
+            String userLogin = userName.Text;
+            String userPassword = passwordField.Text;
 
+            DB db = new DB();
+
+            DataTable table = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login`=@uL AND `password`= @uP", db.getConnection());
+            command.Parameters.Add("@ul", MySqlDbType.VarChar).Value=userLogin;
+            command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = userPassword;
+
+            adapter.SelectCommand=command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+                MessageBox.Show("Yes");
+            else
+                MessageBox.Show("No");
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e) // exit from menuStrip
@@ -127,6 +149,11 @@ namespace FoolOrGeniusWinFormsApp
         private void authorizationLabel_MouseDown(object sender, MouseEventArgs e)
         {
             lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void authorizationLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -34,7 +34,7 @@ namespace FoolOrGeniusWinFormsApp
             var welcomeForm=new WelcomeForm();
             welcomeForm.ShowDialog();
 
-            var user = new User(welcomeForm.userNameTextBox.Text);
+            var user = new User(welcomeForm.userName.Text);
             game = new Game(user);
 
             ShowNextQuestion();

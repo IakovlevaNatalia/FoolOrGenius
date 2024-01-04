@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.userNameTextBox = new System.Windows.Forms.TextBox();
+            this.userName = new System.Windows.Forms.TextBox();
             this.startButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,25 +41,25 @@
             this.closeButton = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.authorizationLabel = new System.Windows.Forms.Label();
+            this.passwordField = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.passwordFieldTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // userNameTextBox
+            // userName
             // 
-            this.userNameTextBox.BackColor = System.Drawing.Color.White;
-            this.userNameTextBox.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.userNameTextBox.Location = new System.Drawing.Point(235, 239);
-            this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(303, 39);
-            this.userNameTextBox.TabIndex = 2;
-            this.userNameTextBox.TextChanged += new System.EventHandler(this.userNameTextBox_TextChanged);
+            this.userName.BackColor = System.Drawing.Color.White;
+            this.userName.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.userName.Location = new System.Drawing.Point(235, 239);
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(303, 39);
+            this.userName.TabIndex = 2;
+            this.userName.TextChanged += new System.EventHandler(this.userNameTextBox_TextChanged);
             // 
             // startButton
             // 
@@ -88,7 +88,7 @@
             this.questionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(726, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(726, 30);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -168,7 +168,7 @@
             this.panel1.Controls.Add(this.authorizationLabel);
             this.panel1.Controls.Add(this.closeButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 28);
+            this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(726, 163);
             this.panel1.TabIndex = 7;
@@ -184,8 +184,20 @@
             this.authorizationLabel.TabIndex = 6;
             this.authorizationLabel.Text = "Authorization";
             this.authorizationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.authorizationLabel.Click += new System.EventHandler(this.authorizationLabel_Click);
             this.authorizationLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.authorizationLabel_MouseDown);
             this.authorizationLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.authorizationLabel_MouseMove);
+            // 
+            // passwordField
+            // 
+            this.passwordField.BackColor = System.Drawing.Color.White;
+            this.passwordField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passwordField.Location = new System.Drawing.Point(235, 328);
+            this.passwordField.Name = "passwordField";
+            this.passwordField.Size = new System.Drawing.Size(303, 39);
+            this.passwordField.TabIndex = 9;
+            this.passwordField.UseSystemPasswordChar = true;
+            this.passwordField.TextChanged += new System.EventHandler(this.passwordFieldTextBox_TextChanged);
             // 
             // pictureBox2
             // 
@@ -208,29 +220,18 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // passwordFieldTextBox
-            // 
-            this.passwordFieldTextBox.BackColor = System.Drawing.Color.White;
-            this.passwordFieldTextBox.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passwordFieldTextBox.Location = new System.Drawing.Point(235, 328);
-            this.passwordFieldTextBox.Name = "passwordFieldTextBox";
-            this.passwordFieldTextBox.Size = new System.Drawing.Size(303, 39);
-            this.passwordFieldTextBox.TabIndex = 9;
-            this.passwordFieldTextBox.UseSystemPasswordChar = true;
-            this.passwordFieldTextBox.TextChanged += new System.EventHandler(this.passwordFieldTextBox_TextChanged);
-            // 
             // WelcomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(8)))), ((int)(((byte)(24)))));
             this.ClientSize = new System.Drawing.Size(726, 598);
-            this.Controls.Add(this.passwordFieldTextBox);
+            this.Controls.Add(this.passwordField);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.startButton);
-            this.Controls.Add(this.userNameTextBox);
+            this.Controls.Add(this.userName);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
@@ -250,7 +251,7 @@
         }
 
         #endregion
-        public System.Windows.Forms.TextBox userNameTextBox;
+        public System.Windows.Forms.TextBox userName;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -265,6 +266,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label authorizationLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox passwordFieldTextBox;
+        private System.Windows.Forms.TextBox passwordField;
     }
 }
