@@ -26,6 +26,9 @@ namespace FoolOrGeniusWinFormsApp
 
             userPasswordField.Text = "Password";
             userPasswordField.ForeColor=Color.Gray;
+
+            userEmailField.Text = "E-mail";
+            userEmailField.ForeColor = Color.Gray;
         }
 
         private void authorizationLabel_Click(object sender, EventArgs e)
@@ -160,6 +163,20 @@ namespace FoolOrGeniusWinFormsApp
             if (userPasswordField.Text == "");
             userPasswordField.Text = "";
             userPasswordField.ForeColor = Color.Gray;
+        }
+
+        private void userEmailField_Enter(object sender, EventArgs e)
+        {
+            if (userEmailField.Text == "E-mail") ;
+            userEmailField.Text = "";
+            userEmailField.ForeColor = Color.Black;
+        }
+
+        private void userEmailField_Leave(object sender, EventArgs e)
+        {
+            if (userEmailField.Text == "")
+                userEmailField.Text = "E-mail";
+            userEmailField.ForeColor=Color.Gray;
         }
     }
 }
