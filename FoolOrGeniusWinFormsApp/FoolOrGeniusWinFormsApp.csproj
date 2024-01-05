@@ -210,6 +210,9 @@
   <ItemGroup>
     <None Include="Resources\icognito2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e-mail.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

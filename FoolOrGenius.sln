@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoolOrGeniusWinFormsApp", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoolOrGeniusLibrary", "FoolOrGeniusLibrary\FoolOrGeniusLibrary.csproj", "{354DC396-ACDE-478B-93CE-192C2058D10E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoolOrGenius.Db", "FoolOrGenius.Db\FoolOrGenius.Db.csproj", "{3002C422-C77A-47EC-A26C-DDDDBB9DF848}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{354DC396-ACDE-478B-93CE-192C2058D10E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{354DC396-ACDE-478B-93CE-192C2058D10E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{354DC396-ACDE-478B-93CE-192C2058D10E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3002C422-C77A-47EC-A26C-DDDDBB9DF848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3002C422-C77A-47EC-A26C-DDDDBB9DF848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3002C422-C77A-47EC-A26C-DDDDBB9DF848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3002C422-C77A-47EC-A26C-DDDDBB9DF848}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
