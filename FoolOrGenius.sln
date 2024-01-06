@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoolOrGeniusConsoleApp", "FoolOrGeniusConsoleApp\FoolOrGeniusConsoleApp.csproj", "{88D488AE-7484-4B13-8749-826E4E7652DF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoolOrGeniusWinFormsApp", "FoolOrGeniusWinFormsApp\FoolOrGeniusWinFormsApp.csproj", "{1C721706-4042-4A1B-B113-2423C3158481}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoolOrGeniusLibrary", "FoolOrGeniusLibrary\FoolOrGeniusLibrary.csproj", "{354DC396-ACDE-478B-93CE-192C2058D10E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoolOrGenius.Db", "FoolOrGenius.Db\FoolOrGenius.Db.csproj", "{3002C422-C77A-47EC-A26C-DDDDBB9DF848}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoolOrGenius.DbCore", "FoolOrGenius.DbCore\FoolOrGenius.DbCore.csproj", "{0BF1E949-8394-4F44-9444-5873F362C12F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoolOrGeniusWinFormsApp", "FoolOrGeniusWinFormsAppCore\FoolOrGeniusWinFormsApp.csproj", "{75C86CDC-A1DE-4E73-B826-BFE304FF160F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,22 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{88D488AE-7484-4B13-8749-826E4E7652DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{88D488AE-7484-4B13-8749-826E4E7652DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{88D488AE-7484-4B13-8749-826E4E7652DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{88D488AE-7484-4B13-8749-826E4E7652DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1C721706-4042-4A1B-B113-2423C3158481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1C721706-4042-4A1B-B113-2423C3158481}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1C721706-4042-4A1B-B113-2423C3158481}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1C721706-4042-4A1B-B113-2423C3158481}.Release|Any CPU.Build.0 = Release|Any CPU
 		{354DC396-ACDE-478B-93CE-192C2058D10E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{354DC396-ACDE-478B-93CE-192C2058D10E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{354DC396-ACDE-478B-93CE-192C2058D10E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{354DC396-ACDE-478B-93CE-192C2058D10E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3002C422-C77A-47EC-A26C-DDDDBB9DF848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3002C422-C77A-47EC-A26C-DDDDBB9DF848}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3002C422-C77A-47EC-A26C-DDDDBB9DF848}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3002C422-C77A-47EC-A26C-DDDDBB9DF848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BF1E949-8394-4F44-9444-5873F362C12F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BF1E949-8394-4F44-9444-5873F362C12F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BF1E949-8394-4F44-9444-5873F362C12F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BF1E949-8394-4F44-9444-5873F362C12F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75C86CDC-A1DE-4E73-B826-BFE304FF160F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75C86CDC-A1DE-4E73-B826-BFE304FF160F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75C86CDC-A1DE-4E73-B826-BFE304FF160F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75C86CDC-A1DE-4E73-B826-BFE304FF160F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
