@@ -1,14 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
+using FoolOrGenius.Db.Models;
 
 namespace FoolOrGenius.Db
 {
-    public class DatabaseContext:DbContext
+    public class DatabaseContext : DbContext
     {
-        //public DatabaseContext(DbContextOptions<DatabaseContext> options)
-        //    : base options
-        //{
-        //    Database.En
-        //}
+        public DatabaseContext()
+        {
+        }
+
+        public DatabaseContext(DbContextOptions<DatabaseContext> options)
+            : base (options)
+        {
+            Database.EnsureCreated();
+        }
+        public DbSet<User> User { get; set; }
+
     }
 }

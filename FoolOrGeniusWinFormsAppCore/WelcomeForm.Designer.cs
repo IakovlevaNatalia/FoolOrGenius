@@ -28,230 +28,250 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.userName = new System.Windows.Forms.TextBox();
-            this.startButton = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showPreviousResultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.restartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.questionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listOfAllQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeButton = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.authorizationLabel = new System.Windows.Forms.Label();
-            this.passwordField = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            userLogin = new System.Windows.Forms.TextBox();
+            startButton = new System.Windows.Forms.Button();
+            menuStrip1 = new System.Windows.Forms.MenuStrip();
+            fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            showPreviousResultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            restartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            questionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            addNewQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            listOfAllQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            closeButton = new System.Windows.Forms.Label();
+            panel1 = new System.Windows.Forms.Panel();
+            authorizationLabel = new System.Windows.Forms.Label();
+            passwordField = new System.Windows.Forms.TextBox();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            RegisterLabel = new System.Windows.Forms.Label();
+            menuStrip1.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
-            // userName
+            // userLogin
             // 
-            this.userName.BackColor = System.Drawing.Color.White;
-            this.userName.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.userName.Location = new System.Drawing.Point(235, 239);
-            this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(303, 39);
-            this.userName.TabIndex = 2;
-            this.userName.TextChanged += new System.EventHandler(this.userNameTextBox_TextChanged);
+            userLogin.BackColor = System.Drawing.Color.White;
+            userLogin.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            userLogin.ForeColor = System.Drawing.Color.FromArgb(64, 64, 0);
+            userLogin.Location = new System.Drawing.Point(235, 299);
+            userLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            userLogin.Name = "userLogin";
+            userLogin.Size = new System.Drawing.Size(303, 39);
+            userLogin.TabIndex = 2;
+            userLogin.TextChanged += userNameTextBox_TextChanged;
+            userLogin.Enter += userLogin_Enter;
+            userLogin.Leave += userLogin_Leave;
             // 
             // startButton
             // 
-            this.startButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(24)))), ((int)(((byte)(70)))));
-            this.startButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.startButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
-            this.startButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Olive;
-            this.startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startButton.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.startButton.ForeColor = System.Drawing.Color.White;
-            this.startButton.Location = new System.Drawing.Point(274, 463);
-            this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(222, 62);
-            this.startButton.TabIndex = 3;
-            this.startButton.Text = "Start";
-            this.startButton.UseVisualStyleBackColor = false;
-            this.startButton.Click += new System.EventHandler(this.startButton_Click);
-            this.startButton.MouseEnter += new System.EventHandler(this.startButton_MouseEnter);
-            this.startButton.MouseLeave += new System.EventHandler(this.startButton_MouseLeave);
+            startButton.BackColor = System.Drawing.Color.FromArgb(8, 24, 70);
+            startButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            startButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            startButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Olive;
+            startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            startButton.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            startButton.ForeColor = System.Drawing.Color.White;
+            startButton.Location = new System.Drawing.Point(269, 514);
+            startButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            startButton.Name = "startButton";
+            startButton.Size = new System.Drawing.Size(222, 78);
+            startButton.TabIndex = 3;
+            startButton.Text = "Start";
+            startButton.UseVisualStyleBackColor = false;
+            startButton.Click += startButton_Click;
+            startButton.MouseEnter += startButton_MouseEnter;
+            startButton.MouseLeave += startButton_MouseLeave;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.questionsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(726, 30);
-            this.menuStrip1.TabIndex = 4;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, questionsToolStripMenuItem });
+            menuStrip1.Location = new System.Drawing.Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new System.Drawing.Size(726, 28);
+            menuStrip1.TabIndex = 4;
+            menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showPreviousResultsToolStripMenuItem,
-            this.restartToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
-            this.fileToolStripMenuItem.Text = "File";
-            this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
+            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { showPreviousResultsToolStripMenuItem, restartToolStripMenuItem, exitToolStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            fileToolStripMenuItem.Text = "File";
+            fileToolStripMenuItem.Click += fileToolStripMenuItem_Click;
             // 
             // showPreviousResultsToolStripMenuItem
             // 
-            this.showPreviousResultsToolStripMenuItem.Name = "showPreviousResultsToolStripMenuItem";
-            this.showPreviousResultsToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
-            this.showPreviousResultsToolStripMenuItem.Text = "Show previous results";
-            this.showPreviousResultsToolStripMenuItem.Click += new System.EventHandler(this.showPreviousResultsToolStripMenuItem_Click);
+            showPreviousResultsToolStripMenuItem.Name = "showPreviousResultsToolStripMenuItem";
+            showPreviousResultsToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            showPreviousResultsToolStripMenuItem.Text = "Show previous results";
+            showPreviousResultsToolStripMenuItem.Click += showPreviousResultsToolStripMenuItem_Click;
             // 
             // restartToolStripMenuItem
             // 
-            this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
-            this.restartToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
-            this.restartToolStripMenuItem.Text = "Restart";
-            this.restartToolStripMenuItem.Click += new System.EventHandler(this.restartToolStripMenuItem_Click);
+            restartToolStripMenuItem.Name = "restartToolStripMenuItem";
+            restartToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            restartToolStripMenuItem.Text = "Restart";
+            restartToolStripMenuItem.Click += restartToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // questionsToolStripMenuItem
             // 
-            this.questionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewQuestionsToolStripMenuItem,
-            this.listOfAllQuestionsToolStripMenuItem});
-            this.questionsToolStripMenuItem.Name = "questionsToolStripMenuItem";
-            this.questionsToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
-            this.questionsToolStripMenuItem.Text = "Questions";
+            questionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { addNewQuestionsToolStripMenuItem, listOfAllQuestionsToolStripMenuItem });
+            questionsToolStripMenuItem.Name = "questionsToolStripMenuItem";
+            questionsToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
+            questionsToolStripMenuItem.Text = "Questions";
             // 
             // addNewQuestionsToolStripMenuItem
             // 
-            this.addNewQuestionsToolStripMenuItem.Name = "addNewQuestionsToolStripMenuItem";
-            this.addNewQuestionsToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
-            this.addNewQuestionsToolStripMenuItem.Text = "Add new questions";
-            this.addNewQuestionsToolStripMenuItem.Click += new System.EventHandler(this.addNewQuestionsToolStripMenuItem_Click);
+            addNewQuestionsToolStripMenuItem.Name = "addNewQuestionsToolStripMenuItem";
+            addNewQuestionsToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
+            addNewQuestionsToolStripMenuItem.Text = "Add new questions";
+            addNewQuestionsToolStripMenuItem.Click += addNewQuestionsToolStripMenuItem_Click;
             // 
             // listOfAllQuestionsToolStripMenuItem
             // 
-            this.listOfAllQuestionsToolStripMenuItem.Name = "listOfAllQuestionsToolStripMenuItem";
-            this.listOfAllQuestionsToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
-            this.listOfAllQuestionsToolStripMenuItem.Text = "List of all questions";
-            this.listOfAllQuestionsToolStripMenuItem.Click += new System.EventHandler(this.listOfAllQuestionsToolStripMenuItem_Click);
+            listOfAllQuestionsToolStripMenuItem.Name = "listOfAllQuestionsToolStripMenuItem";
+            listOfAllQuestionsToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
+            listOfAllQuestionsToolStripMenuItem.Text = "List of all questions";
+            listOfAllQuestionsToolStripMenuItem.Click += listOfAllQuestionsToolStripMenuItem_Click;
             // 
             // closeButton
             // 
-            this.closeButton.AutoSize = true;
-            this.closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.closeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.closeButton.Location = new System.Drawing.Point(677, 13);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(37, 36);
-            this.closeButton.TabIndex = 5;
-            this.closeButton.Text = "X";
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
-            this.closeButton.MouseEnter += new System.EventHandler(this.closeButton_MouseEnter);
-            this.closeButton.MouseLeave += new System.EventHandler(this.closeButton_MouseLeave);
+            closeButton.AutoSize = true;
+            closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            closeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            closeButton.Location = new System.Drawing.Point(677, 16);
+            closeButton.Name = "closeButton";
+            closeButton.Size = new System.Drawing.Size(37, 36);
+            closeButton.TabIndex = 5;
+            closeButton.Text = "X";
+            closeButton.Click += closeButton_Click;
+            closeButton.MouseEnter += closeButton_MouseEnter;
+            closeButton.MouseLeave += closeButton_MouseLeave;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(24)))), ((int)(((byte)(70)))));
-            this.panel1.Controls.Add(this.authorizationLabel);
-            this.panel1.Controls.Add(this.closeButton);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 30);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(726, 163);
-            this.panel1.TabIndex = 7;
+            panel1.BackColor = System.Drawing.Color.FromArgb(8, 24, 70);
+            panel1.Controls.Add(authorizationLabel);
+            panel1.Controls.Add(closeButton);
+            panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            panel1.Location = new System.Drawing.Point(0, 28);
+            panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(726, 204);
+            panel1.TabIndex = 7;
             // 
             // authorizationLabel
             // 
-            this.authorizationLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.authorizationLabel.Font = new System.Drawing.Font("Times New Roman", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.authorizationLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.authorizationLabel.Location = new System.Drawing.Point(0, 0);
-            this.authorizationLabel.Name = "authorizationLabel";
-            this.authorizationLabel.Size = new System.Drawing.Size(667, 163);
-            this.authorizationLabel.TabIndex = 6;
-            this.authorizationLabel.Text = "Authorization";
-            this.authorizationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.authorizationLabel.Click += new System.EventHandler(this.authorizationLabel_Click);
-            this.authorizationLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.authorizationLabel_MouseDown);
-            this.authorizationLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.authorizationLabel_MouseMove);
+            authorizationLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            authorizationLabel.Font = new System.Drawing.Font("Times New Roman", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            authorizationLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            authorizationLabel.Location = new System.Drawing.Point(0, 0);
+            authorizationLabel.Name = "authorizationLabel";
+            authorizationLabel.Size = new System.Drawing.Size(667, 204);
+            authorizationLabel.TabIndex = 6;
+            authorizationLabel.Text = "Authorization";
+            authorizationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            authorizationLabel.Click += authorizationLabel_Click;
+            authorizationLabel.MouseDown += authorizationLabel_MouseDown;
+            authorizationLabel.MouseMove += authorizationLabel_MouseMove;
             // 
             // passwordField
             // 
-            this.passwordField.BackColor = System.Drawing.Color.White;
-            this.passwordField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.passwordField.Location = new System.Drawing.Point(235, 328);
-            this.passwordField.Name = "passwordField";
-            this.passwordField.Size = new System.Drawing.Size(303, 39);
-            this.passwordField.TabIndex = 9;
-            this.passwordField.UseSystemPasswordChar = true;
-            this.passwordField.TextChanged += new System.EventHandler(this.passwordFieldTextBox_TextChanged);
+            passwordField.BackColor = System.Drawing.Color.White;
+            passwordField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 204);
+            passwordField.Location = new System.Drawing.Point(235, 410);
+            passwordField.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            passwordField.Name = "passwordField";
+            passwordField.Size = new System.Drawing.Size(303, 39);
+            passwordField.TabIndex = 9;
+            passwordField.UseSystemPasswordChar = true;
+            passwordField.TextChanged += passwordFieldTextBox_TextChanged;
+            passwordField.Enter += passwordField_Enter;
+            passwordField.Leave += passwordField_Leave;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::FoolOrGeniusWinFormsApp.Properties.Resources._lock;
-            this.pictureBox2.Location = new System.Drawing.Point(143, 328);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 63);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            pictureBox2.Image = Properties.Resources._lock;
+            pictureBox2.Location = new System.Drawing.Point(143, 410);
+            pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(64, 64);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 8;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::FoolOrGeniusWinFormsApp.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(143, 239);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = Properties.Resources.user;
+            pictureBox1.Location = new System.Drawing.Point(143, 299);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(64, 64);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            // 
+            // RegisterLabel
+            // 
+            RegisterLabel.AutoSize = true;
+            RegisterLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            RegisterLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            RegisterLabel.Location = new System.Drawing.Point(287, 641);
+            RegisterLabel.Name = "RegisterLabel";
+            RegisterLabel.Size = new System.Drawing.Size(187, 20);
+            RegisterLabel.TabIndex = 10;
+            RegisterLabel.Text = "Don't have an account yet?";
+            RegisterLabel.Click += RegisterLabel_Click;
+            RegisterLabel.MouseEnter += RegisterLabel_MouseEnter;
+            RegisterLabel.MouseLeave += RegisterLabel_MouseLeave;
             // 
             // WelcomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(8)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(726, 598);
-            this.Controls.Add(this.passwordField);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.startButton);
-            this.Controls.Add(this.userName);
-            this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "WelcomeForm";
-            this.Text = "WelcomeForm";
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WelcomeForm_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.WelcomeForm_MouseMove);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(70, 8, 24);
+            ClientSize = new System.Drawing.Size(726, 748);
+            Controls.Add(RegisterLabel);
+            Controls.Add(passwordField);
+            Controls.Add(pictureBox2);
+            Controls.Add(panel1);
+            Controls.Add(pictureBox1);
+            Controls.Add(startButton);
+            Controls.Add(userLogin);
+            Controls.Add(menuStrip1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            MainMenuStrip = menuStrip1;
+            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            Name = "WelcomeForm";
+            Text = "WelcomeForm";
+            Load += WelcomeForm_Load;
+            MouseDown += WelcomeForm_MouseDown;
+            MouseMove += WelcomeForm_MouseMove;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-        public System.Windows.Forms.TextBox userName;
+        public System.Windows.Forms.TextBox userLogin;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -267,5 +287,6 @@
         private System.Windows.Forms.Label authorizationLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox passwordField;
+        private System.Windows.Forms.Label RegisterLabel;
     }
 }

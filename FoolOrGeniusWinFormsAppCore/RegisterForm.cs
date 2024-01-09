@@ -1,36 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using FoolOrGenius.Db;
+using FoolOrGenius.Db.Models;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FoolOrGeniusWinFormsApp
 {
     public partial class RegisterForm : Form
     {
-        public RegisterForm()
+        DatabaseContext db;
+        public RegisterForm(DatabaseContext db)
         {
             InitializeComponent();
+
             userFirstNameField.Text = "First name";
             userFirstNameField.ForeColor = Color.Gray;
 
             userLastNameField.Text = "Last name";
-            userLastNameField.ForeColor=Color.Gray;
+            userLastNameField.ForeColor = Color.Gray;
 
             userLoginField.Text = "Login";
-            userLoginField.ForeColor=Color.Gray;
+            userLoginField.ForeColor = Color.Gray;
 
             userPasswordField.Text = "Password";
-            userPasswordField.ForeColor=Color.Gray;
+            userPasswordField.ForeColor = Color.Gray;
 
             userEmailField.Text = "E-mail";
             userEmailField.ForeColor = Color.Gray;
-        }
 
+            this.db = db;
+
+            this.StartPosition = FormStartPosition.CenterScreen;
+
+        }
         private void authorizationLabel_Click(object sender, EventArgs e)
         {
 
@@ -128,7 +130,7 @@ namespace FoolOrGeniusWinFormsApp
         {
             if (userLastNameField.Text == "")
                 userLastNameField.Text = "Last name";
-            userLastNameField.ForeColor= Color.Gray;
+            userLastNameField.ForeColor = Color.Gray;
 
         }
 
@@ -141,7 +143,7 @@ namespace FoolOrGeniusWinFormsApp
         {
             if (userLoginField.Text == "Login")
                 userLoginField.Text = "";
-            userLoginField.ForeColor=Color.Black;
+            userLoginField.ForeColor = Color.Black;
         }
 
         private void userLoginField_Leave(object sender, EventArgs e)
@@ -155,13 +157,12 @@ namespace FoolOrGeniusWinFormsApp
         {
             if (userPasswordField.Text == "Password");
             userPasswordField.Text = "";
-            userPasswordField.ForeColor= Color.Black;
+            userPasswordField.ForeColor = Color.Black;
         }
 
         private void userPasswordField_Leave(object sender, EventArgs e)
         {
             if (userPasswordField.Text == "");
-            userPasswordField.Text = "";
             userPasswordField.ForeColor = Color.Gray;
         }
 
@@ -176,7 +177,42 @@ namespace FoolOrGeniusWinFormsApp
         {
             if (userEmailField.Text == "")
                 userEmailField.Text = "E-mail";
-            userEmailField.ForeColor=Color.Gray;
+            userEmailField.ForeColor = Color.Gray;
+        }
+
+        private void authorizathionLabel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            WelcomeForm welcomeForm = new WelcomeForm();
+            welcomeForm.Show();
+        }
+
+        private void authorizathionLabel_MouseEnter(object sender, EventArgs e)
+        {
+            authorizathionLabel.ForeColor = Color.Blue;
+        }
+
+        private void authorizathionLabel_MouseLeave(object sender, EventArgs e)
+        {
+            authorizathionLabel.ForeColor = Color.White;
+        }
+
+        private void signUpButton_Click(object sender, EventArgs e)
+        {
+            User user = new User();
+            user.FirstName = userFirstNameField.Text;
+            user.LastName = userLastNameField.Text;
+            user.Email = userEmailField.Text;
+            user.Login = userLoginField.Text;
+            user.Password = userPasswordField.Text;
+            user.RegistrationDate = DateTime.Now;
+            db.User.Add(user);
+            db.SaveChanges();
+        }
+
+        private void userPasswordField_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
