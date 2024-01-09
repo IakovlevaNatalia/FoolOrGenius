@@ -28,268 +28,300 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.Registration = new System.Windows.Forms.Panel();
-            this.authorizationLabel = new System.Windows.Forms.Label();
-            this.closeButton = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.userEmailField = new System.Windows.Forms.TextBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.userLoginField = new System.Windows.Forms.TextBox();
-            this.userFirstNameField = new System.Windows.Forms.TextBox();
-            this.signUpButton = new System.Windows.Forms.Button();
-            this.userPasswordField = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.userLastNameField = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.Registration.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.SuspendLayout();
+            menuStrip1 = new System.Windows.Forms.MenuStrip();
+            Registration = new System.Windows.Forms.Panel();
+            authorizationLabel = new System.Windows.Forms.Label();
+            closeButton = new System.Windows.Forms.Label();
+            panel1 = new System.Windows.Forms.Panel();
+            authorizathionLabel = new System.Windows.Forms.Label();
+            userEmailField = new System.Windows.Forms.TextBox();
+            pictureBox5 = new System.Windows.Forms.PictureBox();
+            pictureBox4 = new System.Windows.Forms.PictureBox();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            userLoginField = new System.Windows.Forms.TextBox();
+            userFirstNameField = new System.Windows.Forms.TextBox();
+            signUpButton = new System.Windows.Forms.Button();
+            userPasswordField = new System.Windows.Forms.TextBox();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            userLastNameField = new System.Windows.Forms.TextBox();
+            pictureBox3 = new System.Windows.Forms.PictureBox();
+            panel2 = new System.Windows.Forms.Panel();
+            Registration.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel2.SuspendLayout();
+            SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(726, 24);
-            this.menuStrip1.TabIndex = 5;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            menuStrip1.Location = new System.Drawing.Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new System.Drawing.Size(726, 24);
+            menuStrip1.TabIndex = 5;
+            menuStrip1.Text = "menuStrip1";
             // 
             // Registration
             // 
-            this.Registration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(24)))), ((int)(((byte)(70)))));
-            this.Registration.Controls.Add(this.authorizationLabel);
-            this.Registration.Font = new System.Drawing.Font("Times New Roman", 31.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Registration.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Registration.Location = new System.Drawing.Point(0, 0);
-            this.Registration.Name = "Registration";
-            this.Registration.Size = new System.Drawing.Size(667, 163);
-            this.Registration.TabIndex = 12;
-            this.Registration.TabStop = true;
+            Registration.BackColor = System.Drawing.Color.FromArgb(8, 24, 70);
+            Registration.Controls.Add(authorizationLabel);
+            Registration.Font = new System.Drawing.Font("Times New Roman", 31.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            Registration.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            Registration.Location = new System.Drawing.Point(0, 0);
+            Registration.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            Registration.Name = "Registration";
+            Registration.Size = new System.Drawing.Size(667, 204);
+            Registration.TabIndex = 12;
+            Registration.TabStop = true;
             // 
             // authorizationLabel
             // 
-            this.authorizationLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.authorizationLabel.Font = new System.Drawing.Font("Times New Roman", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.authorizationLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.authorizationLabel.Location = new System.Drawing.Point(0, 0);
-            this.authorizationLabel.Name = "authorizationLabel";
-            this.authorizationLabel.Size = new System.Drawing.Size(723, 163);
-            this.authorizationLabel.TabIndex = 7;
-            this.authorizationLabel.Text = "Registration";
-            this.authorizationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.authorizationLabel.Click += new System.EventHandler(this.authorizationLabel_Click_1);
-            this.authorizationLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.authorizationLabel_MouseDown_1);
-            this.authorizationLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.authorizationLabel_MouseMove_1);
+            authorizationLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            authorizationLabel.Font = new System.Drawing.Font("Times New Roman", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            authorizationLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            authorizationLabel.Location = new System.Drawing.Point(0, 0);
+            authorizationLabel.Name = "authorizationLabel";
+            authorizationLabel.Size = new System.Drawing.Size(723, 204);
+            authorizationLabel.TabIndex = 7;
+            authorizationLabel.Text = "Registration";
+            authorizationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            authorizationLabel.Click += authorizationLabel_Click_1;
+            authorizationLabel.MouseDown += authorizationLabel_MouseDown_1;
+            authorizationLabel.MouseMove += authorizationLabel_MouseMove_1;
             // 
             // closeButton
             // 
-            this.closeButton.AutoSize = true;
-            this.closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.closeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.closeButton.Location = new System.Drawing.Point(13, 9);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(37, 36);
-            this.closeButton.TabIndex = 13;
-            this.closeButton.Text = "X";
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            closeButton.AutoSize = true;
+            closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            closeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            closeButton.Location = new System.Drawing.Point(13, 11);
+            closeButton.Name = "closeButton";
+            closeButton.Size = new System.Drawing.Size(37, 36);
+            closeButton.TabIndex = 13;
+            closeButton.Text = "X";
+            closeButton.Click += closeButton_Click;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(8)))), ((int)(((byte)(24)))));
-            this.panel1.Controls.Add(this.userEmailField);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.userLoginField);
-            this.panel1.Controls.Add(this.userFirstNameField);
-            this.panel1.Controls.Add(this.signUpButton);
-            this.panel1.Controls.Add(this.userPasswordField);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.userLastNameField);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Location = new System.Drawing.Point(0, 157);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(726, 439);
-            this.panel1.TabIndex = 13;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            panel1.BackColor = System.Drawing.Color.FromArgb(70, 8, 24);
+            panel1.Controls.Add(authorizathionLabel);
+            panel1.Controls.Add(userEmailField);
+            panel1.Controls.Add(pictureBox5);
+            panel1.Controls.Add(pictureBox4);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(userLoginField);
+            panel1.Controls.Add(userFirstNameField);
+            panel1.Controls.Add(signUpButton);
+            panel1.Controls.Add(userPasswordField);
+            panel1.Controls.Add(pictureBox2);
+            panel1.Controls.Add(userLastNameField);
+            panel1.Controls.Add(pictureBox3);
+            panel1.Location = new System.Drawing.Point(0, 196);
+            panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(726, 549);
+            panel1.TabIndex = 13;
+            panel1.Paint += panel1_Paint;
+            panel1.MouseDown += panel1_MouseDown;
+            panel1.MouseMove += panel1_MouseMove;
+            // 
+            // authorizathionLabel
+            // 
+            authorizathionLabel.AutoSize = true;
+            authorizathionLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            authorizathionLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            authorizathionLabel.Location = new System.Drawing.Point(340, 498);
+            authorizathionLabel.Name = "authorizathionLabel";
+            authorizathionLabel.Size = new System.Drawing.Size(99, 20);
+            authorizathionLabel.TabIndex = 18;
+            authorizathionLabel.Text = "Authorization";
+            authorizathionLabel.Click += authorizathionLabel_Click;
+            authorizathionLabel.MouseEnter += authorizathionLabel_MouseEnter;
+            authorizathionLabel.MouseLeave += authorizathionLabel_MouseLeave;
             // 
             // userEmailField
             // 
-            this.userEmailField.BackColor = System.Drawing.Color.White;
-            this.userEmailField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userEmailField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.userEmailField.Location = new System.Drawing.Point(255, 231);
-            this.userEmailField.Name = "userEmailField";
-            this.userEmailField.Size = new System.Drawing.Size(303, 39);
-            this.userEmailField.TabIndex = 17;
-            this.userEmailField.Enter += new System.EventHandler(this.userEmailField_Enter);
-            this.userEmailField.Leave += new System.EventHandler(this.userEmailField_Leave);
+            userEmailField.BackColor = System.Drawing.Color.White;
+            userEmailField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            userEmailField.ForeColor = System.Drawing.Color.FromArgb(64, 64, 0);
+            userEmailField.Location = new System.Drawing.Point(255, 256);
+            userEmailField.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            userEmailField.Name = "userEmailField";
+            userEmailField.Size = new System.Drawing.Size(303, 39);
+            userEmailField.TabIndex = 17;
+            userEmailField.Enter += userEmailField_Enter;
+            userEmailField.Leave += userEmailField_Leave;
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::FoolOrGeniusWinFormsApp.Properties.Resources.e_mail;
-            this.pictureBox5.Location = new System.Drawing.Point(160, 210);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(65, 60);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 16;
-            this.pictureBox5.TabStop = false;
+            pictureBox5.Image = Properties.Resources.e_mail;
+            pictureBox5.Location = new System.Drawing.Point(160, 231);
+            pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new System.Drawing.Size(64, 64);
+            pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 16;
+            pictureBox5.TabStop = false;
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::FoolOrGeniusWinFormsApp.Properties.Resources.icognito2;
-            this.pictureBox4.Location = new System.Drawing.Point(160, 144);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(65, 60);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 15;
-            this.pictureBox4.TabStop = false;
+            pictureBox4.Image = Properties.Resources.icognito2;
+            pictureBox4.Location = new System.Drawing.Point(160, 159);
+            pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new System.Drawing.Size(64, 64);
+            pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 15;
+            pictureBox4.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::FoolOrGeniusWinFormsApp.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(160, 78);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 60);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = Properties.Resources.user;
+            pictureBox1.Location = new System.Drawing.Point(160, 87);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(64, 64);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 14;
+            pictureBox1.TabStop = false;
             // 
             // userLoginField
             // 
-            this.userLoginField.BackColor = System.Drawing.Color.White;
-            this.userLoginField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userLoginField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.userLoginField.Location = new System.Drawing.Point(255, 165);
-            this.userLoginField.Name = "userLoginField";
-            this.userLoginField.Size = new System.Drawing.Size(303, 39);
-            this.userLoginField.TabIndex = 13;
-            this.userLoginField.TextChanged += new System.EventHandler(this.userLoginField_TextChanged);
-            this.userLoginField.Enter += new System.EventHandler(this.userLoginField_Enter);
-            this.userLoginField.Leave += new System.EventHandler(this.userLoginField_Leave);
+            userLoginField.BackColor = System.Drawing.Color.White;
+            userLoginField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            userLoginField.ForeColor = System.Drawing.Color.FromArgb(64, 64, 0);
+            userLoginField.Location = new System.Drawing.Point(255, 184);
+            userLoginField.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            userLoginField.Name = "userLoginField";
+            userLoginField.Size = new System.Drawing.Size(303, 39);
+            userLoginField.TabIndex = 13;
+            userLoginField.TextChanged += userLoginField_TextChanged;
+            userLoginField.Enter += userLoginField_Enter;
+            userLoginField.Leave += userLoginField_Leave;
             // 
             // userFirstNameField
             // 
-            this.userFirstNameField.BackColor = System.Drawing.Color.White;
-            this.userFirstNameField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userFirstNameField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.userFirstNameField.Location = new System.Drawing.Point(255, 21);
-            this.userFirstNameField.Name = "userFirstNameField";
-            this.userFirstNameField.Size = new System.Drawing.Size(303, 39);
-            this.userFirstNameField.TabIndex = 12;
-            this.userFirstNameField.TextChanged += new System.EventHandler(this.userFirstNameField_TextChanged);
-            this.userFirstNameField.Enter += new System.EventHandler(this.userFirstNameField_Enter);
-            this.userFirstNameField.Leave += new System.EventHandler(this.userFirstNameField_Leave);
+            userFirstNameField.BackColor = System.Drawing.Color.White;
+            userFirstNameField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            userFirstNameField.ForeColor = System.Drawing.Color.FromArgb(64, 64, 0);
+            userFirstNameField.Location = new System.Drawing.Point(255, 40);
+            userFirstNameField.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            userFirstNameField.Name = "userFirstNameField";
+            userFirstNameField.Size = new System.Drawing.Size(303, 39);
+            userFirstNameField.TabIndex = 12;
+            userFirstNameField.TextChanged += userFirstNameField_TextChanged;
+            userFirstNameField.Enter += userFirstNameField_Enter;
+            userFirstNameField.Leave += userFirstNameField_Leave;
             // 
             // signUpButton
             // 
-            this.signUpButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(24)))), ((int)(((byte)(70)))));
-            this.signUpButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.signUpButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
-            this.signUpButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Olive;
-            this.signUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.signUpButton.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.signUpButton.ForeColor = System.Drawing.Color.White;
-            this.signUpButton.Location = new System.Drawing.Point(283, 358);
-            this.signUpButton.Name = "signUpButton";
-            this.signUpButton.Size = new System.Drawing.Size(222, 62);
-            this.signUpButton.TabIndex = 11;
-            this.signUpButton.Text = "Sign Up";
-            this.signUpButton.UseVisualStyleBackColor = false;
+            signUpButton.BackColor = System.Drawing.Color.FromArgb(8, 24, 70);
+            signUpButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            signUpButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
+            signUpButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Olive;
+            signUpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            signUpButton.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            signUpButton.ForeColor = System.Drawing.Color.White;
+            signUpButton.Location = new System.Drawing.Point(291, 392);
+            signUpButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            signUpButton.Name = "signUpButton";
+            signUpButton.Size = new System.Drawing.Size(222, 78);
+            signUpButton.TabIndex = 11;
+            signUpButton.Text = "Sign Up";
+            signUpButton.UseVisualStyleBackColor = false;
+            signUpButton.Click += signUpButton_Click;
             // 
             // userPasswordField
             // 
-            this.userPasswordField.BackColor = System.Drawing.Color.White;
-            this.userPasswordField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.userPasswordField.Location = new System.Drawing.Point(255, 294);
-            this.userPasswordField.Name = "userPasswordField";
-            this.userPasswordField.Size = new System.Drawing.Size(303, 39);
-            this.userPasswordField.TabIndex = 10;
-            this.userPasswordField.UseSystemPasswordChar = true;
-            this.userPasswordField.Enter += new System.EventHandler(this.userPasswordField_Enter);
-            this.userPasswordField.Leave += new System.EventHandler(this.userPasswordField_Leave);
+            userPasswordField.BackColor = System.Drawing.Color.White;
+            userPasswordField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 204);
+            userPasswordField.Location = new System.Drawing.Point(255, 328);
+            userPasswordField.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            userPasswordField.Name = "userPasswordField";
+            userPasswordField.Size = new System.Drawing.Size(303, 39);
+            userPasswordField.TabIndex = 10;
+            userPasswordField.UseSystemPasswordChar = true;
+            userPasswordField.TextChanged += userPasswordField_TextChanged;
+            userPasswordField.Enter += userPasswordField_Enter;
+            userPasswordField.Leave += userPasswordField_Leave;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::FoolOrGeniusWinFormsApp.Properties.Resources._lock;
-            this.pictureBox2.Location = new System.Drawing.Point(160, 284);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(65, 60);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Image = Properties.Resources._lock;
+            pictureBox2.Location = new System.Drawing.Point(160, 303);
+            pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(64, 64);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 9;
+            pictureBox2.TabStop = false;
             // 
             // userLastNameField
             // 
-            this.userLastNameField.BackColor = System.Drawing.Color.White;
-            this.userLastNameField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userLastNameField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.userLastNameField.Location = new System.Drawing.Point(255, 90);
-            this.userLastNameField.Name = "userLastNameField";
-            this.userLastNameField.Size = new System.Drawing.Size(303, 39);
-            this.userLastNameField.TabIndex = 8;
-            this.userLastNameField.TextChanged += new System.EventHandler(this.userLastName_TextChanged);
-            this.userLastNameField.Enter += new System.EventHandler(this.userLastNameField_Enter);
-            this.userLastNameField.Leave += new System.EventHandler(this.userLastNameField_Leave);
+            userLastNameField.BackColor = System.Drawing.Color.White;
+            userLastNameField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            userLastNameField.ForeColor = System.Drawing.Color.FromArgb(64, 64, 0);
+            userLastNameField.Location = new System.Drawing.Point(255, 112);
+            userLastNameField.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            userLastNameField.Name = "userLastNameField";
+            userLastNameField.Size = new System.Drawing.Size(303, 39);
+            userLastNameField.TabIndex = 8;
+            userLastNameField.TextChanged += userLastName_TextChanged;
+            userLastNameField.Enter += userLastNameField_Enter;
+            userLastNameField.Leave += userLastNameField_Leave;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::FoolOrGeniusWinFormsApp.Properties.Resources.user;
-            this.pictureBox3.Location = new System.Drawing.Point(160, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(65, 60);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
+            pictureBox3.Image = Properties.Resources.user;
+            pictureBox3.Location = new System.Drawing.Point(160, 15);
+            pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new System.Drawing.Size(64, 64);
+            pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 7;
+            pictureBox3.TabStop = false;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(24)))), ((int)(((byte)(70)))));
-            this.panel2.Controls.Add(this.closeButton);
-            this.panel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel2.Location = new System.Drawing.Point(664, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(62, 160);
-            this.panel2.TabIndex = 14;
+            panel2.BackColor = System.Drawing.Color.FromArgb(8, 24, 70);
+            panel2.Controls.Add(closeButton);
+            panel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            panel2.Location = new System.Drawing.Point(664, 0);
+            panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            panel2.Name = "panel2";
+            panel2.Size = new System.Drawing.Size(62, 200);
+            panel2.TabIndex = 14;
             // 
             // RegisterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 598);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.Registration);
-            this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "RegisterForm";
-            this.Text = "RegisterForm";
-            this.Registration.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(726, 748);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Controls.Add(Registration);
+            Controls.Add(menuStrip1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            Name = "RegisterForm";
+            Text = "RegisterForm";
+            Registration.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -311,5 +343,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
         public System.Windows.Forms.TextBox userEmailField;
+        private System.Windows.Forms.Label authorizathionLabel;
     }
 }
