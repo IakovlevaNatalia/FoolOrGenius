@@ -1,5 +1,6 @@
 ﻿using FoolOrGenius.Db;
 using FoolOrGenius.Db.Models;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -31,8 +32,11 @@ namespace FoolOrGeniusWinFormsApp
             this.db = db;
 
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.Cursor = Cursors.Arrow;
+            this.Cursor = new Cursor(Cursor.Current.Handle);
 
         }
+
         private void authorizationLabel_Click(object sender, EventArgs e)
         {
 
@@ -155,20 +159,20 @@ namespace FoolOrGeniusWinFormsApp
 
         private void userPasswordField_Enter(object sender, EventArgs e)
         {
-            if (userPasswordField.Text == "Password");
+            if (userPasswordField.Text == "Password")
             userPasswordField.Text = "";
             userPasswordField.ForeColor = Color.Black;
         }
 
         private void userPasswordField_Leave(object sender, EventArgs e)
         {
-            if (userPasswordField.Text == "");
+            if (userPasswordField.Text == "")
             userPasswordField.ForeColor = Color.Gray;
         }
 
         private void userEmailField_Enter(object sender, EventArgs e)
         {
-            if (userEmailField.Text == "E-mail") ;
+            if (userEmailField.Text == "E-mail") 
             userEmailField.Text = "";
             userEmailField.ForeColor = Color.Black;
         }
@@ -199,20 +203,70 @@ namespace FoolOrGeniusWinFormsApp
 
         private void signUpButton_Click(object sender, EventArgs e)
         {
-            User user = new User();
-            user.FirstName = userFirstNameField.Text;
-            user.LastName = userLastNameField.Text;
-            user.Email = userEmailField.Text;
-            user.Login = userLoginField.Text;
-            user.Password = userPasswordField.Text;
-            user.RegistrationDate = DateTime.Now;
-            db.User.Add(user);
-            db.SaveChanges();
-        }
+            bool ok = true;
+            var firstName = "";
+            var lastName = "";
+            var login = "";
+            var email ="";
+            var password = "";
 
-        private void userPasswordField_TextChanged(object sender, EventArgs e)
-        {
+            if (string.IsNullOrEmpty(userFirstNameField.Text) || (userFirstNameField.Text == "First name"))
+            {
+                FirstNameErrorProvider.SetError(userFirstNameField, "Please provide your first name. It is a required field");
+                MessageBox.Show("Please provide your first name!");
+                ok = false;
+            }
 
+            if (ok && string.IsNullOrEmpty(userLastNameField.Text) || (userLastNameField.Text == "Last name"))
+            {
+                LastNameErrorProvider.SetError(userLastNameField, "Please provide your last name. It is a required field");
+                MessageBox.Show("Please provide your last name!");
+                ok = false;
+            }
+
+            if (ok && string.IsNullOrEmpty(userLoginField.Text) || (userLoginField.Text == "Login"))
+            {
+                loginErrorProvider.SetError(userLoginField, "Please provide your login. It is a required field");
+                MessageBox.Show("Please provide your login");
+                ok = false;
+
+            }
+            if (ok && string.IsNullOrEmpty(userEmailField.Text) || (userEmailField.Text =="E-mail"))
+            {
+                emailErrorProvider.SetError(userEmailField, "Please provide your e-mail. It is a required field");
+                MessageBox.Show("Please provide your e-mail");
+                ok= false;
+            }
+
+            if(ok && string.IsNullOrEmpty(userPasswordField.Text) ||(userPasswordField.Text=="Password"))
+            {
+                passwordErrorProvider.SetError(userPasswordField, "Please provide your password. It is a required field");
+                MessageBox.Show("Please provide you password");
+                ok = false;
+            }
+            if (ok)
+            {
+                firstName = userFirstNameField.Text;
+                lastName = userLastNameField.Text;
+                login = userLoginField.Text;
+                email = userEmailField.Text;
+                password = userPasswordField.Text;
+
+                User user = new User();
+                user.FirstName = userFirstNameField.Text;
+                user.LastName = userLastNameField.Text;
+                user.Email = userEmailField.Text;
+                user.Login = userLoginField.Text;
+                user.Password = userPasswordField.Text;
+                user.RegistrationDate = DateTime.Now;
+                db.User.Add(user);
+                db.SaveChanges();
+                MessageBox.Show(firstName + " " + ", you have successfully registered!");
+                this.Hide();
+                WelcomeForm welcomeForm = new WelcomeForm();
+                welcomeForm.Show();
+
+            }
         }
     }
 }

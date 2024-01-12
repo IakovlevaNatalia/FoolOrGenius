@@ -81,7 +81,6 @@
             startButton.TabIndex = 3;
             startButton.Text = "Start";
             startButton.UseVisualStyleBackColor = false;
-            startButton.Click += startButton_Click;
             startButton.MouseEnter += startButton_MouseEnter;
             startButton.MouseLeave += startButton_MouseLeave;
             // 

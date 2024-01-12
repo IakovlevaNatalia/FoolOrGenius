@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             menuStrip1 = new System.Windows.Forms.MenuStrip();
             Registration = new System.Windows.Forms.Panel();
             authorizationLabel = new System.Windows.Forms.Label();
@@ -46,6 +47,11 @@
             userLastNameField = new System.Windows.Forms.TextBox();
             pictureBox3 = new System.Windows.Forms.PictureBox();
             panel2 = new System.Windows.Forms.Panel();
+            FirstNameErrorProvider = new System.Windows.Forms.ErrorProvider(components);
+            LastNameErrorProvider = new System.Windows.Forms.ErrorProvider(components);
+            loginErrorProvider = new System.Windows.Forms.ErrorProvider(components);
+            emailErrorProvider = new System.Windows.Forms.ErrorProvider(components);
+            passwordErrorProvider = new System.Windows.Forms.ErrorProvider(components);
             Registration.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -54,6 +60,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)FirstNameErrorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LastNameErrorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)loginErrorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)emailErrorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)passwordErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -64,6 +75,7 @@
             menuStrip1.Size = new System.Drawing.Size(726, 24);
             menuStrip1.TabIndex = 5;
             menuStrip1.Text = "menuStrip1";
+            menuStrip1.UseWaitCursor = true;
             // 
             // Registration
             // 
@@ -77,6 +89,7 @@
             Registration.Size = new System.Drawing.Size(667, 204);
             Registration.TabIndex = 12;
             Registration.TabStop = true;
+            Registration.UseWaitCursor = true;
             // 
             // authorizationLabel
             // 
@@ -89,6 +102,7 @@
             authorizationLabel.TabIndex = 7;
             authorizationLabel.Text = "Registration";
             authorizationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            authorizationLabel.UseWaitCursor = true;
             authorizationLabel.Click += authorizationLabel_Click_1;
             authorizationLabel.MouseDown += authorizationLabel_MouseDown_1;
             authorizationLabel.MouseMove += authorizationLabel_MouseMove_1;
@@ -104,6 +118,7 @@
             closeButton.Size = new System.Drawing.Size(37, 36);
             closeButton.TabIndex = 13;
             closeButton.Text = "X";
+            closeButton.UseWaitCursor = true;
             closeButton.Click += closeButton_Click;
             // 
             // panel1
@@ -126,6 +141,7 @@
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(726, 549);
             panel1.TabIndex = 13;
+            panel1.UseWaitCursor = true;
             panel1.Paint += panel1_Paint;
             panel1.MouseDown += panel1_MouseDown;
             panel1.MouseMove += panel1_MouseMove;
@@ -140,6 +156,7 @@
             authorizathionLabel.Size = new System.Drawing.Size(99, 20);
             authorizathionLabel.TabIndex = 18;
             authorizathionLabel.Text = "Authorization";
+            authorizathionLabel.UseWaitCursor = true;
             authorizathionLabel.Click += authorizathionLabel_Click;
             authorizathionLabel.MouseEnter += authorizathionLabel_MouseEnter;
             authorizathionLabel.MouseLeave += authorizathionLabel_MouseLeave;
@@ -154,6 +171,7 @@
             userEmailField.Name = "userEmailField";
             userEmailField.Size = new System.Drawing.Size(303, 39);
             userEmailField.TabIndex = 17;
+            userEmailField.UseWaitCursor = true;
             userEmailField.Enter += userEmailField_Enter;
             userEmailField.Leave += userEmailField_Leave;
             // 
@@ -167,6 +185,7 @@
             pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 16;
             pictureBox5.TabStop = false;
+            pictureBox5.UseWaitCursor = true;
             // 
             // pictureBox4
             // 
@@ -178,6 +197,7 @@
             pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 15;
             pictureBox4.TabStop = false;
+            pictureBox4.UseWaitCursor = true;
             // 
             // pictureBox1
             // 
@@ -189,6 +209,7 @@
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 14;
             pictureBox1.TabStop = false;
+            pictureBox1.UseWaitCursor = true;
             // 
             // userLoginField
             // 
@@ -200,6 +221,7 @@
             userLoginField.Name = "userLoginField";
             userLoginField.Size = new System.Drawing.Size(303, 39);
             userLoginField.TabIndex = 13;
+            userLoginField.UseWaitCursor = true;
             userLoginField.TextChanged += userLoginField_TextChanged;
             userLoginField.Enter += userLoginField_Enter;
             userLoginField.Leave += userLoginField_Leave;
@@ -207,13 +229,14 @@
             // userFirstNameField
             // 
             userFirstNameField.BackColor = System.Drawing.Color.White;
-            userFirstNameField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            userFirstNameField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
             userFirstNameField.ForeColor = System.Drawing.Color.FromArgb(64, 64, 0);
             userFirstNameField.Location = new System.Drawing.Point(255, 40);
             userFirstNameField.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             userFirstNameField.Name = "userFirstNameField";
             userFirstNameField.Size = new System.Drawing.Size(303, 39);
             userFirstNameField.TabIndex = 12;
+            userFirstNameField.UseWaitCursor = true;
             userFirstNameField.TextChanged += userFirstNameField_TextChanged;
             userFirstNameField.Enter += userFirstNameField_Enter;
             userFirstNameField.Leave += userFirstNameField_Leave;
@@ -234,6 +257,7 @@
             signUpButton.TabIndex = 11;
             signUpButton.Text = "Sign Up";
             signUpButton.UseVisualStyleBackColor = false;
+            signUpButton.UseWaitCursor = true;
             signUpButton.Click += signUpButton_Click;
             // 
             // userPasswordField
@@ -246,7 +270,7 @@
             userPasswordField.Size = new System.Drawing.Size(303, 39);
             userPasswordField.TabIndex = 10;
             userPasswordField.UseSystemPasswordChar = true;
-            userPasswordField.TextChanged += userPasswordField_TextChanged;
+            userPasswordField.UseWaitCursor = true;
             userPasswordField.Enter += userPasswordField_Enter;
             userPasswordField.Leave += userPasswordField_Leave;
             // 
@@ -260,6 +284,7 @@
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 9;
             pictureBox2.TabStop = false;
+            pictureBox2.UseWaitCursor = true;
             // 
             // userLastNameField
             // 
@@ -271,6 +296,7 @@
             userLastNameField.Name = "userLastNameField";
             userLastNameField.Size = new System.Drawing.Size(303, 39);
             userLastNameField.TabIndex = 8;
+            userLastNameField.UseWaitCursor = true;
             userLastNameField.TextChanged += userLastName_TextChanged;
             userLastNameField.Enter += userLastNameField_Enter;
             userLastNameField.Leave += userLastNameField_Leave;
@@ -285,6 +311,7 @@
             pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 7;
             pictureBox3.TabStop = false;
+            pictureBox3.UseWaitCursor = true;
             // 
             // panel2
             // 
@@ -296,6 +323,27 @@
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(62, 200);
             panel2.TabIndex = 14;
+            panel2.UseWaitCursor = true;
+            // 
+            // FirstNameErrorProvider
+            // 
+            FirstNameErrorProvider.ContainerControl = this;
+            // 
+            // LastNameErrorProvider
+            // 
+            LastNameErrorProvider.ContainerControl = this;
+            // 
+            // loginErrorProvider
+            // 
+            loginErrorProvider.ContainerControl = this;
+            // 
+            // emailErrorProvider
+            // 
+            emailErrorProvider.ContainerControl = this;
+            // 
+            // passwordErrorProvider
+            // 
+            passwordErrorProvider.ContainerControl = this;
             // 
             // RegisterForm
             // 
@@ -310,6 +358,7 @@
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "RegisterForm";
             Text = "RegisterForm";
+            UseWaitCursor = true;
             Registration.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -320,6 +369,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)FirstNameErrorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LastNameErrorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)loginErrorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)emailErrorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)passwordErrorProvider).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -344,5 +398,10 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         public System.Windows.Forms.TextBox userEmailField;
         private System.Windows.Forms.Label authorizathionLabel;
+        private System.Windows.Forms.ErrorProvider FirstNameErrorProvider;
+        private System.Windows.Forms.ErrorProvider LastNameErrorProvider;
+        private System.Windows.Forms.ErrorProvider loginErrorProvider;
+        private System.Windows.Forms.ErrorProvider emailErrorProvider;
+        private System.Windows.Forms.ErrorProvider passwordErrorProvider;
     }
 }
