@@ -31,6 +31,7 @@
     <PackageReference Include="ZstdSharp.Port" Version="0.7.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="RegisterForm 1.cs" />
     <Compile Remove="ResultsForm - Copy.cs" />
     <Compile Remove="ResultsForm - Copy.Designer.cs" />
     <EmbeddedResource Remove="ResultsForm - Copy.resx" />
