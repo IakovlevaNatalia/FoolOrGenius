@@ -75,7 +75,6 @@
             menuStrip1.Size = new System.Drawing.Size(726, 24);
             menuStrip1.TabIndex = 5;
             menuStrip1.Text = "menuStrip1";
-            menuStrip1.UseWaitCursor = true;
             // 
             // Registration
             // 
@@ -89,7 +88,6 @@
             Registration.Size = new System.Drawing.Size(667, 204);
             Registration.TabIndex = 12;
             Registration.TabStop = true;
-            Registration.UseWaitCursor = true;
             // 
             // authorizationLabel
             // 
@@ -102,7 +100,6 @@
             authorizationLabel.TabIndex = 7;
             authorizationLabel.Text = "Registration";
             authorizationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            authorizationLabel.UseWaitCursor = true;
             authorizationLabel.Click += authorizationLabel_Click_1;
             authorizationLabel.MouseDown += authorizationLabel_MouseDown_1;
             authorizationLabel.MouseMove += authorizationLabel_MouseMove_1;
@@ -118,7 +115,6 @@
             closeButton.Size = new System.Drawing.Size(37, 36);
             closeButton.TabIndex = 13;
             closeButton.Text = "X";
-            closeButton.UseWaitCursor = true;
             closeButton.Click += closeButton_Click;
             // 
             // panel1
@@ -141,7 +137,6 @@
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(726, 549);
             panel1.TabIndex = 13;
-            panel1.UseWaitCursor = true;
             panel1.Paint += panel1_Paint;
             panel1.MouseDown += panel1_MouseDown;
             panel1.MouseMove += panel1_MouseMove;
@@ -156,7 +151,6 @@
             authorizathionLabel.Size = new System.Drawing.Size(99, 20);
             authorizathionLabel.TabIndex = 18;
             authorizathionLabel.Text = "Authorization";
-            authorizathionLabel.UseWaitCursor = true;
             authorizathionLabel.Click += authorizathionLabel_Click;
             authorizathionLabel.MouseEnter += authorizathionLabel_MouseEnter;
             authorizathionLabel.MouseLeave += authorizathionLabel_MouseLeave;
@@ -171,7 +165,6 @@
             userEmailField.Name = "userEmailField";
             userEmailField.Size = new System.Drawing.Size(303, 39);
             userEmailField.TabIndex = 17;
-            userEmailField.UseWaitCursor = true;
             userEmailField.Enter += userEmailField_Enter;
             userEmailField.Leave += userEmailField_Leave;
             // 
@@ -185,7 +178,6 @@
             pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 16;
             pictureBox5.TabStop = false;
-            pictureBox5.UseWaitCursor = true;
             // 
             // pictureBox4
             // 
@@ -197,7 +189,6 @@
             pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 15;
             pictureBox4.TabStop = false;
-            pictureBox4.UseWaitCursor = true;
             // 
             // pictureBox1
             // 
@@ -209,7 +200,6 @@
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 14;
             pictureBox1.TabStop = false;
-            pictureBox1.UseWaitCursor = true;
             // 
             // userLoginField
             // 
@@ -221,7 +211,6 @@
             userLoginField.Name = "userLoginField";
             userLoginField.Size = new System.Drawing.Size(303, 39);
             userLoginField.TabIndex = 13;
-            userLoginField.UseWaitCursor = true;
             userLoginField.TextChanged += userLoginField_TextChanged;
             userLoginField.Enter += userLoginField_Enter;
             userLoginField.Leave += userLoginField_Leave;
@@ -236,7 +225,6 @@
             userFirstNameField.Name = "userFirstNameField";
             userFirstNameField.Size = new System.Drawing.Size(303, 39);
             userFirstNameField.TabIndex = 12;
-            userFirstNameField.UseWaitCursor = true;
             userFirstNameField.TextChanged += userFirstNameField_TextChanged;
             userFirstNameField.Enter += userFirstNameField_Enter;
             userFirstNameField.Leave += userFirstNameField_Leave;
@@ -257,7 +245,6 @@
             signUpButton.TabIndex = 11;
             signUpButton.Text = "Sign Up";
             signUpButton.UseVisualStyleBackColor = false;
-            signUpButton.UseWaitCursor = true;
             signUpButton.Click += signUpButton_Click;
             // 
             // userPasswordField
@@ -270,7 +257,6 @@
             userPasswordField.Size = new System.Drawing.Size(303, 39);
             userPasswordField.TabIndex = 10;
             userPasswordField.UseSystemPasswordChar = true;
-            userPasswordField.UseWaitCursor = true;
             userPasswordField.Enter += userPasswordField_Enter;
             userPasswordField.Leave += userPasswordField_Leave;
             // 
@@ -284,7 +270,6 @@
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 9;
             pictureBox2.TabStop = false;
-            pictureBox2.UseWaitCursor = true;
             // 
             // userLastNameField
             // 
@@ -296,7 +281,6 @@
             userLastNameField.Name = "userLastNameField";
             userLastNameField.Size = new System.Drawing.Size(303, 39);
             userLastNameField.TabIndex = 8;
-            userLastNameField.UseWaitCursor = true;
             userLastNameField.TextChanged += userLastName_TextChanged;
             userLastNameField.Enter += userLastNameField_Enter;
             userLastNameField.Leave += userLastNameField_Leave;
@@ -311,7 +295,6 @@
             pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 7;
             pictureBox3.TabStop = false;
-            pictureBox3.UseWaitCursor = true;
             // 
             // panel2
             // 
@@ -323,7 +306,6 @@
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(62, 200);
             panel2.TabIndex = 14;
-            panel2.UseWaitCursor = true;
             // 
             // FirstNameErrorProvider
             // 
@@ -358,7 +340,6 @@
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "RegisterForm";
             Text = "RegisterForm";
-            UseWaitCursor = true;
             Registration.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

@@ -1,9 +1,10 @@
 ﻿using FoolOrGenius.Db;
 using FoolOrGenius.Db.Models;
-using Microsoft.IdentityModel.Tokens;
+using System.Text.RegularExpressions;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace FoolOrGeniusWinFormsApp
 {
@@ -32,9 +33,6 @@ namespace FoolOrGeniusWinFormsApp
             this.db = db;
 
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.Cursor = Cursors.Arrow;
-            this.Cursor = new Cursor(Cursor.Current.Handle);
-
         }
 
         private void authorizationLabel_Click(object sender, EventArgs e)
@@ -201,56 +199,101 @@ namespace FoolOrGeniusWinFormsApp
             authorizathionLabel.ForeColor = Color.White;
         }
 
-        private void signUpButton_Click(object sender, EventArgs e)
+        public static bool IsValidEmail(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+            Regex regex = new Regex(pattern);
+            return regex.IsMatch(email);
+        }
+        public static bool IsValidName(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                return false;
+            }
+            if (name.Length < 2 || name.Length > 20)
+            {
+                return false;
+            }
+            foreach (char c in name)
+            {
+                if (!char.IsLetter(c) && !char.IsWhiteSpace(c))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public static bool IsValidLogin (string login)
+        {
+            if(string.IsNullOrWhiteSpace(login))
+            {
+                return false;
+            }
+
+            if (login.Length < 2 || login.Length > 20)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static bool IsValidPassword(string password)
+        {
+            if(string.IsNullOrEmpty(password))
+            {
+                return false;
+            }
+
+            if(password.Length<2 || password.Length > 20)
+            {
+                return false;
+            }
+            return true;
+        }
+    
+    private void signUpButton_Click(object sender, EventArgs e)
         {
             bool ok = true;
-            var firstName = "";
-            var lastName = "";
-            var login = "";
-            var email ="";
-            var password = "";
 
-            if (string.IsNullOrEmpty(userFirstNameField.Text) || (userFirstNameField.Text == "First name"))
+            if (!IsValidName(userFirstNameField.Text) || userFirstNameField.Text == "First name") 
             {
-                FirstNameErrorProvider.SetError(userFirstNameField, "Please provide your first name. It is a required field");
-                MessageBox.Show("Please provide your first name!");
+                FirstNameErrorProvider.SetError(userFirstNameField, "It is a required field");
+                MessageBox.Show("Please provide your first name. The name must contain only letters, be a minimum of two characters, and have a maximum length of 20 characters.");
                 ok = false;
             }
 
-            if (ok && string.IsNullOrEmpty(userLastNameField.Text) || (userLastNameField.Text == "Last name"))
+            if (ok && !IsValidName(userLastNameField.Text) || userLastNameField.Text == "Last name")
             {
                 LastNameErrorProvider.SetError(userLastNameField, "Please provide your last name. It is a required field");
-                MessageBox.Show("Please provide your last name!");
+                MessageBox.Show("Please provide your last name. The last name must contain only letters, be a minimum of two characters, and have a maximum length of 20 characters.");
                 ok = false;
             }
 
-            if (ok && string.IsNullOrEmpty(userLoginField.Text) || (userLoginField.Text == "Login"))
+            if (ok && !IsValidLogin(userLoginField.Text) || userLoginField.Text == "Login")
             {
                 loginErrorProvider.SetError(userLoginField, "Please provide your login. It is a required field");
-                MessageBox.Show("Please provide your login");
+                MessageBox.Show("Please provide your login. The login must be a minimum of two characters, and have a maximum length of 20 characters.");
                 ok = false;
 
             }
-            if (ok && string.IsNullOrEmpty(userEmailField.Text) || (userEmailField.Text =="E-mail"))
-            {
-                emailErrorProvider.SetError(userEmailField, "Please provide your e-mail. It is a required field");
-                MessageBox.Show("Please provide your e-mail");
-                ok= false;
-            }
+            if (ok && !IsValidEmail(userEmailField.Text) || userEmailField.Text=="E-mail")
 
-            if(ok && string.IsNullOrEmpty(userPasswordField.Text) ||(userPasswordField.Text=="Password"))
+            {
+                emailErrorProvider.SetError(userEmailField, "Please provide your e-mail. It is a required field.");
+                MessageBox.Show("Please provide your e-mail.");
+                ok = false;
+
+            }
+            if (ok && !IsValidPassword(userPasswordField.Text) ||(userPasswordField.Text=="Password"))
             {
                 passwordErrorProvider.SetError(userPasswordField, "Please provide your password. It is a required field");
-                MessageBox.Show("Please provide you password");
+                MessageBox.Show("Please provide you password. The password must be a minimum of two characters, and have a maximum length of 20 characters.");
                 ok = false;
             }
             if (ok)
             {
-                firstName = userFirstNameField.Text;
-                lastName = userLastNameField.Text;
-                login = userLoginField.Text;
-                email = userEmailField.Text;
-                password = userPasswordField.Text;
 
                 User user = new User();
                 user.FirstName = userFirstNameField.Text;
@@ -259,12 +302,16 @@ namespace FoolOrGeniusWinFormsApp
                 user.Login = userLoginField.Text;
                 user.Password = userPasswordField.Text;
                 user.RegistrationDate = DateTime.Now;
-                db.User.Add(user);
-                db.SaveChanges();
-                MessageBox.Show(firstName + " " + ", you have successfully registered!");
-                this.Hide();
-                WelcomeForm welcomeForm = new WelcomeForm();
-                welcomeForm.Show();
+
+                try
+                {
+                    db.User.Add(user);
+                    db.SaveChanges();
+                    MessageBox.Show(userFirstNameField.Text + ", you have successfully registered!");
+                    this.Hide();
+                    WelcomeForm welcomeForm = new WelcomeForm();
+                    welcomeForm.Show();
+                } catch (Exception ex) { MessageBox.Show(ex.Message); }
 
             }
         }
