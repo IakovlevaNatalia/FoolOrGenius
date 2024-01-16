@@ -2,60 +2,39 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Extensions.DependencyInjection;
+using System.Linq;
+using FoolOrGenius.Db;
+using FoolOrGenius.Db.Models;
 
 namespace FoolOrGeniusWinFormsApp
 {
     public partial class WelcomeForm : Form
     {
-        //DatabaseContext db;
-        public WelcomeForm()
+        DatabaseContext db;
+        public WelcomeForm(DatabaseContext db)
         {
             InitializeComponent();
-            //db = new DatabaseContext();
+ 
+            userLoginField.Text = "Login";
+            userLoginField.ForeColor = Color.Gray;
 
-            userLogin.Text = "Login";
-            userLogin.ForeColor = Color.Gray;
+            userPasswordField.Text = "Password";
+            userPasswordField.ForeColor = Color.Gray;
 
-            passwordField.Text = "Password";
-            passwordField.ForeColor = Color.Gray;
+            this.userPasswordField.AutoSize = false;
+            this.userPasswordField.Size = new Size(300, 60);
+            this.userLoginField.AutoSize = false;
+            this.userLoginField.Size = new Size(300, 60);
 
-            this.passwordField.AutoSize = false;
-            this.passwordField.Size = new Size(300, 60);
-            this.userLogin.AutoSize = false;
-            this.userLogin.Size = new Size(300, 60);
+            this.db = db;
 
             this.StartPosition = FormStartPosition.CenterScreen;
         }
+
         private void userNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
-
-        //private void startButton_Click(object sender, EventArgs e)
-        //{
-        //    String userLogin2 = userLogin.Text;
-        //    String userPassword = passwordField.Text;
-
-        //    // DB db = new DB();
-
-        //    //DataTable table = new DataTable();
-
-        //    //MySqlDataAdapter adapter = new MySqlDataAdapter();
-
-
-        //    //MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login`=@uL AND `password`= @uP", db.getConnection());
-        //    //command.Parameters.Add("@ul", MySqlDbType.VarChar).Value = userLogin;
-        //    //command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = userPassword;
-
-        //    //adapter.SelectCommand = command;
-        //    //adapter.Fill(table);
-
-        //    //if (table.Rows.Count > 0)
-        //    //    MessageBox.Show("Yes");
-        //    //else
-        //    //    MessageBox.Show("No");
-        //}
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e) // exit from menuStrip
         {
             Application.Exit();
@@ -172,34 +151,34 @@ namespace FoolOrGeniusWinFormsApp
         private void userLogin_Enter(object sender, EventArgs e)
         {
 
-            if (userLogin.Text == "Login")
+            if (userLoginField.Text == "Login")
             {
-                userLogin.Text = "";
-                userLogin.ForeColor = Color.Black;
+                userLoginField.Text = "";
+                userLoginField.ForeColor = Color.Black;
             }
         }
 
         private void userLogin_Leave(object sender, EventArgs e)
         {
-            if (userLogin.Text == "")
-                userLogin.Text = "Login";
-            userLogin.ForeColor = Color.Gray;
+            if (userLoginField.Text == "")
+                userLoginField.Text = "Login";
+            userLoginField.ForeColor = Color.Gray;
         }
 
         private void passwordField_Enter(object sender, EventArgs e)
         {
-            if (passwordField.Text == "Login")
+            if (userPasswordField.Text == "Login")
             {
-                passwordField.Text = "";
-                passwordField.ForeColor = Color.Black;
+                userPasswordField.Text = "";
+                userPasswordField.ForeColor = Color.Black;
             }
         }
 
         private void passwordField_Leave(object sender, EventArgs e)
         {
-            if (passwordField.Text == "")
-                passwordField.Text = "Password";
-            passwordField.ForeColor = Color.Gray;
+            if (userPasswordField.Text == "")
+                userPasswordField.Text = "Password";
+            userPasswordField.ForeColor = Color.Gray;
         }
 
         private void RegisterLabel_Click(object sender, EventArgs e)
@@ -218,6 +197,42 @@ namespace FoolOrGeniusWinFormsApp
         private void RegisterLabel_MouseLeave(object sender, EventArgs e)
         {
             RegisterLabel.ForeColor = Color.White;
+        }
+
+        public User TryGetByLogin(string login, string password)
+        {
+            if (db == null)
+            {
+                throw new InvalidOperationException("Database context is not initialized.");
+            }
+            return db.User.FirstOrDefault(x => x.Login == login && x.Password == password);
+
+        }
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            var login = userLoginField.Text;
+            var password = userPasswordField.Text;
+
+            try
+            {
+                var existingUser = TryGetByLogin(login, password);
+                if (existingUser != null)
+                {
+                    MessageBox.Show(userLoginField.Text + " , welcome to the game!");
+                    this.Hide();
+                    var mainForm = Program.Services.GetRequiredService<mainForm>();
+                    mainForm.ShowDialog();
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Invalid credentials");
+                }
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Error");
+            }
         }
     }
 }

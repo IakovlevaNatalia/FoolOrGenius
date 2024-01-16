@@ -10,11 +10,13 @@ namespace FoolOrGeniusWinFormsApp
         public AddNewQuestionForm()
         {
             InitializeComponent();
+
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void addQuestionButton_Click(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -61,5 +63,12 @@ namespace FoolOrGeniusWinFormsApp
         {
 
         }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+       
     }
 }

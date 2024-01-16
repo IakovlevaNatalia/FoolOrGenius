@@ -4,7 +4,8 @@ using System.Text.RegularExpressions;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Net.Mail;
+using Microsoft.Extensions.DependencyInjection;
+using System.Linq;
 
 namespace FoolOrGeniusWinFormsApp
 {
@@ -185,8 +186,8 @@ namespace FoolOrGeniusWinFormsApp
         private void authorizathionLabel_Click(object sender, EventArgs e)
         {
             this.Hide();
-            WelcomeForm welcomeForm = new WelcomeForm();
-            welcomeForm.Show();
+            var welcomeForm = Program.Services.GetRequiredService<WelcomeForm>();
+            welcomeForm.ShowDialog();
         }
 
         private void authorizathionLabel_MouseEnter(object sender, EventArgs e)
@@ -252,8 +253,13 @@ namespace FoolOrGeniusWinFormsApp
             }
             return true;
         }
-    
-    private void signUpButton_Click(object sender, EventArgs e)
+
+        public bool CheckUserLoginExist(string login)
+        {
+            bool userExist = db.User.Any(x => x.Login == login);
+            return userExist;
+        }
+        private void signUpButton_Click(object sender, EventArgs e)
         {
             bool ok = true;
 
@@ -292,6 +298,13 @@ namespace FoolOrGeniusWinFormsApp
                 MessageBox.Show("Please provide you password. The password must be a minimum of two characters, and have a maximum length of 20 characters.");
                 ok = false;
             }
+
+            if(ok && CheckUserLoginExist(userLoginField.Text))
+            {
+                MessageBox.Show("A user with this login already exists in our system. Please create unique login.");
+                ok = false;
+            }
+
             if (ok)
             {
 
@@ -303,15 +316,13 @@ namespace FoolOrGeniusWinFormsApp
                 user.Password = userPasswordField.Text;
                 user.RegistrationDate = DateTime.Now;
 
-                try
-                {
                     db.User.Add(user);
                     db.SaveChanges();
                     MessageBox.Show(userFirstNameField.Text + ", you have successfully registered!");
                     this.Hide();
-                    WelcomeForm welcomeForm = new WelcomeForm();
-                    welcomeForm.Show();
-                } catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+                var welcomeForm = Program.Services.GetRequiredService<WelcomeForm>();
+                welcomeForm.ShowDialog();
 
             }
         }

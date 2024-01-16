@@ -25,6 +25,7 @@ namespace FoolOrGeniusWinFormsApp
                 {
                     services.AddTransient<WelcomeForm>();
                     services.AddTransient<RegisterForm>();
+                    services.AddTransient<mainForm>();
                     services.AddDbContext<DatabaseContext>(options =>
                         options.UseSqlServer(connection), ServiceLifetime.Singleton);
                 })
