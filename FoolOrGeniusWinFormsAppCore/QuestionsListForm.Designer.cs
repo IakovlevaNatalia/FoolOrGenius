@@ -28,66 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.questionsDataGridView = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.questionsDataGridView)).BeginInit();
-            this.SuspendLayout();
+            questionsDataGridView = new System.Windows.Forms.DataGridView();
+            Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)questionsDataGridView).BeginInit();
+            SuspendLayout();
             // 
             // questionsDataGridView
             // 
-            this.questionsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.questionsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.questionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.questionsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.questionsDataGridView.Location = new System.Drawing.Point(75, 100);
-            this.questionsDataGridView.Name = "questionsDataGridView";
-            this.questionsDataGridView.RowHeadersWidth = 51;
-            this.questionsDataGridView.RowTemplate.Height = 24;
-            this.questionsDataGridView.Size = new System.Drawing.Size(680, 323);
-            this.questionsDataGridView.TabIndex = 0;
-            this.questionsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            questionsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            questionsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            questionsDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(8, 24, 70);
+            questionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            questionsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Column1, Column2 });
+            questionsDataGridView.Location = new System.Drawing.Point(33, 29);
+            questionsDataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            questionsDataGridView.Name = "questionsDataGridView";
+            questionsDataGridView.RowHeadersWidth = 51;
+            questionsDataGridView.RowTemplate.Height = 24;
+            questionsDataGridView.Size = new System.Drawing.Size(680, 98);
+            questionsDataGridView.TabIndex = 0;
+            questionsDataGridView.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "Text";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 62;
+            Column1.HeaderText = "Text";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.Width = 65;
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Answer";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 80;
+            Column2.HeaderText = "Answer";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.Width = 86;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(621, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 59);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Remove Exsisting Question";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Location = new System.Drawing.Point(316, 386);
+            button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(134, 74);
+            button1.TabIndex = 1;
+            button1.Text = "Remove Exsisting Question";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // QuestionsListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.questionsDataGridView);
-            this.Name = "QuestionsListForm";
-            this.Text = "QuestionsListForm";
-            this.Load += new System.EventHandler(this.QuestionsListForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.questionsDataGridView)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(70, 8, 24);
+            ClientSize = new System.Drawing.Size(800, 562);
+            Controls.Add(button1);
+            Controls.Add(questionsDataGridView);
+            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            Name = "QuestionsListForm";
+            Text = "QuestionsListForm";
+            Load += QuestionsListForm_Load;
+            ((System.ComponentModel.ISupportInitialize)questionsDataGridView).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

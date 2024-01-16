@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            userLogin = new System.Windows.Forms.TextBox();
+            userLoginField = new System.Windows.Forms.TextBox();
             startButton = new System.Windows.Forms.Button();
             menuStrip1 = new System.Windows.Forms.MenuStrip();
             fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,7 +41,7 @@
             closeButton = new System.Windows.Forms.Label();
             panel1 = new System.Windows.Forms.Panel();
             authorizationLabel = new System.Windows.Forms.Label();
-            passwordField = new System.Windows.Forms.TextBox();
+            userPasswordField = new System.Windows.Forms.TextBox();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             RegisterLabel = new System.Windows.Forms.Label();
@@ -51,19 +51,19 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // userLogin
+            // userLoginField
             // 
-            userLogin.BackColor = System.Drawing.Color.White;
-            userLogin.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            userLogin.ForeColor = System.Drawing.Color.FromArgb(64, 64, 0);
-            userLogin.Location = new System.Drawing.Point(235, 299);
-            userLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            userLogin.Name = "userLogin";
-            userLogin.Size = new System.Drawing.Size(303, 39);
-            userLogin.TabIndex = 2;
-            userLogin.TextChanged += userNameTextBox_TextChanged;
-            userLogin.Enter += userLogin_Enter;
-            userLogin.Leave += userLogin_Leave;
+            userLoginField.BackColor = System.Drawing.Color.White;
+            userLoginField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            userLoginField.ForeColor = System.Drawing.Color.FromArgb(64, 64, 0);
+            userLoginField.Location = new System.Drawing.Point(235, 299);
+            userLoginField.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            userLoginField.Name = "userLoginField";
+            userLoginField.Size = new System.Drawing.Size(303, 39);
+            userLoginField.TabIndex = 2;
+            userLoginField.TextChanged += userNameTextBox_TextChanged;
+            userLoginField.Enter += userLogin_Enter;
+            userLoginField.Leave += userLogin_Leave;
             // 
             // startButton
             // 
@@ -81,6 +81,7 @@
             startButton.TabIndex = 3;
             startButton.Text = "Start";
             startButton.UseVisualStyleBackColor = false;
+            startButton.Click += startButton_Click;
             startButton.MouseEnter += startButton_MouseEnter;
             startButton.MouseLeave += startButton_MouseLeave;
             // 
@@ -186,19 +187,19 @@
             authorizationLabel.MouseDown += authorizationLabel_MouseDown;
             authorizationLabel.MouseMove += authorizationLabel_MouseMove;
             // 
-            // passwordField
+            // userPasswordField
             // 
-            passwordField.BackColor = System.Drawing.Color.White;
-            passwordField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 204);
-            passwordField.Location = new System.Drawing.Point(235, 410);
-            passwordField.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            passwordField.Name = "passwordField";
-            passwordField.Size = new System.Drawing.Size(303, 39);
-            passwordField.TabIndex = 9;
-            passwordField.UseSystemPasswordChar = true;
-            passwordField.TextChanged += passwordFieldTextBox_TextChanged;
-            passwordField.Enter += passwordField_Enter;
-            passwordField.Leave += passwordField_Leave;
+            userPasswordField.BackColor = System.Drawing.Color.White;
+            userPasswordField.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 204);
+            userPasswordField.Location = new System.Drawing.Point(235, 410);
+            userPasswordField.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            userPasswordField.Name = "userPasswordField";
+            userPasswordField.Size = new System.Drawing.Size(303, 39);
+            userPasswordField.TabIndex = 9;
+            userPasswordField.UseSystemPasswordChar = true;
+            userPasswordField.TextChanged += passwordFieldTextBox_TextChanged;
+            userPasswordField.Enter += passwordField_Enter;
+            userPasswordField.Leave += passwordField_Leave;
             // 
             // pictureBox2
             // 
@@ -244,12 +245,12 @@
             BackColor = System.Drawing.Color.FromArgb(70, 8, 24);
             ClientSize = new System.Drawing.Size(726, 748);
             Controls.Add(RegisterLabel);
-            Controls.Add(passwordField);
+            Controls.Add(userPasswordField);
             Controls.Add(pictureBox2);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
             Controls.Add(startButton);
-            Controls.Add(userLogin);
+            Controls.Add(userLoginField);
             Controls.Add(menuStrip1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             MainMenuStrip = menuStrip1;
@@ -270,7 +271,7 @@
         }
 
         #endregion
-        public System.Windows.Forms.TextBox userLogin;
+        public System.Windows.Forms.TextBox userLoginField;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -285,7 +286,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label authorizationLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox passwordField;
+        private System.Windows.Forms.TextBox userPasswordField;
         private System.Windows.Forms.Label RegisterLabel;
     }
 }

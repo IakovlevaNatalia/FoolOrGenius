@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using FoolOrGeniusLibrary;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FoolOrGeniusWinFormsApp
 {
     public partial class mainForm : Form
     {
-       Game game;
+        Game game;
 
         public mainForm()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
-
         private void questionNumberLabel_Click(object sender, EventArgs e)
         {
 
@@ -31,10 +32,16 @@ namespace FoolOrGeniusWinFormsApp
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            var welcomeForm=new WelcomeForm();
-            welcomeForm.ShowDialog();
+            //var welcomeForm = Program.Services.GetRequiredService<WelcomeForm>();
+            //welcomeForm.ShowDialog();
 
-            var user = new User(welcomeForm.userLogin.Text);
+            //var user = new User(welcomeForm.userLoginField.Text);
+            //game = new Game(user);
+
+            //ShowNextQuestion();
+            var userLogin = "exampleUser";
+            var user = new User(userLogin);
+
             game = new Game(user);
 
             ShowNextQuestion();
@@ -68,6 +75,11 @@ namespace FoolOrGeniusWinFormsApp
             questionTextLabel.Text = currentQuestion.Text;
 
             questionNumberLabel.Text = game.GetQuestionNumberText();
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

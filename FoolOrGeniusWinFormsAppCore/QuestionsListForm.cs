@@ -9,6 +9,8 @@ namespace FoolOrGeniusWinFormsApp
         public QuestionsListForm()
         {
             InitializeComponent();
+
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

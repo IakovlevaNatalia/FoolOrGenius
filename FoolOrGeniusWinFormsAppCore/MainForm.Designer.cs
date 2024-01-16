@@ -28,68 +28,101 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nextbutton = new System.Windows.Forms.Button();
-            this.questionNumberLabel = new System.Windows.Forms.Label();
-            this.questionTextLabel = new System.Windows.Forms.Label();
-            this.UserAnswerTextBox = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+            nextbutton = new System.Windows.Forms.Button();
+            questionNumberLabel = new System.Windows.Forms.Label();
+            questionTextLabel = new System.Windows.Forms.Label();
+            UserAnswerTextBox = new System.Windows.Forms.TextBox();
+            panel1 = new System.Windows.Forms.Panel();
+            closeButton = new System.Windows.Forms.Label();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // nextbutton
             // 
-            this.nextbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nextbutton.Location = new System.Drawing.Point(217, 378);
-            this.nextbutton.Name = "nextbutton";
-            this.nextbutton.Size = new System.Drawing.Size(201, 151);
-            this.nextbutton.TabIndex = 4;
-            this.nextbutton.Text = "Next";
-            this.nextbutton.Click += new System.EventHandler(this.nextbutton_Click);
+            nextbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            nextbutton.Location = new System.Drawing.Point(238, 440);
+            nextbutton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            nextbutton.Name = "nextbutton";
+            nextbutton.Size = new System.Drawing.Size(222, 78);
+            nextbutton.TabIndex = 4;
+            nextbutton.Text = "Next";
+            nextbutton.Click += nextbutton_Click;
             // 
             // questionNumberLabel
             // 
-            this.questionNumberLabel.AutoSize = true;
-            this.questionNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.questionNumberLabel.Location = new System.Drawing.Point(22, 55);
-            this.questionNumberLabel.Name = "questionNumberLabel";
-            this.questionNumberLabel.Size = new System.Drawing.Size(163, 29);
-            this.questionNumberLabel.TabIndex = 1;
-            this.questionNumberLabel.Text = "Question №1";
-            this.questionNumberLabel.Click += new System.EventHandler(this.questionNumberLabel_Click);
+            questionNumberLabel.AutoSize = true;
+            questionNumberLabel.Font = new System.Drawing.Font("Times New Roman", 31.8000011F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            questionNumberLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            questionNumberLabel.Location = new System.Drawing.Point(258, 76);
+            questionNumberLabel.Name = "questionNumberLabel";
+            questionNumberLabel.Size = new System.Drawing.Size(326, 62);
+            questionNumberLabel.TabIndex = 1;
+            questionNumberLabel.Text = "Question №1";
+            questionNumberLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            questionNumberLabel.Click += questionNumberLabel_Click;
             // 
             // questionTextLabel
             // 
-            this.questionTextLabel.AutoSize = true;
-            this.questionTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.questionTextLabel.Location = new System.Drawing.Point(22, 167);
-            this.questionTextLabel.Name = "questionTextLabel";
-            this.questionTextLabel.Size = new System.Drawing.Size(176, 29);
-            this.questionTextLabel.TabIndex = 2;
-            this.questionTextLabel.Text = "Question Text";
-            this.questionTextLabel.Click += new System.EventHandler(this.QuestionTextLabel_Click);
+            questionTextLabel.AutoSize = true;
+            questionTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            questionTextLabel.Location = new System.Drawing.Point(137, 231);
+            questionTextLabel.Name = "questionTextLabel";
+            questionTextLabel.Size = new System.Drawing.Size(176, 29);
+            questionTextLabel.TabIndex = 2;
+            questionTextLabel.Text = "Question Text";
+            questionTextLabel.Click += QuestionTextLabel_Click;
             // 
             // UserAnswerTextBox
             // 
-            this.UserAnswerTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.UserAnswerTextBox.Location = new System.Drawing.Point(27, 248);
-            this.UserAnswerTextBox.Name = "UserAnswerTextBox";
-            this.UserAnswerTextBox.Size = new System.Drawing.Size(235, 34);
-            this.UserAnswerTextBox.TabIndex = 3;
-            this.UserAnswerTextBox.TextChanged += new System.EventHandler(this.UserAnswerTextBox_TextChanged);
+            UserAnswerTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            UserAnswerTextBox.Location = new System.Drawing.Point(160, 340);
+            UserAnswerTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            UserAnswerTextBox.Name = "UserAnswerTextBox";
+            UserAnswerTextBox.Size = new System.Drawing.Size(317, 34);
+            UserAnswerTextBox.TabIndex = 3;
+            UserAnswerTextBox.TextChanged += UserAnswerTextBox_TextChanged;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = System.Drawing.Color.FromArgb(8, 24, 70);
+            panel1.Controls.Add(closeButton);
+            panel1.Controls.Add(questionNumberLabel);
+            panel1.Location = new System.Drawing.Point(-3, -3);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(855, 212);
+            panel1.TabIndex = 5;
+            // 
+            // closeButton
+            // 
+            closeButton.AutoSize = true;
+            closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            closeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            closeButton.Location = new System.Drawing.Point(662, 12);
+            closeButton.Name = "closeButton";
+            closeButton.Size = new System.Drawing.Size(37, 36);
+            closeButton.TabIndex = 14;
+            closeButton.Text = "X";
+            closeButton.Click += closeButton_Click;
             // 
             // mainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(848, 654);
-            this.Controls.Add(this.UserAnswerTextBox);
-            this.Controls.Add(this.questionTextLabel);
-            this.Controls.Add(this.questionNumberLabel);
-            this.Controls.Add(this.nextbutton);
-            this.Name = "mainForm";
-            this.Text = "Fool or Genius";
-            this.Load += new System.EventHandler(this.mainForm_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(70, 8, 24);
+            ClientSize = new System.Drawing.Size(708, 706);
+            Controls.Add(panel1);
+            Controls.Add(UserAnswerTextBox);
+            Controls.Add(questionTextLabel);
+            Controls.Add(nextbutton);
+            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            Name = "mainForm";
+            Text = "Fool or Genius";
+            Load += mainForm_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -98,6 +131,8 @@
         private System.Windows.Forms.Label questionNumberLabel;
         private System.Windows.Forms.Label questionTextLabel;
         private System.Windows.Forms.TextBox UserAnswerTextBox;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label closeButton;
     }
 }
 
