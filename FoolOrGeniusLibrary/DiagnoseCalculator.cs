@@ -15,12 +15,12 @@ namespace FoolOrGeniusLibrary
         {
             var diagnoses = new string[6];
 
-            diagnoses[0] = "Идиот";
-            diagnoses[1] = "Кретин";
-            diagnoses[2] = "Дурак";
-            diagnoses[3] = "Нормальный";
-            diagnoses[4] = "Талант";
-            diagnoses[5] = "Гений";
+            diagnoses[0] = "egg";
+            diagnoses[1] = "chick";
+            diagnoses[2] = "hen";
+            diagnoses[3] = "developed";
+            diagnoses[4] = "talent";
+            diagnoses[5] = "genius";
 
             //var userDiagnose = diagnoses[user.CountRightAnswers];
             //return user.Name + ", Ваш диагноз: " + userDiagnose;

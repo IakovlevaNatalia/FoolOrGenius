@@ -40,7 +40,7 @@ namespace FoolOrGeniusLibrary
         }
         public string GetQuestionNumberText()
         {
-            return "Вопрос №" + questionNumber;
+            return "Question №" + questionNumber;
         }
 
         public bool End()
@@ -54,7 +54,7 @@ namespace FoolOrGeniusLibrary
             user.Diagnose=diagnose;
             UserResultsRepository.Append(user);
 
-            return user.Name + ", Ваш диагноз: " + user.Diagnose;
+            return user.Name + ", Your diagnosis is: " + user.Diagnose;
         }
 
     }

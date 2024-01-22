@@ -203,7 +203,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources._lock;
+            pictureBox2.Image = Resources._lock;
             pictureBox2.Location = new System.Drawing.Point(143, 410);
             pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
@@ -215,7 +215,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.user;
+            pictureBox1.Image = Resources.user;
             pictureBox1.Location = new System.Drawing.Point(143, 299);
             pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
@@ -223,6 +223,7 @@
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // RegisterLabel
             // 

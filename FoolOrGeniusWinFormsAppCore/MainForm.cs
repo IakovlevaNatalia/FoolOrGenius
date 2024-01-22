@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using FoolOrGeniusLibrary;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +15,7 @@ namespace FoolOrGeniusWinFormsApp
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+
         }
         private void questionNumberLabel_Click(object sender, EventArgs e)
         {
@@ -27,9 +29,13 @@ namespace FoolOrGeniusWinFormsApp
 
         private void QuestionTextLabel_Click(object sender, EventArgs e)
         {
-
+            questionTextLabel.AutoSize = false;
         }
 
+        //private User GetAuthenticatedUser()
+        //{
+        //    //return User..GetUserByLogin("exampleUser");
+        //}
         private void mainForm_Load(object sender, EventArgs e)
         {
             //var welcomeForm = Program.Services.GetRequiredService<WelcomeForm>();
@@ -39,6 +45,7 @@ namespace FoolOrGeniusWinFormsApp
             //game = new Game(user);
 
             //ShowNextQuestion();
+            
             var userLogin = "exampleUser";
             var user = new User(userLogin);
 
@@ -46,6 +53,14 @@ namespace FoolOrGeniusWinFormsApp
 
             ShowNextQuestion();
         }
+
+        //private User GetAuthenticatedUser()
+        //{
+        //    // Здесь вы должны предоставить код для получения информации о авторизованном пользователе
+        //    // Например, если у вас есть сервис для работы с пользователями, используйте его
+        //    // Замените следующую строку кода на свой метод получения пользователя
+        //    return UserService.GetUserByLogin("exampleUser");
+        //}
         private void nextbutton_Click(object sender, EventArgs e)
         {
             var parsed =
@@ -81,5 +96,17 @@ namespace FoolOrGeniusWinFormsApp
         {
             Application.Exit();
         }
+
+        private void nextbutton_MouseEnter(object sender, EventArgs e)
+        {
+            nextbutton.ForeColor = Color.Blue;
+
+        }
+
+        private void nextbutton_MouseLeave(object sender, EventArgs e)
+        {
+            nextbutton.ForeColor = Color.White;
+        }
+      
     }
 }

@@ -170,7 +170,7 @@
             // 
             // pictureBox5
             // 
-            pictureBox5.Image = Properties.Resources.e_mail;
+            pictureBox5.Image = Resources.e_mail;
             pictureBox5.Location = new System.Drawing.Point(160, 231);
             pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox5.Name = "pictureBox5";
@@ -181,7 +181,7 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources.icognito2;
+            pictureBox4.Image = Resources.icognito2;
             pictureBox4.Location = new System.Drawing.Point(160, 159);
             pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox4.Name = "pictureBox4";
@@ -192,7 +192,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.user;
+            pictureBox1.Image = Resources.user;
             pictureBox1.Location = new System.Drawing.Point(160, 87);
             pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
@@ -262,7 +262,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources._lock;
+            pictureBox2.Image = Resources._lock;
             pictureBox2.Location = new System.Drawing.Point(160, 303);
             pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
@@ -287,7 +287,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.user;
+            pictureBox3.Image = Resources.user;
             pictureBox3.Location = new System.Drawing.Point(160, 15);
             pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox3.Name = "pictureBox3";
