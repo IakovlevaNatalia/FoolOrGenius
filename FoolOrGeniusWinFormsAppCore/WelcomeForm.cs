@@ -14,7 +14,7 @@ namespace FoolOrGeniusWinFormsApp
         public WelcomeForm(DatabaseContext db)
         {
             InitializeComponent();
- 
+
             userLoginField.Text = "Login";
             userLoginField.ForeColor = Color.Gray;
 
@@ -49,11 +49,6 @@ namespace FoolOrGeniusWinFormsApp
         {
             var resultsForm = new ResultsForm();
             resultsForm.ShowDialog();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -222,17 +217,22 @@ namespace FoolOrGeniusWinFormsApp
                     this.Hide();
                     var mainForm = Program.Services.GetRequiredService<mainForm>();
                     mainForm.ShowDialog();
-                    
+
                 }
                 else
                 {
                     MessageBox.Show("Invalid credentials");
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show("Error");
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
