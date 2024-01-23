@@ -1,5 +1,4 @@
 ﻿using System;
-using FoolOrGeniusLibrary;
 using System.Windows.Forms;
 
 
@@ -19,12 +18,12 @@ namespace FoolOrGeniusWinFormsApp
 
         private void ResultsForm_Load(object sender, EventArgs e)
         {
-            var results = UserResultsRepository.GetAll();
+            //var results = UserResultsRepository.GetAll();
 
-            foreach (var result in results)
-            {
-                resultsDataGridView.Rows.Add(result.Name, result.CountRightAnswers, result.Diagnose);
-            }
+            //foreach (var result in results)
+            //{
+            //    resultsDataGridView.Rows.Add(result.Name, result.CountRightAnswers, result.Diagnose);
+            //}
         }
     }
 }

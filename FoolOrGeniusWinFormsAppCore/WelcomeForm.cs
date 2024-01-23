@@ -5,13 +5,17 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
 using FoolOrGenius.Db;
 using FoolOrGenius.Db.Models;
+using FoolOrGenius.DbCore.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace FoolOrGeniusWinFormsApp
 {
     public partial class WelcomeForm : Form
     {
         DatabaseContext db;
-        public WelcomeForm(DatabaseContext db)
+        UserFactory userFactory;
+        private mainForm mainForm;
+        public WelcomeForm(DatabaseContext db, UserFactory userFactory, mainForm mainForm)
         {
             InitializeComponent();
 
@@ -27,6 +31,8 @@ namespace FoolOrGeniusWinFormsApp
             this.userLoginField.Size = new Size(300, 60);
 
             this.db = db;
+            this.userFactory = userFactory;
+            this.mainForm = mainForm;
 
             this.StartPosition = FormStartPosition.CenterScreen;
         }
@@ -203,6 +209,8 @@ namespace FoolOrGeniusWinFormsApp
             return db.User.FirstOrDefault(x => x.Login == login && x.Password == password);
 
         }
+
+
         private void startButton_Click(object sender, EventArgs e)
         {
             var login = userLoginField.Text;
@@ -211,11 +219,14 @@ namespace FoolOrGeniusWinFormsApp
             try
             {
                 var existingUser = TryGetByLogin(login, password);
+
                 if (existingUser != null)
                 {
+                    userFactory.ExistingUser = existingUser;
+
                     MessageBox.Show(userLoginField.Text + " , welcome to the game!");
+
                     this.Hide();
-                    var mainForm = Program.Services.GetRequiredService<mainForm>();
                     mainForm.ShowDialog();
 
                 }

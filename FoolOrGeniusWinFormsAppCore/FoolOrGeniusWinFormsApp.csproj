@@ -8,7 +8,6 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\FoolOrGenius.DbCore\FoolOrGenius.DbCore.csproj" />
-    <ProjectReference Include="..\FoolOrGeniusLibrary\FoolOrGeniusLibrary.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\" />
