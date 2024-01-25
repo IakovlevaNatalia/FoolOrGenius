@@ -1,20 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
-using FoolOrGeniusLibrary;
+using FoolOrGenius.Db;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FoolOrGeniusWinFormsApp
 {
     public partial class mainForm : Form
     {
-        Game game;
+        UserFactory userFactory;
+        GameService gameService;
+        private int questionNumber = 0;
+        private int countQuestions;
 
-        public mainForm()
+        DatabaseContext db; 
+
+        public mainForm(UserFactory userFactory, GameService gameService)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+
+            this.userFactory = userFactory;
+            this.gameService = gameService;
 
         }
         private void questionNumberLabel_Click(object sender, EventArgs e)
@@ -31,36 +41,36 @@ namespace FoolOrGeniusWinFormsApp
         {
             questionTextLabel.AutoSize = false;
         }
+        public string GetDiagnosis(int countQuestions, int countRightAnswers)
+        {
+            var percentRightAnswers = countRightAnswers * 100 / countQuestions;
 
-        //private User GetAuthenticatedUser()
-        //{
-        //    //return User..GetUserByLogin("exampleUser");
-        //}
+            var diagnosisId = CalculateDiagnosis(percentRightAnswers);
+
+            var diagnosisName = GetDiagnosisName(diagnosisId);
+
+            return diagnosisName;
+        }
+
+        private int CalculateDiagnosis(int percentRightAnswers)
+        {
+
+            return (percentRightAnswers / 20) + 1;
+        }
+
+        private string GetDiagnosisName(int diagnosisId)
+        {
+            var diagnosis = db.Diagnosis.FirstOrDefault(d => d.Id == diagnosisId);
+
+            return diagnosis?.DiagnosisName;
+        }
         private void mainForm_Load(object sender, EventArgs e)
         {
-            //var welcomeForm = Program.Services.GetRequiredService<WelcomeForm>();
-            //welcomeForm.ShowDialog();
-
-            //var user = new User(welcomeForm.userLoginField.Text);
-            //game = new Game(user);
-
-            //ShowNextQuestion();
-            
-            var userLogin = "exampleUser";
-            var user = new User(userLogin);
-
-            game = new Game(user);
+            gameService.StartNewGame();
 
             ShowNextQuestion();
         }
 
-        //private User GetAuthenticatedUser()
-        //{
-        //    // Здесь вы должны предоставить код для получения информации о авторизованном пользователе
-        //    // Например, если у вас есть сервис для работы с пользователями, используйте его
-        //    // Замените следующую строку кода на свой метод получения пользователя
-        //    return UserService.GetUserByLogin("exampleUser");
-        //}
         private void nextbutton_Click(object sender, EventArgs e)
         {
             var parsed =
@@ -71,11 +81,11 @@ namespace FoolOrGeniusWinFormsApp
             }
             else
             {
-                game.AcceptAnswer(userAnswer);
+                gameService.AcceptAnswer(userAnswer);
 
-                if (game.End())
+                if (gameService.End())
                 {
-                    var message = game.CalculateDiagnose();
+                    var message = gameService.CalculateDiagnosis();
                     MessageBox.Show(message);
                 }
                 else
@@ -84,12 +94,14 @@ namespace FoolOrGeniusWinFormsApp
                 }
             }
         }
+
         private void ShowNextQuestion()
         {
-            var currentQuestion = game.GetNextQuestion();
-            questionTextLabel.Text = currentQuestion.Text;
+            UserAnswerTextBox.Text = "";
+            var currentQuestion = gameService.GetNextQuestion();
+            questionTextLabel.Text = currentQuestion.QuestionText;
 
-            questionNumberLabel.Text = game.GetQuestionNumberText();
+            questionNumberLabel.Text = gameService.GetQuestionNumberText();
         }
 
         private void closeButton_Click(object sender, EventArgs e)

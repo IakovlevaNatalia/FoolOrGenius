@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace FoolOrGenius.DbCore.Models
 {
-    public class Question
+    public class Diagnosis
     {
         public int Id { get; set; }
-        public string QuestionText { get; set; }
-        public int Answer { get; set;}
+        public string DiagnosisName { get; set; }
+
+        public int MinPercentage { get; set; }
     }
 }
