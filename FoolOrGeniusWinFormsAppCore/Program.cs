@@ -43,6 +43,7 @@ namespace FoolOrGeniusWinFormsApp
 
             Application.Run(host.Services.GetRequiredService<WelcomeForm>());
 
+
         }
     }
 }

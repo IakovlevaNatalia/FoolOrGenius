@@ -30,14 +30,6 @@
         {
             userLoginField = new System.Windows.Forms.TextBox();
             startButton = new System.Windows.Forms.Button();
-            menuStrip1 = new System.Windows.Forms.MenuStrip();
-            fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            showPreviousResultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            restartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            questionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            addNewQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            listOfAllQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             closeButton = new System.Windows.Forms.Label();
             panel1 = new System.Windows.Forms.Panel();
             authorizationLabel = new System.Windows.Forms.Label();
@@ -45,7 +37,7 @@
             pictureBox2 = new System.Windows.Forms.PictureBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             RegisterLabel = new System.Windows.Forms.Label();
-            menuStrip1.SuspendLayout();
+            label1 = new System.Windows.Forms.Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -85,66 +77,6 @@
             startButton.MouseEnter += startButton_MouseEnter;
             startButton.MouseLeave += startButton_MouseLeave;
             // 
-            // menuStrip1
-            // 
-            menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, questionsToolStripMenuItem });
-            menuStrip1.Location = new System.Drawing.Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new System.Drawing.Size(726, 28);
-            menuStrip1.TabIndex = 4;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { showPreviousResultsToolStripMenuItem, restartToolStripMenuItem, exitToolStripMenuItem });
-            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
-            fileToolStripMenuItem.Text = "File";
-            fileToolStripMenuItem.Click += fileToolStripMenuItem_Click;
-            // 
-            // showPreviousResultsToolStripMenuItem
-            // 
-            showPreviousResultsToolStripMenuItem.Name = "showPreviousResultsToolStripMenuItem";
-            showPreviousResultsToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
-            showPreviousResultsToolStripMenuItem.Text = "Show previous results";
-            showPreviousResultsToolStripMenuItem.Click += showPreviousResultsToolStripMenuItem_Click;
-            // 
-            // restartToolStripMenuItem
-            // 
-            restartToolStripMenuItem.Name = "restartToolStripMenuItem";
-            restartToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
-            restartToolStripMenuItem.Text = "Restart";
-            restartToolStripMenuItem.Click += restartToolStripMenuItem_Click;
-            // 
-            // exitToolStripMenuItem
-            // 
-            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
-            exitToolStripMenuItem.Text = "Exit";
-            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
-            // 
-            // questionsToolStripMenuItem
-            // 
-            questionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { addNewQuestionsToolStripMenuItem, listOfAllQuestionsToolStripMenuItem });
-            questionsToolStripMenuItem.Name = "questionsToolStripMenuItem";
-            questionsToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
-            questionsToolStripMenuItem.Text = "Questions";
-            // 
-            // addNewQuestionsToolStripMenuItem
-            // 
-            addNewQuestionsToolStripMenuItem.Name = "addNewQuestionsToolStripMenuItem";
-            addNewQuestionsToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
-            addNewQuestionsToolStripMenuItem.Text = "Add new questions";
-            addNewQuestionsToolStripMenuItem.Click += addNewQuestionsToolStripMenuItem_Click;
-            // 
-            // listOfAllQuestionsToolStripMenuItem
-            // 
-            listOfAllQuestionsToolStripMenuItem.Name = "listOfAllQuestionsToolStripMenuItem";
-            listOfAllQuestionsToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
-            listOfAllQuestionsToolStripMenuItem.Text = "List of all questions";
-            listOfAllQuestionsToolStripMenuItem.Click += listOfAllQuestionsToolStripMenuItem_Click;
-            // 
             // closeButton
             // 
             closeButton.AutoSize = true;
@@ -166,7 +98,7 @@
             panel1.Controls.Add(authorizationLabel);
             panel1.Controls.Add(closeButton);
             panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            panel1.Location = new System.Drawing.Point(0, 28);
+            panel1.Location = new System.Drawing.Point(0, 0);
             panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(726, 204);
@@ -239,12 +171,23 @@
             RegisterLabel.MouseEnter += RegisterLabel_MouseEnter;
             RegisterLabel.MouseLeave += RegisterLabel_MouseLeave;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(593, 653);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(41, 20);
+            label1.TabIndex = 11;
+            label1.Text = "2048";
+            label1.Click += label1_Click;
+            // 
             // WelcomeForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(70, 8, 24);
             ClientSize = new System.Drawing.Size(726, 748);
+            Controls.Add(label1);
             Controls.Add(RegisterLabel);
             Controls.Add(userPasswordField);
             Controls.Add(pictureBox2);
@@ -252,17 +195,13 @@
             Controls.Add(pictureBox1);
             Controls.Add(startButton);
             Controls.Add(userLoginField);
-            Controls.Add(menuStrip1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            MainMenuStrip = menuStrip1;
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "WelcomeForm";
             Text = "WelcomeForm";
             Load += WelcomeForm_Load;
             MouseDown += WelcomeForm_MouseDown;
             MouseMove += WelcomeForm_MouseMove;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -274,14 +213,6 @@
         #endregion
         public System.Windows.Forms.TextBox userLoginField;
         private System.Windows.Forms.Button startButton;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem showPreviousResultsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem restartToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem questionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addNewQuestionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listOfAllQuestionsToolStripMenuItem;
         private System.Windows.Forms.Label closeButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
@@ -289,5 +220,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox userPasswordField;
         private System.Windows.Forms.Label RegisterLabel;
+        private System.Windows.Forms.Label label1;
     }
 }

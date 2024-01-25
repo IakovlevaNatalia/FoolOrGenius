@@ -97,6 +97,7 @@ namespace FoolOrGeniusWinFormsApp
 
         private void ShowNextQuestion()
         {
+            UserAnswerTextBox.Text = "";
             var currentQuestion = gameService.GetNextQuestion();
             questionTextLabel.Text = currentQuestion.QuestionText;
 

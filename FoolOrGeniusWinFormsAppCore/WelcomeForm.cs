@@ -6,6 +6,7 @@ using System.Linq;
 using FoolOrGenius.Db;
 using FoolOrGenius.Db.Models;
 using FoolOrGenius.DbCore.Models;
+using FoolOrGeniusWinFormsApp._2048_Game;
 using Microsoft.EntityFrameworkCore;
 
 namespace FoolOrGeniusWinFormsApp
@@ -243,6 +244,14 @@ namespace FoolOrGeniusWinFormsApp
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TwentyFortyEightMainForm twentyFortyEightMainForm = new TwentyFortyEightMainForm();
+            twentyFortyEightMainForm.ShowDialog();
 
         }
     }
