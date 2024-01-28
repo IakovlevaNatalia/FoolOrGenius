@@ -3,7 +3,7 @@ using System.Text;
 
 namespace FoolOrGeniusLibrary
 {
-    internal class FileProvider
+    public class FileProvider
     {
         public static void Append(string fileName, string value)
         {
@@ -11,7 +11,7 @@ namespace FoolOrGeniusLibrary
             sw.WriteLine(value);
             sw.Close();
         }
-        public static void Replace (string fileName, string value) // перезапись файла. false означает что перезаписываем
+        public static void Replace (string fileName, string value) 
         {
             var sw = new StreamWriter(fileName, false, Encoding.UTF8);
             sw.WriteLine(value);

@@ -250,8 +250,10 @@ namespace FoolOrGeniusWinFormsApp
         private void label1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TwentyFortyEightMainForm twentyFortyEightMainForm = new TwentyFortyEightMainForm();
-            twentyFortyEightMainForm.ShowDialog();
+            //TwentyFortyEightMainForm twentyFortyEightMainForm = new TwentyFortyEightMainForm();
+            //twentyFortyEightMainForm.ShowDialog();
+            ChooseGameForm chooseGameForm =new ChooseGameForm();
+            chooseGameForm.ShowDialog();
 
         }
     }
