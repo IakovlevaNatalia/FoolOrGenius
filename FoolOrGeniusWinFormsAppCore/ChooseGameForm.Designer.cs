@@ -28,36 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            FoolOrGeniusLabel = new System.Windows.Forms.Label();
-            TwentyFortyEightGameLabel = new System.Windows.Forms.Label();
+            foolOrGeniusRadioButton = new System.Windows.Forms.RadioButton();
+            Game2048RadioButton = new System.Windows.Forms.RadioButton();
+            startButton = new System.Windows.Forms.Button();
             SuspendLayout();
             // 
-            // FoolOrGeniusLabel
+            // foolOrGeniusRadioButton
             // 
-            FoolOrGeniusLabel.AutoSize = true;
-            FoolOrGeniusLabel.Location = new System.Drawing.Point(70, 82);
-            FoolOrGeniusLabel.Name = "FoolOrGeniusLabel";
-            FoolOrGeniusLabel.Size = new System.Drawing.Size(106, 20);
-            FoolOrGeniusLabel.TabIndex = 0;
-            FoolOrGeniusLabel.Text = "Fool Or Genius";
+            foolOrGeniusRadioButton.AutoSize = true;
+            foolOrGeniusRadioButton.Location = new System.Drawing.Point(117, 95);
+            foolOrGeniusRadioButton.Name = "foolOrGeniusRadioButton";
+            foolOrGeniusRadioButton.Size = new System.Drawing.Size(127, 24);
+            foolOrGeniusRadioButton.TabIndex = 3;
+            foolOrGeniusRadioButton.TabStop = true;
+            foolOrGeniusRadioButton.Text = "Fool Or Genius";
+            foolOrGeniusRadioButton.UseVisualStyleBackColor = true;
+            foolOrGeniusRadioButton.CheckedChanged += radioButton1_CheckedChanged;
             // 
-            // TwentyFortyEightGameLabel
+            // Game2048RadioButton
             // 
-            TwentyFortyEightGameLabel.AutoSize = true;
-            TwentyFortyEightGameLabel.Location = new System.Drawing.Point(402, 91);
-            TwentyFortyEightGameLabel.Name = "TwentyFortyEightGameLabel";
-            TwentyFortyEightGameLabel.Size = new System.Drawing.Size(41, 20);
-            TwentyFortyEightGameLabel.TabIndex = 1;
-            TwentyFortyEightGameLabel.Text = "2048";
-            TwentyFortyEightGameLabel.Click += TwentyFortyEightGameLabel_Click;
+            Game2048RadioButton.AutoSize = true;
+            Game2048RadioButton.Location = new System.Drawing.Point(523, 95);
+            Game2048RadioButton.Name = "Game2048RadioButton";
+            Game2048RadioButton.Size = new System.Drawing.Size(62, 24);
+            Game2048RadioButton.TabIndex = 4;
+            Game2048RadioButton.TabStop = true;
+            Game2048RadioButton.Text = "2048";
+            Game2048RadioButton.UseVisualStyleBackColor = true;
+            // 
+            // startButton
+            // 
+            startButton.BackColor = System.Drawing.Color.FromArgb(8, 24, 70);
+            startButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            startButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            startButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Olive;
+            startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            startButton.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            startButton.ForeColor = System.Drawing.Color.White;
+            startButton.Location = new System.Drawing.Point(274, 304);
+            startButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            startButton.Name = "startButton";
+            startButton.Size = new System.Drawing.Size(222, 78);
+            startButton.TabIndex = 5;
+            startButton.Text = "Start";
+            startButton.UseVisualStyleBackColor = false;
+            startButton.Click += startButton_Click;
             // 
             // ChooseGameForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.SystemColors.ActiveCaption;
             ClientSize = new System.Drawing.Size(800, 450);
-            Controls.Add(TwentyFortyEightGameLabel);
-            Controls.Add(FoolOrGeniusLabel);
+            Controls.Add(startButton);
+            Controls.Add(Game2048RadioButton);
+            Controls.Add(foolOrGeniusRadioButton);
             Name = "ChooseGameForm";
             Text = "ChooseGameForm";
             Load += ChooseGame_Load;
@@ -66,8 +91,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label FoolOrGeniusLabel;
-        private System.Windows.Forms.Label TwentyFortyEightGameLabel;
+        private System.Windows.Forms.RadioButton foolOrGeniusRadioButton;
+        private System.Windows.Forms.RadioButton Game2048RadioButton;
+        private System.Windows.Forms.Button startButton;
     }
 }

@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Windows.Forms;
 using FoolOrGenius.Db;
 using FoolOrGenius.DbCore.Models;
+using Microsoft.VisualBasic;
 using Question = FoolOrGenius.DbCore.Models.Question;
 
 namespace FoolOrGeniusWinFormsApp
@@ -18,6 +21,7 @@ namespace FoolOrGeniusWinFormsApp
         public int countRightAnswers;
         private DiagnoseCalculator diagnoseCalculator;
         private Game currentGame;
+        private Game2048 game2048;
 
         public GameService(UserFactory userFactory, DatabaseContext db, DiagnoseCalculator diagnoseCalculator)
         {
@@ -99,5 +103,7 @@ namespace FoolOrGeniusWinFormsApp
             return userFactory.ExistingUser.FirstName + ", Your diagnosis is: " + diagnosis.DiagnosisName;
         }
 
+
+     
     }
 }
