@@ -5,9 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
 using FoolOrGenius.Db;
 using FoolOrGenius.Db.Models;
-using FoolOrGenius.DbCore.Models;
-using FoolOrGeniusWinFormsApp._2048_Game;
-using Microsoft.EntityFrameworkCore;
+using FoolOrGeniusWinFormsApp.BallGames;
 
 namespace FoolOrGeniusWinFormsApp
 {
@@ -42,12 +40,12 @@ namespace FoolOrGeniusWinFormsApp
         {
 
         }
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e) // exit from menuStrip
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void restartToolStripMenuItem_Click(object sender, EventArgs e) //restart restart menuStrip
+        private void restartToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Restart();
         }
@@ -222,11 +220,8 @@ namespace FoolOrGeniusWinFormsApp
                     MessageBox.Show(userLoginField.Text + " , welcome to the game!");
 
                     this.Hide();
-                    //mainForm.ShowDialog();
                     var chooseGameForm = Program.Services.GetRequiredService<ChooseGameForm>();
-                    //ChooseGameForm chooseGameForm = new ChooseGameForm(db);
                     chooseGameForm.ShowDialog();
-
                 }
                 else
                 {
@@ -244,15 +239,11 @@ namespace FoolOrGeniusWinFormsApp
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            //TwentyFortyEightMainForm twentyFortyEightMainForm = new TwentyFortyEightMainForm();
-            //twentyFortyEightMainForm.ShowDialog();
-            var chooseGameForm = Program.Services.GetRequiredService<ChooseGameForm>();
-            //ChooseGameForm chooseGameForm = new ChooseGameForm(db);
-            chooseGameForm.ShowDialog();
-
+            MainFormBallGameWinFormsApp ball = new MainFormBallGameWinFormsApp();
+            ball.ShowDialog();
         }
     }
 }
