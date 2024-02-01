@@ -22,15 +22,15 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
             
         }
 
-        private void TileResultsForm_Load(object sender, EventArgs e)
-        {
-            var users = TileUserManager.GetAll();
-            foreach (var user in users)
-            {
-                TileResultsDataGridView.Rows.Add(user.Login, user.Score);
+        //private void TileResultsForm_Load(object sender, EventArgs e) ///json
+        //{
+        //    var users = TileUserManager.GetAll(); 
+        //    foreach (var user in users)
+        //    {
+        //        TileResultsDataGridView.Rows.Add(user.Login, user.Score);
 
-            }
-        }
+        //    }
+        //}
 
         //private void TileResultsForm_Load(object sender, EventArgs e)
         //{

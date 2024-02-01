@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace FoolOrGeniusWinFormsApp._2048_Game
 {
@@ -25,41 +23,6 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
             this.StartPosition = FormStartPosition.CenterScreen;
 
         }
-
-        //private void StartButton_Click(object sender, EventArgs e)
-        //{
-
-        //    RadioButton selectedRadioButton = radioButtons.FirstOrDefault(rb => rb.Checked);
-
-        //    if (selectedRadioButton != null)
-        //    {
-        //        string buttonText = selectedRadioButton.Text;
-
-        //        // Извлекаем числовую часть из текста
-        //        string numericPart = new string(buttonText.Where(char.IsDigit).ToArray());
-
-        //        if (int.TryParse(numericPart, out int selectedSize))
-        //        {
-        //            SelectedSize = selectedSize;
-        //            this.DialogResult = DialogResult.OK;
-        //            this.Close();
-        //            MessageBox.Show("я отпарсился");
-        //            TwentyFortyEightMainForm twentyFortyEightMainForm = new TwentyFortyEightMainForm(selectedSize);
-        //            twentyFortyEightMainForm.ShowDialog();
-
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Невозможно преобразовать числовую часть текста RadioButton в число.");
-        //        }
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Выберите размер карты.");
-        //    }
-
-
-        //}
         private void StartButton_Click(object sender, EventArgs e)
         {
 
@@ -77,19 +40,39 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
 
                     this.DialogResult = DialogResult.OK;
                     this.Close();
-                    MessageBox.Show("Я отпарсился");
-                    TwentyFortyEightMainForm twentyFortyEightMainForm = new TwentyFortyEightMainForm(selectedSize);
+                    var twentyFortyEightMainForm = Program.Services.GetRequiredService<TwentyFortyEightMainForm>();
+                    twentyFortyEightMainForm.Init(selectedSize);
                     twentyFortyEightMainForm.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Не удалось определить размер поля.");
                 }
             }
             else
             {
-                MessageBox.Show("Выберите размер поля.");
+                MessageBox.Show("Choose the field size.");
             }
+        }
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void StartButton_MouseEnter_1(object sender, EventArgs e)
+        {
+            StartButton.ForeColor = Color.Blue;
+        }
+
+        private void StartButton_MouseLeave_1(object sender, EventArgs e)
+        {
+            StartButton.ForeColor = Color.White;
+        }
+
+        private void closeButton_MouseEnter_1(object sender, EventArgs e)
+        {
+            closeButton.ForeColor = Color.Red;
+        }
+
+        private void closeButton_MouseLeave_1(object sender, EventArgs e)
+        {
+            closeButton.ForeColor = Color.White;
         }
     }
 }

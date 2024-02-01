@@ -52,12 +52,6 @@ namespace FoolOrGeniusWinFormsApp
             Application.Restart();
         }
 
-        private void showPreviousResultsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var resultsForm = new ResultsForm();
-            resultsForm.ShowDialog();
-        }
-
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -228,7 +222,10 @@ namespace FoolOrGeniusWinFormsApp
                     MessageBox.Show(userLoginField.Text + " , welcome to the game!");
 
                     this.Hide();
-                    mainForm.ShowDialog();
+                    //mainForm.ShowDialog();
+                    var chooseGameForm = Program.Services.GetRequiredService<ChooseGameForm>();
+                    //ChooseGameForm chooseGameForm = new ChooseGameForm(db);
+                    chooseGameForm.ShowDialog();
 
                 }
                 else
@@ -252,7 +249,8 @@ namespace FoolOrGeniusWinFormsApp
             this.Hide();
             //TwentyFortyEightMainForm twentyFortyEightMainForm = new TwentyFortyEightMainForm();
             //twentyFortyEightMainForm.ShowDialog();
-            ChooseGameForm chooseGameForm =new ChooseGameForm();
+            var chooseGameForm = Program.Services.GetRequiredService<ChooseGameForm>();
+            //ChooseGameForm chooseGameForm = new ChooseGameForm(db);
             chooseGameForm.ShowDialog();
 
         }

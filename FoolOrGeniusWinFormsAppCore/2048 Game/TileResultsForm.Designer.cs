@@ -66,7 +66,7 @@
             Controls.Add(TileResultsDataGridView);
             Name = "TileResultsForm";
             Text = "TileResultsForm";
-            Load += TileResultsForm_Load;
+            //Load += TileResultsForm_Load;
             ((System.ComponentModel.ISupportInitialize)TileResultsDataGridView).EndInit();
             ResumeLayout(false);
         }

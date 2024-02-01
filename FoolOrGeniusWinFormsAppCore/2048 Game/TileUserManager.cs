@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
-using FoolOrGenius.Db.Models;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 using FoolOrGenius.DbCore.Models;
 using FoolOrGeniusLibrary;
@@ -12,40 +8,25 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
     public static class TileUserManager
     {
         public static string path = "results.json";
-        public static List<UserTile> GetAll()
+        public static List<Game2048Type> GetAll()
         {
             if (FileProvider.Exists(path))
             {
                 var jsonData = FileProvider.GetValue(path);
-                return JsonConvert.DeserializeObject<List<UserTile>>(jsonData);
+                return JsonConvert.DeserializeObject<List<Game2048Type>>(jsonData);
             }
 
-            return new List<UserTile>();
+            return new List<Game2048Type>();
         }
 
-        public static void Add(UserTile userTile)
+        public static void Add(Game2048Type game2048)
         {
             var users = GetAll();
-            users.Add(userTile);
+            users.Add(game2048);
             var jsonData = JsonConvert.SerializeObject(users);
             FileProvider.Replace(path, jsonData);
         }
 
-        //public static void Add(UserTile userTile)
-        //{
-        //    try
-        //    {
-        //        var users = GetAll();
-        //        users.Add(userTile);
-        //        var jsonData = JsonConvert.SerializeObject(users);
-        //        FileProvider.Replace(path, jsonData);
-        //        MessageBox.Show($"Файл '{path}' успешно обновлен.");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Произошла ошибка при записи в файл: {ex.Message}");
-        //    }
-        //}
     }
 }
 

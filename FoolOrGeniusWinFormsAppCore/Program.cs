@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using FoolOrGenius.Db;
 using System.Configuration;
 using FoolOrGenius.Db.Models;
+using FoolOrGenius.DbCore.Models;
+using FoolOrGeniusWinFormsApp._2048_Game;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 
@@ -31,6 +33,12 @@ namespace FoolOrGeniusWinFormsApp
                     services.AddTransient<mainForm>();
                     services.AddTransient<GameService>();
                     services.AddSingleton<DiagnoseCalculator>();
+                    services.AddTransient<Game2048>();
+                    services.AddTransient<Game2048Type>();
+                    services.AddTransient<GameService2048>();
+                    services.AddTransient<ChooseSizeForm>();
+                    services.AddScoped<TwentyFortyEightMainForm>();
+                    services.AddTransient<ChooseGameForm>();
                     services.AddDbContext<DatabaseContext>(options =>
                         options.UseSqlServer(connection), ServiceLifetime.Singleton);
                 })

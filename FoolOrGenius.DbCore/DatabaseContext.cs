@@ -28,6 +28,10 @@ namespace FoolOrGenius.Db
         public DbSet<Diagnosis> Diagnosis { get; set; }
         public DbSet<Question> Question { get; set; }
         public DbSet<QuestionResult> QuestionResult { get; set; }
+
+        public DbSet<Game2048> Game2048 { get; set; }
+        public DbSet<Game2048Type>Game2048Type { get; set; }
+
     }
 
    

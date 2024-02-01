@@ -37,7 +37,6 @@
             pictureBox2 = new System.Windows.Forms.PictureBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             RegisterLabel = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -171,23 +170,12 @@
             RegisterLabel.MouseEnter += RegisterLabel_MouseEnter;
             RegisterLabel.MouseLeave += RegisterLabel_MouseLeave;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(593, 653);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(41, 20);
-            label1.TabIndex = 11;
-            label1.Text = "2048";
-            label1.Click += label1_Click;
-            // 
             // WelcomeForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(70, 8, 24);
             ClientSize = new System.Drawing.Size(726, 748);
-            Controls.Add(label1);
             Controls.Add(RegisterLabel);
             Controls.Add(userPasswordField);
             Controls.Add(pictureBox2);
@@ -220,6 +208,5 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox userPasswordField;
         private System.Windows.Forms.Label RegisterLabel;
-        private System.Windows.Forms.Label label1;
     }
 }
