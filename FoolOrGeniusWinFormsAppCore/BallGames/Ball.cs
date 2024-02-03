@@ -11,8 +11,8 @@ namespace FoolOrGeniusWinFormsApp.BallGames
     public class Ball
     {
        private MainFormBallGameWinFormsApp mainFormBallGameWinFormsApp;
-       private int vx = 5; //задает сторону движения и скорость, чем выше тем быстрее
-       private int vy = 5;
+       private int vx = 1; //задает сторону движения и скорость, чем выше тем быстрее
+       private int vy = 1;
        protected int x = 150;
        protected int y = 150;
        protected int size = 70;
