@@ -1,6 +1,6 @@
-﻿namespace FoolOrGeniusWinFormsApp.BallGames
+﻿namespace FoolOrGeniusWinFormsApp.CatchMe
 {
-    partial class MainFormBallGameWinFormsApp
+    partial class CatchMeMainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,66 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            stopButton = new System.Windows.Forms.Button();
-            timer = new System.Windows.Forms.Timer(components);
             startButton = new System.Windows.Forms.Button();
             clearButton = new System.Windows.Forms.Button();
+            ballsCountLabel = new System.Windows.Forms.Label();
+            FinishGameButton = new System.Windows.Forms.Button();
             SuspendLayout();
-            // 
-            // stopButton
-            // 
-            stopButton.Location = new System.Drawing.Point(606, 93);
-            stopButton.Name = "stopButton";
-            stopButton.Size = new System.Drawing.Size(182, 49);
-            stopButton.TabIndex = 2;
-            stopButton.Text = "Stop";
-            stopButton.UseVisualStyleBackColor = true;
-            stopButton.Click += button3_Click;
-            // 
-            // timer
-            // 
-            timer.Interval = 15;
             // 
             // startButton
             // 
-            startButton.Location = new System.Drawing.Point(606, 21);
+            startButton.Location = new System.Drawing.Point(634, 27);
             startButton.Name = "startButton";
-            startButton.Size = new System.Drawing.Size(182, 50);
-            startButton.TabIndex = 3;
+            startButton.Size = new System.Drawing.Size(126, 49);
+            startButton.TabIndex = 0;
             startButton.Text = "Start";
             startButton.UseVisualStyleBackColor = true;
-            startButton.Click += ballsButton_Click;
+            startButton.Click += startButton_Click;
             // 
             // clearButton
             // 
-            clearButton.Location = new System.Drawing.Point(606, 170);
+            clearButton.Location = new System.Drawing.Point(634, 98);
             clearButton.Name = "clearButton";
-            clearButton.Size = new System.Drawing.Size(182, 46);
-            clearButton.TabIndex = 4;
+            clearButton.Size = new System.Drawing.Size(126, 58);
+            clearButton.TabIndex = 1;
             clearButton.Text = "Clear";
             clearButton.UseVisualStyleBackColor = true;
             clearButton.Click += clearButton_Click;
             // 
-            // MainFormBallGameWinFormsApp
+            // ballsCountLabel
+            // 
+            ballsCountLabel.AutoSize = true;
+            ballsCountLabel.Location = new System.Drawing.Point(559, 27);
+            ballsCountLabel.Name = "ballsCountLabel";
+            ballsCountLabel.Size = new System.Drawing.Size(17, 20);
+            ballsCountLabel.TabIndex = 2;
+            ballsCountLabel.Text = "0";
+            // 
+            // FinishGameButton
+            // 
+            FinishGameButton.Location = new System.Drawing.Point(634, 176);
+            FinishGameButton.Name = "FinishGameButton";
+            FinishGameButton.Size = new System.Drawing.Size(126, 56);
+            FinishGameButton.TabIndex = 3;
+            FinishGameButton.Text = "Finish Game";
+            FinishGameButton.UseVisualStyleBackColor = true;
+            FinishGameButton.Click += FinishGameButton_Click;
+            // 
+            // CatchMeMainForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(800, 450);
+            Controls.Add(FinishGameButton);
+            Controls.Add(ballsCountLabel);
             Controls.Add(clearButton);
             Controls.Add(startButton);
-            Controls.Add(stopButton);
-            Name = "MainFormBallGameWinFormsApp";
-            Text = "MainFormBallGame";
-            Load += MainFormBallGameWinFormsApp_Load;
-            MouseDown += MainFormBallGameWinFormsApp_MouseDown;
+            Name = "CatchMeMainForm";
+            Text = "CatchMeMainForm";
+            Load += CatchMeMainForm_Load;
+            MouseDown += CatchMeMainForm_MouseDown;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-        private System.Windows.Forms.Button stopButton;
-        private System.Windows.Forms.Timer timer;
+
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.Label ballsCountLabel;
+        private System.Windows.Forms.Button FinishGameButton;
     }
 }

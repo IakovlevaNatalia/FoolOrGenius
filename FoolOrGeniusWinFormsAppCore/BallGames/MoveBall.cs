@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Threading;
+using FoolOrGeniusWinFormsApp.CatchMe;
 using Timer = System.Windows.Forms.Timer;
+using System.Collections.Generic;
 
 namespace FoolOrGeniusWinFormsApp.BallGames
 {
@@ -9,7 +11,7 @@ namespace FoolOrGeniusWinFormsApp.BallGames
     {
         private Timer timer;
 
-        public MoveBall(MainFormBallGameWinFormsApp mainFormBallGameWinFormsApp) : base(mainFormBallGameWinFormsApp)
+        public MoveBall(Form mainFormBallGameWinFormsApp) : base(mainFormBallGameWinFormsApp)
         {
             timer = new Timer();
             timer.Interval = 20;
@@ -30,5 +32,11 @@ namespace FoolOrGeniusWinFormsApp.BallGames
         {
             timer.Stop();
         }
+
+        public bool IsMovable()
+        {
+            return timer.Enabled;
+        }
+
     }
 }
