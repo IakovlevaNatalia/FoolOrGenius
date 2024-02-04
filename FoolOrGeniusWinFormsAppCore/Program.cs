@@ -42,7 +42,7 @@ namespace FoolOrGeniusWinFormsApp
                     services.AddScoped<TwentyFortyEightMainForm>();
                     services.AddTransient<ChooseGameForm>();
                     services.AddTransient<MainFormBallGameWinFormsApp>();
-                    services.AddTransient<CatchMeRandomMoveBall>();
+                    services.AddTransient<RandomMoveBall>();
                     services.AddTransient<CatchMeMainForm>();
                     services.AddDbContext<DatabaseContext>(options =>
                         options.UseSqlServer(connection), ServiceLifetime.Singleton);

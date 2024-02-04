@@ -1,42 +1,36 @@
-﻿using System;
-using System.Windows.Forms;
-using System.Threading;
-using FoolOrGeniusWinFormsApp.CatchMe;
-using Timer = System.Windows.Forms.Timer;
-using System.Collections.Generic;
+﻿//using System;
+//using System.Windows.Forms;
+//using System.Threading;
+//using FoolOrGeniusWinFormsApp.CatchMe;
+//using Timer = System.Windows.Forms.Timer;
+//using System.Collections.Generic;
 
-namespace FoolOrGeniusWinFormsApp.BallGames
-{
-    public class MoveBall:RandomPointBall
-    {
-        private Timer timer;
+//namespace FoolOrGeniusWinFormsApp.BallGames
+//{
+//    public class MoveBall : RandomPointBall
+//    {
+//        //RandomMoveBall ball1;
+//        //private RandomMoveBall ball2;
+//        //private List<RandomMoveBall> balls;
 
-        public MoveBall(Form mainFormBallGameWinFormsApp) : base(mainFormBallGameWinFormsApp)
-        {
-            timer = new Timer();
-            timer.Interval = 20;
-            timer.Tick += Timer_Tick;
-        }
+//        //public MoveBall(Form mainFormBallGameWinFormsApp) : base(mainFormBallGameWinFormsApp)
+//        //{
 
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            Move();
-        }
+//        //}
 
-        public void Start()
-        {
-            timer.Start();
-        }
+//        public MoveBall(CatchMeMainForm catchMeMForm) : base(catchMeMForm)
+//        {
+//            vx = GenerateRandomProjection();
+//            vy = GenerateRandomProjection();
+//        }
 
-        public void Stop()
-        {
-            timer.Stop();
-        }
-
-        public bool IsMovable()
-        {
-            return timer.Enabled;
-        }
-
-    }
-}
+//        private int GenerateRandomProjection()
+//        {
+//            var randomDouble = random.NextDouble();
+//            var sign = 1;
+//            if(randomDouble<0.5)
+//                sign = -1;
+//            return random.Next(2,5)*sign;
+//        }
+//    }
+//}

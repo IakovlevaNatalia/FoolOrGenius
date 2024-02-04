@@ -21,7 +21,7 @@ namespace FoolOrGeniusWinFormsApp.CatchMe
             startButton.Enabled = false;
             clearButton.Enabled = true;
             moveBalls = new List<RandomMoveBall>();
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 4; i++)
             {
                 var moveBall = new RandomMoveBall(this);
                 moveBalls.Add(moveBall);
@@ -31,7 +31,7 @@ namespace FoolOrGeniusWinFormsApp.CatchMe
 
         private void CatchMeMainForm_Load(object sender, EventArgs e)
         {
-            //MoveBall ball1 = new MoveBall(this); 
+            //MoveBall ball1 = new MoveBall(this);
             //MoveBall ball2 = new MoveBall(this);
 
             //List<MoveBall> balls = new List<MoveBall> { ball1, ball2 };

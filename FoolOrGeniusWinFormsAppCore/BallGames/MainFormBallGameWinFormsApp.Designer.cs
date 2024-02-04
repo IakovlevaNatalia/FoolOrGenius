@@ -57,7 +57,7 @@
             startButton.TabIndex = 3;
             startButton.Text = "Start";
             startButton.UseVisualStyleBackColor = true;
-            startButton.Click += ballsButton_Click;
+           // startButton.Click += ballsButton_Click;
             // 
             // clearButton
             // 
