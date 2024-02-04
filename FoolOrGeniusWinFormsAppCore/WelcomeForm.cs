@@ -6,6 +6,7 @@ using System.Linq;
 using FoolOrGenius.Db;
 using FoolOrGenius.Db.Models;
 using FoolOrGeniusWinFormsApp.BallGames;
+using FoolOrGeniusWinFormsApp.CatchMe;
 
 namespace FoolOrGeniusWinFormsApp
 {
@@ -242,8 +243,9 @@ namespace FoolOrGeniusWinFormsApp
         private void label1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            MainFormBallGameWinFormsApp ball = new MainFormBallGameWinFormsApp();
-            ball.ShowDialog();
+            var catchMeForm = Program.Services.GetRequiredService<CatchMeMainForm>();
+            catchMeForm.Show();
+
         }
     }
 }

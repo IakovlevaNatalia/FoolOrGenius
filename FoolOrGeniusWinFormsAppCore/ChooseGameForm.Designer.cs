@@ -31,6 +31,7 @@
             foolOrGeniusRadioButton = new System.Windows.Forms.RadioButton();
             Game2048RadioButton = new System.Windows.Forms.RadioButton();
             startButton = new System.Windows.Forms.Button();
+            easyBallRadioButton = new System.Windows.Forms.RadioButton();
             SuspendLayout();
             // 
             // foolOrGeniusRadioButton
@@ -74,12 +75,24 @@
             startButton.UseVisualStyleBackColor = false;
             startButton.Click += startButton_Click;
             // 
+            // easyBallRadioButton
+            // 
+            easyBallRadioButton.AutoSize = true;
+            easyBallRadioButton.Location = new System.Drawing.Point(563, 243);
+            easyBallRadioButton.Name = "easyBallRadioButton";
+            easyBallRadioButton.Size = new System.Drawing.Size(94, 24);
+            easyBallRadioButton.TabIndex = 6;
+            easyBallRadioButton.TabStop = true;
+            easyBallRadioButton.Text = "Easy Balls";
+            easyBallRadioButton.UseVisualStyleBackColor = true;
+            // 
             // ChooseGameForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.ActiveCaption;
             ClientSize = new System.Drawing.Size(800, 450);
+            Controls.Add(easyBallRadioButton);
             Controls.Add(startButton);
             Controls.Add(Game2048RadioButton);
             Controls.Add(foolOrGeniusRadioButton);
@@ -94,5 +107,6 @@
         private System.Windows.Forms.RadioButton foolOrGeniusRadioButton;
         private System.Windows.Forms.RadioButton Game2048RadioButton;
         private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.RadioButton easyBallRadioButton;
     }
 }

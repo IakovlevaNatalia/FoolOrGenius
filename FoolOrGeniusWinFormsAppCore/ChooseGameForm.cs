@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using FoolOrGenius.Db;
 using FoolOrGeniusWinFormsApp._2048_Game;
+using FoolOrGeniusWinFormsApp.BallGames;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualBasic.ApplicationServices;
 
 namespace FoolOrGeniusWinFormsApp
 {
@@ -67,6 +60,13 @@ namespace FoolOrGeniusWinFormsApp
                 this.Hide();
                 ChooseSizeForm chooseSizeForm = new ChooseSizeForm();
                 chooseSizeForm.ShowDialog();
+            }
+
+            if (easyBallRadioButton.Checked)
+            {
+                this.Hide();
+                MainFormBallGameWinFormsApp mainFormBallGame = new MainFormBallGameWinFormsApp();
+                mainFormBallGame.ShowDialog();
             }
         }
     }
