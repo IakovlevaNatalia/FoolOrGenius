@@ -1,13 +1,19 @@
 ﻿
 
+using FoolOrGeniusWinFormsApp.CatchMe;
+
 namespace FoolOrGeniusWinFormsApp.BallGames
 {
     public class RandomSizeAndPointBall:RandomPointBall
 
     {
-        public RandomSizeAndPointBall(MainFormBallGameWinFormsApp mainFormBallGameWinFormsApp):base(mainFormBallGameWinFormsApp)
+        //public RandomSizeAndPointBall(MainFormBallGameWinFormsApp mainFormBallGameWinFormsApp):base(mainFormBallGameWinFormsApp)
+        //{
+        //    radius = random.Next(30, 80);
+        //}
+        public RandomSizeAndPointBall(CatchMeMainForm catchMe):base(catchMe)
         {
-            size = random.Next(30, 80);
+            radius = random.Next(10, 40);
         }
     }
 }

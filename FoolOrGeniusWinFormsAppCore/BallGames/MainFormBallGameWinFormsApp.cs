@@ -37,20 +37,20 @@ namespace FoolOrGeniusWinFormsApp.BallGames
             clearButton.Enabled = true;
         }
 
-        private void ballsButton_Click(object sender, EventArgs e)
-        {
-            stopButton.Enabled = true;
-            startButton.Enabled = false;
+        //private void ballsButton_Click(object sender, EventArgs e)
+        //{
+        //    stopButton.Enabled = true;
+        //    startButton.Enabled = false;
 
-            moveBalls = new List<RandomMoveBall>();
-            for (int i = 0; i < 5; i++)
-            {
-                var moveBall = new RandomMoveBall(this);
-                moveBalls.Add(moveBall);
-                moveBall.Start();
-            }
+        //    moveBalls = new List<RandomMoveBall>();
+        //    for (int i = 0; i < 5; i++)
+        //    {
+        //        var moveBall = new RandomMoveBall(this);
+        //        moveBalls.Add(moveBall);
+        //        moveBall.Start();
+        //    }
 
-        }
+        //}
 
         private void MainFormBallGameWinFormsApp_Load(object sender, EventArgs e)
         {
@@ -62,7 +62,7 @@ namespace FoolOrGeniusWinFormsApp.BallGames
         {
             foreach (var ball in moveBalls)
             {
-                ball.Clear();
+                ball.ClearCatchMe();
             }
 
             clearButton.Enabled = false;

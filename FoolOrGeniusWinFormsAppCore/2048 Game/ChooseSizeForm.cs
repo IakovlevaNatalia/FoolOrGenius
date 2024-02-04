@@ -47,7 +47,7 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
             }
             else
             {
-                MessageBox.Show("Choose the field size.");
+                MessageBox.Show("Choose the field radius.");
             }
         }
         private void closeButton_Click(object sender, EventArgs e)

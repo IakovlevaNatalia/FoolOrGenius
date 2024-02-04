@@ -3,14 +3,23 @@ using FoolOrGeniusWinFormsApp.CatchMe;
 
 namespace FoolOrGeniusWinFormsApp.BallGames
 {
-    public class RandomMoveBall : MoveBall
+    public class RandomMoveBall : RandomPointBall
     {
-        private CatchMeMainForm catchMeForm;
-        public RandomMoveBall(Form mainFormBallGameWinFormsApp) : base(mainFormBallGameWinFormsApp)
-        {
-            vx = random.Next(-5, 6);
-            vy = random.Next(-5, 5);
+        private MainFormBallGameWinFormsApp mainFormBallGameWinFormsApp;
 
+        public RandomMoveBall(CatchMeMainForm catchMeMForm) : base(catchMeMForm)
+        {
+            vx = GenerateRandomProjection();
+            vy = GenerateRandomProjection();
+        }
+
+        private int GenerateRandomProjection()
+        {
+            var randomDouble = random.NextDouble();
+            var sign = 1;
+            if (randomDouble < 0.5)
+                sign = -1;
+            return random.Next(2, 5) * sign;
         }
 
     }
