@@ -199,7 +199,6 @@
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "WelcomeForm";
             Text = "WelcomeForm";
-            Load += WelcomeForm_Load;
             MouseDown += WelcomeForm_MouseDown;
             MouseMove += WelcomeForm_MouseMove;
             panel1.ResumeLayout(false);

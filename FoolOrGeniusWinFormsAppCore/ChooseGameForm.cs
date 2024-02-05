@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using FoolOrGenius.Db;
 using FoolOrGeniusWinFormsApp._2048_Game;
 using FoolOrGeniusWinFormsApp.BallGames;
+using FoolOrGeniusWinFormsApp.CatchMe;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FoolOrGeniusWinFormsApp
@@ -30,9 +31,6 @@ namespace FoolOrGeniusWinFormsApp
             ChooseSizeForm chooseSizeForm = new ChooseSizeForm();
             chooseSizeForm.ShowDialog();
             this.Hide();
-            //TwentyFortyEightMainForm twentyFortyEightMainForm = new TwentyFortyEightMainForm();
-            //twentyFortyEightMainForm.ShowDialog();
-
 
         }
 
@@ -65,9 +63,10 @@ namespace FoolOrGeniusWinFormsApp
             if (easyBallRadioButton.Checked)
             {
                 this.Hide();
-                MainFormBallGameWinFormsApp mainFormBallGame = new MainFormBallGameWinFormsApp();
-                mainFormBallGame.ShowDialog();
+                var catchMeForm = Program.Services.GetRequiredService<CatchMeMainForm>();
+                catchMeForm.ShowDialog();
             }
         }
+
     }
 }

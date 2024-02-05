@@ -1,7 +1,6 @@
-﻿using FoolOrGeniusWinFormsApp.CatchMe;
+﻿using FoolOrGeniusWinFormsApp.BallGames;
 
-
-namespace FoolOrGeniusWinFormsApp.BallGames
+namespace FoolOrGeniusWinFormsApp.CatchMe
 {
     public class CatchMeRandomMoveBall : RandomMoveBall
     {

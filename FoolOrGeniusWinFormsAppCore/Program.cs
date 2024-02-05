@@ -8,6 +8,7 @@ using FoolOrGenius.DbCore.Models;
 using FoolOrGeniusWinFormsApp._2048_Game;
 using FoolOrGeniusWinFormsApp.BallGames;
 using FoolOrGeniusWinFormsApp.CatchMe;
+using FoolOrGeniusWinFormsApp.Firework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 
@@ -44,6 +45,7 @@ namespace FoolOrGeniusWinFormsApp
                     services.AddTransient<MainFormBallGameWinFormsApp>();
                     services.AddTransient<RandomMoveBall>();
                     services.AddTransient<CatchMeMainForm>();
+                    services.AddTransient<FireworkForm>();
                     services.AddDbContext<DatabaseContext>(options =>
                         options.UseSqlServer(connection), ServiceLifetime.Singleton);
                 })

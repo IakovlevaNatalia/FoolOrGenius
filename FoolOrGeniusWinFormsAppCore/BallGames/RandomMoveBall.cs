@@ -5,9 +5,7 @@ namespace FoolOrGeniusWinFormsApp.BallGames
 {
     public class RandomMoveBall : RandomPointBall
     {
-        private MainFormBallGameWinFormsApp mainFormBallGameWinFormsApp;
-
-        public RandomMoveBall(CatchMeMainForm catchMeMForm) : base(catchMeMForm)
+        public RandomMoveBall(Form catchMeMForm) : base(catchMeMForm)
         {
             vx = GenerateRandomProjection();
             vy = GenerateRandomProjection();

@@ -17,17 +17,12 @@ namespace FoolOrGeniusWinFormsApp.BallGames
        private Form catchMeForm;
        private Timer timer;
 
-       protected int vx = 10; 
-       protected int vy = 10;
-       protected int centerX = 10;
-       protected int centerY = 10;
+       protected float vx = 10; 
+       protected float vy = 10;
+       protected float centerX = 10;
+       protected float centerY = 10;
        protected int radius = 25;
        protected static Random random = new Random();
-
-        //public Ball(Form mainFormBallGameWinFormsApp)
-        //{
-        //    this.mainFormBallGameWinFormsApp= mainFormBallGameWinFormsApp;
-        //}
 
         public Ball(Form catchMeForm)
         {
@@ -80,7 +75,7 @@ namespace FoolOrGeniusWinFormsApp.BallGames
         {
             return catchMeForm.ClientSize.Height - radius;
         }
-        private void HandleEdgeCollision()
+        protected virtual void HandleEdgeCollision()
         {
             var catchMeForm = Program.Services.GetRequiredService<CatchMeMainForm>();
 
@@ -94,46 +89,19 @@ namespace FoolOrGeniusWinFormsApp.BallGames
                 vy = -vy; 
             }
         }
-      
-
-        //public void Show() либо удалить , либо вернуть раб метод
-        //{
-        //    var graphics = mainFormBallGameWinFormsApp.CreateGraphics();
-        //    var brush = Brushes.Aqua;
-        //    var rectangle = new Rectangle(centerX-radius, centerY-radius, 2*radius, 2*radius);
-        //    graphics.FillEllipse(brush, rectangle);
-        //}
 
         public void Show()
         {
             var brush = Brushes.DarkRed;
             Draw(brush);
+
         }
 
-        private void Go()
+        protected virtual void Go()
         {
             centerX += vx;
             centerY += vy;
         }
-
-        //public void Clear() раскоментировать после 
-        //{
-        //    var graphics = mainFormBallGameWinFormsApp.CreateGraphics();
-        //    var brush = new SolidBrush(mainFormBallGameWinFormsApp.BackColor);
-        //    var rectangle = new Rectangle(centerX, centerY, radius, radius);
-        //    graphics.FillEllipse(brush, rectangle);
-        //}
-
-        //public void ClearCatchMe() работающий метод
-        //{
-        //    var catchMeForm = Program.Services.GetRequiredService<CatchMeMainForm>();
-        //    var graphics = catchMeForm.CreateGraphics();
-
-        //    var brush = new SolidBrush(catchMeForm.BackColor);
-        //    var rectangle = new Rectangle(centerX, centerY, radius, radius);
-
-        //    graphics.FillEllipse(brush, rectangle);
-        //}
 
         public void ClearCatchMe()
         {
@@ -146,15 +114,6 @@ namespace FoolOrGeniusWinFormsApp.BallGames
  
         }
 
-        //public bool Contains(int pointX, int pointY)
-        //{
-        //    var radius = this.radius / 2;
-        //    var centerX=this.centerX+ radius;
-        //    var centerY=this.centerY+ radius;
-
-        //    return (centerX-pointX)*(centerX-pointX) + (centerY-pointY)*(centerY-pointY)<=radius*radius;
-        //}
-
         public bool Contains(int pointX, int pointY)
         {
 
@@ -163,11 +122,10 @@ namespace FoolOrGeniusWinFormsApp.BallGames
 
             return dx*dx+dy*dy<=radius*radius;
         }
-
         private void Draw(Brush brush)
         {
             var graphics = catchMeForm.CreateGraphics();
-            var rectangle = new Rectangle(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
+            var rectangle = new RectangleF(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
             graphics.FillEllipse(brush, rectangle);
         }
     }
