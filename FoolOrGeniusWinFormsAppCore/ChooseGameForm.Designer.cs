@@ -80,10 +80,10 @@
             easyBallRadioButton.AutoSize = true;
             easyBallRadioButton.Location = new System.Drawing.Point(563, 243);
             easyBallRadioButton.Name = "easyBallRadioButton";
-            easyBallRadioButton.Size = new System.Drawing.Size(94, 24);
+            easyBallRadioButton.Size = new System.Drawing.Size(162, 24);
             easyBallRadioButton.TabIndex = 6;
             easyBallRadioButton.TabStop = true;
-            easyBallRadioButton.Text = "Easy Balls";
+            easyBallRadioButton.Text = "Catch Me If You Can";
             easyBallRadioButton.UseVisualStyleBackColor = true;
             // 
             // ChooseGameForm

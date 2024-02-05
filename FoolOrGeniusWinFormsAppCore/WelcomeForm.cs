@@ -7,6 +7,7 @@ using FoolOrGenius.Db;
 using FoolOrGenius.Db.Models;
 using FoolOrGeniusWinFormsApp.BallGames;
 using FoolOrGeniusWinFormsApp.CatchMe;
+using FoolOrGeniusWinFormsApp.Firework;
 
 namespace FoolOrGeniusWinFormsApp
 {
@@ -138,11 +139,6 @@ namespace FoolOrGeniusWinFormsApp
 
         }
 
-        private void WelcomeForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void userLogin_Enter(object sender, EventArgs e)
         {
 
@@ -243,8 +239,8 @@ namespace FoolOrGeniusWinFormsApp
         private void label1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            var catchMeForm = Program.Services.GetRequiredService<CatchMeMainForm>();
-            catchMeForm.Show();
+            var fireworksForm = Program.Services.GetRequiredService<FireworkForm>();
+            fireworksForm.Show();
 
         }
     }

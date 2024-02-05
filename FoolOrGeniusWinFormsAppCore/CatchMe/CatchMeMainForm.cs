@@ -7,7 +7,7 @@ namespace FoolOrGeniusWinFormsApp.CatchMe
 {
     public partial class CatchMeMainForm : Form
     {
-        private List<RandomMoveBall> moveBalls;
+        private List<Ball> balls;
         private int countBalls = 0;
         
         public CatchMeMainForm()
@@ -20,40 +20,29 @@ namespace FoolOrGeniusWinFormsApp.CatchMe
         {
             startButton.Enabled = false;
             clearButton.Enabled = true;
-            moveBalls = new List<RandomMoveBall>();
-            for (int i = 0; i < 4; i++)
+            balls = new List<Ball>();
+            for (int i = 0; i < 10; i++)
             {
                 var moveBall = new RandomMoveBall(this);
-                moveBalls.Add(moveBall);
+                balls.Add(moveBall);
                 moveBall.Start();
+
+                var ball = new RandomSizeAndPointBall(this);
+                balls.Add(ball);
+                ball.Start();
+
             }
         }
-
         private void CatchMeMainForm_Load(object sender, EventArgs e)
         {
-            //MoveBall ball1 = new MoveBall(this);
-            //MoveBall ball2 = new MoveBall(this);
-
-            //List<MoveBall> balls = new List<MoveBall> { ball1, ball2 };
-            //Timer timer = new Timer();
-            //timer.Interval = 20;
-            //timer.Tick += (timerSender, timerEventArgs) =>
-            //{
-            //    foreach (var ball in balls)
-            //    {
-            //        ball.Timer_Tick(timerSender, timerEventArgs);
-            //    }
-            //};
-
-            //timer.Start();
             clearButton.Enabled = false;
         }
 
         private void CatchMeMainForm_MouseDown(object sender, MouseEventArgs e)
         {
-            if (moveBalls != null)
+            if (balls != null)
             {
-                foreach (var ball in moveBalls)
+                foreach (var ball in balls)
                 {
                     if (ball.IsMovable() && ball.Contains(e.X, e.Y))
                     {
@@ -67,7 +56,7 @@ namespace FoolOrGeniusWinFormsApp.CatchMe
         }
         private void clearButton_Click(object sender, EventArgs e)
         {
-            foreach (var ball in moveBalls)
+            foreach (var ball in balls)
             {
                 ball.ClearCatchMe();
             }
@@ -76,7 +65,6 @@ namespace FoolOrGeniusWinFormsApp.CatchMe
 
             Invalidate();
         }
-
         private void FinishGameButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
