@@ -1,5 +1,4 @@
 ﻿using System.Windows.Forms;
-using FoolOrGeniusWinFormsApp.CatchMe;
 
 namespace FoolOrGeniusWinFormsApp.BallGames
 {

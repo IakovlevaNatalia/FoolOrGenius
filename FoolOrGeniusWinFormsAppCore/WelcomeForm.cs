@@ -5,9 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
 using FoolOrGenius.Db;
 using FoolOrGenius.Db.Models;
-using FoolOrGeniusWinFormsApp.BallGames;
-using FoolOrGeniusWinFormsApp.CatchMe;
-using FoolOrGeniusWinFormsApp.Firework;
+using FoolOrGeniusWinFormsApp.FruitNinja;
 
 namespace FoolOrGeniusWinFormsApp
 {
@@ -239,8 +237,8 @@ namespace FoolOrGeniusWinFormsApp
         private void label1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            var fireworksForm = Program.Services.GetRequiredService<FireworkForm>();
-            fireworksForm.Show();
+            var fruitNinjaForm = Program.Services.GetRequiredService<FruitNinjaForm>();
+            fruitNinjaForm.ShowDialog();
 
         }
     }

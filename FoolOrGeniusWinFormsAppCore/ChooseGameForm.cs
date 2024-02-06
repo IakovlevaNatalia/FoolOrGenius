@@ -4,6 +4,7 @@ using FoolOrGenius.Db;
 using FoolOrGeniusWinFormsApp._2048_Game;
 using FoolOrGeniusWinFormsApp.BallGames;
 using FoolOrGeniusWinFormsApp.CatchMe;
+using FoolOrGeniusWinFormsApp.Firework;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FoolOrGeniusWinFormsApp
@@ -65,6 +66,13 @@ namespace FoolOrGeniusWinFormsApp
                 this.Hide();
                 var catchMeForm = Program.Services.GetRequiredService<CatchMeMainForm>();
                 catchMeForm.ShowDialog();
+            }
+
+            if (FireworkRadioButton.Checked)
+            {
+                this.Hide();
+                var firework = Program.Services.GetRequiredService<FireworkForm>();
+                firework.ShowDialog();
             }
         }
 

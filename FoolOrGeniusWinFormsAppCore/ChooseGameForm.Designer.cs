@@ -32,6 +32,7 @@
             Game2048RadioButton = new System.Windows.Forms.RadioButton();
             startButton = new System.Windows.Forms.Button();
             easyBallRadioButton = new System.Windows.Forms.RadioButton();
+            FireworkRadioButton = new System.Windows.Forms.RadioButton();
             SuspendLayout();
             // 
             // foolOrGeniusRadioButton
@@ -78,7 +79,7 @@
             // easyBallRadioButton
             // 
             easyBallRadioButton.AutoSize = true;
-            easyBallRadioButton.Location = new System.Drawing.Point(563, 243);
+            easyBallRadioButton.Location = new System.Drawing.Point(82, 245);
             easyBallRadioButton.Name = "easyBallRadioButton";
             easyBallRadioButton.Size = new System.Drawing.Size(162, 24);
             easyBallRadioButton.TabIndex = 6;
@@ -86,12 +87,24 @@
             easyBallRadioButton.Text = "Catch Me If You Can";
             easyBallRadioButton.UseVisualStyleBackColor = true;
             // 
+            // FireworkRadioButton
+            // 
+            FireworkRadioButton.AutoSize = true;
+            FireworkRadioButton.Location = new System.Drawing.Point(264, 245);
+            FireworkRadioButton.Name = "FireworkRadioButton";
+            FireworkRadioButton.Size = new System.Drawing.Size(92, 24);
+            FireworkRadioButton.TabIndex = 7;
+            FireworkRadioButton.TabStop = true;
+            FireworkRadioButton.Text = "Fireworks";
+            FireworkRadioButton.UseVisualStyleBackColor = true;
+            // 
             // ChooseGameForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.ActiveCaption;
             ClientSize = new System.Drawing.Size(800, 450);
+            Controls.Add(FireworkRadioButton);
             Controls.Add(easyBallRadioButton);
             Controls.Add(startButton);
             Controls.Add(Game2048RadioButton);
@@ -108,5 +121,6 @@
         private System.Windows.Forms.RadioButton Game2048RadioButton;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.RadioButton easyBallRadioButton;
+        private System.Windows.Forms.RadioButton FireworkRadioButton;
     }
 }

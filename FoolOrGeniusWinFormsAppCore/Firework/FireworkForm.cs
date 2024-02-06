@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using FoolOrGeniusWinFormsApp.BallGames;
 
 namespace FoolOrGeniusWinFormsApp.Firework
 {
@@ -29,7 +28,6 @@ namespace FoolOrGeniusWinFormsApp.Firework
                 ball.Start();
             }
         }
-
         private void fireworksStartButton_Click_1(object sender, EventArgs e)
         {
             var ball = new StartFireworksBall(this);
