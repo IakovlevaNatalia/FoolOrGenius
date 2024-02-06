@@ -1,28 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using FoolOrGeniusWinFormsApp.CatchMe;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace FoolOrGeniusWinFormsApp.BallGames
 {
     public class Ball
     {
        private Form mainFormBallGameWinFormsApp;
-       private Form catchMeForm;
        private Timer timer;
-
+       protected Form catchMeForm;
        protected float vx = 10; 
        protected float vy = 10;
        protected float centerX = 10;
        protected float centerY = 10;
        protected int radius = 25;
        protected static Random random = new Random();
+       
 
         public Ball(Form catchMeForm)
         {
@@ -47,7 +40,7 @@ namespace FoolOrGeniusWinFormsApp.BallGames
            timer.Stop();
         }
 
-     private void Timer_Tick(object sender, EventArgs e)
+        private void Timer_Tick(object sender, EventArgs e)
         {
             Move();
         }
@@ -77,20 +70,19 @@ namespace FoolOrGeniusWinFormsApp.BallGames
         }
         protected virtual void HandleEdgeCollision()
         {
-            var catchMeForm = Program.Services.GetRequiredService<CatchMeMainForm>();
 
             if (centerX <= 0 || centerX + radius >= catchMeForm.ClientSize.Width)
             {
                 vx = -vx; 
             }
 
-            if (centerY <= 0 || centerY + radius >= catchMeForm.ClientSize.Height)
+            if (centerY <= 0 || centerY + radius > catchMeForm.ClientSize.Height)
             {
                 vy = -vy; 
             }
         }
 
-        public void Show()
+        public virtual void Show()
         {
             var brush = Brushes.DarkRed;
             Draw(brush);
@@ -122,7 +114,7 @@ namespace FoolOrGeniusWinFormsApp.BallGames
 
             return dx*dx+dy*dy<=radius*radius;
         }
-        private void Draw(Brush brush)
+        protected virtual void Draw(Brush brush)
         {
             var graphics = catchMeForm.CreateGraphics();
             var rectangle = new RectangleF(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
