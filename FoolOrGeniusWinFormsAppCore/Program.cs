@@ -6,6 +6,7 @@ using System.Configuration;
 using FoolOrGenius.Db.Models;
 using FoolOrGenius.DbCore.Models;
 using FoolOrGeniusWinFormsApp._2048_Game;
+using FoolOrGeniusWinFormsApp.AngryBirds;
 using FoolOrGeniusWinFormsApp.BallGames;
 using FoolOrGeniusWinFormsApp.CatchMe;
 using FoolOrGeniusWinFormsApp.Firework;
@@ -48,6 +49,7 @@ namespace FoolOrGeniusWinFormsApp
                     services.AddTransient<CatchMeMainForm>();
                     services.AddTransient<FireworkForm>();
                     services.AddTransient<FruitNinjaForm>();
+                    services.AddTransient<AngryBirdsMainForm>();
                     services.AddDbContext<DatabaseContext>(options =>
                         options.UseSqlServer(connection), ServiceLifetime.Singleton);
                 })

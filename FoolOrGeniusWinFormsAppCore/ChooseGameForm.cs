@@ -5,6 +5,7 @@ using FoolOrGeniusWinFormsApp._2048_Game;
 using FoolOrGeniusWinFormsApp.BallGames;
 using FoolOrGeniusWinFormsApp.CatchMe;
 using FoolOrGeniusWinFormsApp.Firework;
+using FoolOrGeniusWinFormsApp.FruitNinja;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FoolOrGeniusWinFormsApp
@@ -73,6 +74,13 @@ namespace FoolOrGeniusWinFormsApp
                 this.Hide();
                 var firework = Program.Services.GetRequiredService<FireworkForm>();
                 firework.ShowDialog();
+            }
+
+            if (FruitNinjaRadioButton.Checked)
+            {
+                this.Hide();
+                var fruitNinja = Program.Services.GetRequiredService<FruitNinjaForm>();
+                fruitNinja.ShowDialog();
             }
         }
 
