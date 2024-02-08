@@ -29,7 +29,6 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
 
             CreateBalls(5);
         }
-
        
         private void FruitNinjaForm_MouseMove(object sender, MouseEventArgs e)
         {
@@ -51,7 +50,7 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
                     if (caughtBallsCount == 20)
                     {
                         Win();
-                        return;
+                        fruit.Stop();
                     }
                     scoreLabel.Text = (Convert.ToInt32(scoreLabel.Text) + 1).ToString();
                 }
@@ -60,6 +59,7 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
 
         private void Win()
         {
+            
             MessageBox.Show("Congratulations! You caught all balls and won the game!");
         }
         private void EndGame()

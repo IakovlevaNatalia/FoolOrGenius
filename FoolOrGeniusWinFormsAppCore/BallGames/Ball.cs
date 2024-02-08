@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace FoolOrGeniusWinFormsApp.BallGames
@@ -113,6 +114,13 @@ namespace FoolOrGeniusWinFormsApp.BallGames
             var dy = pointY - centerY;
 
             return dx*dx+dy*dy<=radius*radius;
+        }
+
+        public bool Intersect(Ball other)
+        {
+            var dx=centerX-other.centerX;
+            var dy=centerY-other.centerY;
+           return dx*dx+dy*dy<=(radius+other.radius)* (radius + other.radius);
         }
         protected virtual void Draw(Brush brush)
         {

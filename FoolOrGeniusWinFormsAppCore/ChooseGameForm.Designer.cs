@@ -33,6 +33,7 @@
             startButton = new System.Windows.Forms.Button();
             easyBallRadioButton = new System.Windows.Forms.RadioButton();
             FireworkRadioButton = new System.Windows.Forms.RadioButton();
+            FruitNinjaRadioButton = new System.Windows.Forms.RadioButton();
             SuspendLayout();
             // 
             // foolOrGeniusRadioButton
@@ -98,12 +99,24 @@
             FireworkRadioButton.Text = "Fireworks";
             FireworkRadioButton.UseVisualStyleBackColor = true;
             // 
+            // FruitNinjaRadioButton
+            // 
+            FruitNinjaRadioButton.AutoSize = true;
+            FruitNinjaRadioButton.Location = new System.Drawing.Point(374, 246);
+            FruitNinjaRadioButton.Name = "FruitNinjaRadioButton";
+            FruitNinjaRadioButton.Size = new System.Drawing.Size(98, 24);
+            FruitNinjaRadioButton.TabIndex = 8;
+            FruitNinjaRadioButton.TabStop = true;
+            FruitNinjaRadioButton.Text = "Fruit Ninja";
+            FruitNinjaRadioButton.UseVisualStyleBackColor = true;
+            // 
             // ChooseGameForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.ActiveCaption;
             ClientSize = new System.Drawing.Size(800, 450);
+            Controls.Add(FruitNinjaRadioButton);
             Controls.Add(FireworkRadioButton);
             Controls.Add(easyBallRadioButton);
             Controls.Add(startButton);
@@ -122,5 +135,6 @@
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.RadioButton easyBallRadioButton;
         private System.Windows.Forms.RadioButton FireworkRadioButton;
+        private System.Windows.Forms.RadioButton FruitNinjaRadioButton;
     }
 }
