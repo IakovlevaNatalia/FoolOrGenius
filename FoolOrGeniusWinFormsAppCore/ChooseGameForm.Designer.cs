@@ -34,6 +34,7 @@
             easyBallRadioButton = new System.Windows.Forms.RadioButton();
             FireworkRadioButton = new System.Windows.Forms.RadioButton();
             FruitNinjaRadioButton = new System.Windows.Forms.RadioButton();
+            angryBirdsRadioButton = new System.Windows.Forms.RadioButton();
             SuspendLayout();
             // 
             // foolOrGeniusRadioButton
@@ -110,12 +111,24 @@
             FruitNinjaRadioButton.Text = "Fruit Ninja";
             FruitNinjaRadioButton.UseVisualStyleBackColor = true;
             // 
+            // angryBirdsRadioButton
+            // 
+            angryBirdsRadioButton.AutoSize = true;
+            angryBirdsRadioButton.Location = new System.Drawing.Point(505, 250);
+            angryBirdsRadioButton.Name = "angryBirdsRadioButton";
+            angryBirdsRadioButton.Size = new System.Drawing.Size(106, 24);
+            angryBirdsRadioButton.TabIndex = 9;
+            angryBirdsRadioButton.TabStop = true;
+            angryBirdsRadioButton.Text = "Angry Birds";
+            angryBirdsRadioButton.UseVisualStyleBackColor = true;
+            // 
             // ChooseGameForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.ActiveCaption;
             ClientSize = new System.Drawing.Size(800, 450);
+            Controls.Add(angryBirdsRadioButton);
             Controls.Add(FruitNinjaRadioButton);
             Controls.Add(FireworkRadioButton);
             Controls.Add(easyBallRadioButton);
@@ -136,5 +149,6 @@
         private System.Windows.Forms.RadioButton easyBallRadioButton;
         private System.Windows.Forms.RadioButton FireworkRadioButton;
         private System.Windows.Forms.RadioButton FruitNinjaRadioButton;
+        private System.Windows.Forms.RadioButton angryBirdsRadioButton;
     }
 }

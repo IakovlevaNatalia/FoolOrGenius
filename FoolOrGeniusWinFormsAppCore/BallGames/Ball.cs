@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace FoolOrGeniusWinFormsApp.BallGames
@@ -82,7 +81,6 @@ namespace FoolOrGeniusWinFormsApp.BallGames
                 vy = -vy; 
             }
         }
-
         public virtual void Show()
         {
             var brush = Brushes.DarkRed;

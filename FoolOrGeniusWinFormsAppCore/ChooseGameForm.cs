@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using FoolOrGenius.Db;
 using FoolOrGeniusWinFormsApp._2048_Game;
+using FoolOrGeniusWinFormsApp.AngryBirds;
 using FoolOrGeniusWinFormsApp.BallGames;
 using FoolOrGeniusWinFormsApp.CatchMe;
 using FoolOrGeniusWinFormsApp.Firework;
@@ -81,6 +82,13 @@ namespace FoolOrGeniusWinFormsApp
                 this.Hide();
                 var fruitNinja = Program.Services.GetRequiredService<FruitNinjaForm>();
                 fruitNinja.ShowDialog();
+            }
+
+            if (angryBirdsRadioButton.Checked)
+            {
+                this.Hide();
+                var angryBirds = Program.Services.GetRequiredService<AngryBirdsMainForm>();
+                angryBirds.ShowDialog();
             }
         }
 

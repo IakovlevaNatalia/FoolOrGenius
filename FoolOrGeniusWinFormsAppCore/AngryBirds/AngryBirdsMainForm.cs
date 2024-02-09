@@ -70,7 +70,6 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
             bird.Start();
            
         }
-
         private void AngryBirdsMainForm_Load(object sender, EventArgs e)
         {
 

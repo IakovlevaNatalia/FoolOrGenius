@@ -1,9 +1,6 @@
 ﻿using System.Drawing;
-using System.Drawing.Text;
 using System.Windows.Forms;
 using FoolOrGeniusWinFormsApp.BallGames;
-using Microsoft.Extensions.Configuration;
-using Microsoft.VisualBasic.Logging;
 
 namespace FoolOrGeniusWinFormsApp.AngryBirds
 {
@@ -19,7 +16,6 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
 
             brush = Brushes.DarkOrange;
         }
-
         protected override void Go()
         {
             base.Go();
@@ -39,7 +35,6 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
             }
             vy += g;
         }
-
         public bool IsOutSide()
         {
             return centerX > RightSide();
