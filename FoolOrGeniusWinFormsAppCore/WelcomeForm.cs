@@ -239,8 +239,10 @@ namespace FoolOrGeniusWinFormsApp
         private void label1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            var frogsGame = Program.Services.GetRequiredService<FrogMainForm>();
-            frogsGame.ShowDialog();
+            //var frogsGame = Program.Services.GetRequiredService<FrogMainForm>();
+            //frogsGame.ShowDialog();
+            var angryBirds = Program.Services.GetRequiredService<AngryBirdsMainForm>();
+            angryBirds.ShowDialog();
 
         }
     }

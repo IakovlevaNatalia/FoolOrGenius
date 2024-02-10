@@ -9,12 +9,17 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
         private float g = 0.2f; //сила тяжести
         private float elastic = 0.4f; //сила трения
         protected Brush brush;
-        public Bird(Form form):base(form)
+        private PictureBox birdPictureBox;
+        public Bird(Form form, PictureBox birdPictureBox) :base(form)
         {
             centerX = LeftSide(); // начальное положение птицы
             centerY = DownSide();
 
-            brush = Brushes.DarkOrange;
+            //var centerX = pictureBox.Location.X + pictureBox.Width / 2;
+            //var centerY = pictureBox.Location.Y + pictureBox.Height / 2;
+
+            this.birdPictureBox= birdPictureBox;
+            //brush = Brushes.DarkOrange;
         }
         protected override void Go()
         {
@@ -34,6 +39,7 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
                 Stop();
             }
             vy += g;
+            
         }
         public bool IsOutSide()
         {
@@ -44,9 +50,19 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
             vx=(x-centerX)/20;
             vy=(y-centerY)/20;
         }
+        //public override void Show()
+        //{
+        //    Draw(brush);
+        //}
+
         public override void Show()
         {
-            Draw(brush);
+            if (birdPictureBox != null)
+            {
+                // Вместо рисования кисточкой используем PictureBox
+                birdPictureBox.Location = new Point((int)(centerX - birdPictureBox.Width / 2), (int)(centerY - birdPictureBox.Height / 2));
+            }
         }
+
     }
 }

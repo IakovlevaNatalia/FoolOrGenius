@@ -1,4 +1,6 @@
-﻿namespace FoolOrGeniusWinFormsApp.AngryBirds
+﻿using FoolOrGeniusWinFormsApp.Controls;
+
+namespace FoolOrGeniusWinFormsApp.AngryBirds
 {
     partial class AngryBirdsMainForm
     {
@@ -29,27 +31,41 @@
         private void InitializeComponent()
         {
             ScoreLabel = new System.Windows.Forms.Label();
+            //((System.ComponentModel.ISupportInitialize)pigPictureBox).BeginInit();
             SuspendLayout();
             // 
             // ScoreLabel
             // 
             ScoreLabel.AutoSize = true;
-            ScoreLabel.Location = new System.Drawing.Point(19, 11);
+            ScoreLabel.Location = new System.Drawing.Point(55, 26);
             ScoreLabel.Name = "ScoreLabel";
-            ScoreLabel.Size = new System.Drawing.Size(17, 20);
+            ScoreLabel.Size = new System.Drawing.Size(0, 20);
             ScoreLabel.TabIndex = 0;
+            // 
+            // pigPictureBox
+            // 
+            //pigPictureBox.Image = Resources.pig;
+            //pigPictureBox.Location = new System.Drawing.Point(560, 316);
+            //pigPictureBox.Name = "pigPictureBox";
+            //pigPictureBox.Size = new System.Drawing.Size(60, 62);
+            //pigPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            //pigPictureBox.TabIndex = 2;
+            //pigPictureBox.TabStop = false;
             // 
             // AngryBirdsMainForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            //BackColor = System.Drawing.Color.Transparent;
             ClientSize = new System.Drawing.Size(800, 450);
+            //Controls.Add(pigPictureBox);
             Controls.Add(ScoreLabel);
             Name = "AngryBirdsMainForm";
             Text = "AngryBirdsMainForm";
             Load += AngryBirdsMainForm_Load;
             Shown += AngryBirdsMainForm_Shown;
             MouseDown += AngryBirdsMainForm_MouseDown;
+            //((System.ComponentModel.ISupportInitialize)pigPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -57,5 +73,6 @@
         #endregion
 
         private System.Windows.Forms.Label ScoreLabel;
+        //private System.Windows.Forms.PictureBox pigPictureBox;
     }
 }

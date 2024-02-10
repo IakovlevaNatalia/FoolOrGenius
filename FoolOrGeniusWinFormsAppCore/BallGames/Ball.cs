@@ -124,7 +124,7 @@ namespace FoolOrGeniusWinFormsApp.BallGames
         {
             var graphics = catchMeForm.CreateGraphics();
             var rectangle = new RectangleF(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
-            graphics.FillEllipse(brush, rectangle);
+          //  graphics.FillEllipse(brush, rectangle);
         }
     }
 }
