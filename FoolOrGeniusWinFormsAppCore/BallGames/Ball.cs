@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace FoolOrGeniusWinFormsApp.BallGames
@@ -82,7 +81,6 @@ namespace FoolOrGeniusWinFormsApp.BallGames
                 vy = -vy; 
             }
         }
-
         public virtual void Show()
         {
             var brush = Brushes.DarkRed;
@@ -126,7 +124,7 @@ namespace FoolOrGeniusWinFormsApp.BallGames
         {
             var graphics = catchMeForm.CreateGraphics();
             var rectangle = new RectangleF(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
-            graphics.FillEllipse(brush, rectangle);
+          //  graphics.FillEllipse(brush, rectangle);
         }
     }
 }

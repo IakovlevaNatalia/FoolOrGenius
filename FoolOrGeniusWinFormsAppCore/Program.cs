@@ -10,6 +10,7 @@ using FoolOrGeniusWinFormsApp.AngryBirds;
 using FoolOrGeniusWinFormsApp.BallGames;
 using FoolOrGeniusWinFormsApp.CatchMe;
 using FoolOrGeniusWinFormsApp.Firework;
+using FoolOrGeniusWinFormsApp.Frog;
 using FoolOrGeniusWinFormsApp.FruitNinja;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
@@ -50,6 +51,7 @@ namespace FoolOrGeniusWinFormsApp
                     services.AddTransient<FireworkForm>();
                     services.AddTransient<FruitNinjaForm>();
                     services.AddTransient<AngryBirdsMainForm>();
+                    services.AddTransient<FrogMainForm>();
                     services.AddDbContext<DatabaseContext>(options =>
                         options.UseSqlServer(connection), ServiceLifetime.Singleton);
                 })
