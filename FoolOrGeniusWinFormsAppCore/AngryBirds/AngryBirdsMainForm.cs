@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Drawing;
-using System.Net.NetworkInformation;
 using System.Windows.Forms;
-using FoolOrGeniusWinFormsApp.Controls;
+#pragma warning disable CA1416
 
 namespace FoolOrGeniusWinFormsApp.AngryBirds
 {
@@ -11,9 +10,9 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
         private Bird bird;
         private Piggy piggy;
         private PictureBox birdPictureBox;
-        //private Point birdStartCenterPosition = new Point(70, 374);
-        //private PointF birdStartPosition = new Point(0, 0);
-
+        private PictureBox pigPictureBox;
+        private int collision = 0;
+ 
         Timer timer = new Timer();
 
         public AngryBirdsMainForm()
@@ -27,52 +26,43 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
             PictureBox backgroundPictureBox = new PictureBox();
             backgroundPictureBox.Size = this.ClientSize;
             backgroundPictureBox.Location = new Point(0, 0);
-            backgroundPictureBox.Image = Resources.background; // Замените на свой ресурс фона
+            backgroundPictureBox.Image = Resources.background; 
             backgroundPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            backgroundPictureBox.SendToBack(); // Поместите фон за птицу
+            backgroundPictureBox.SendToBack(); 
+            backgroundPictureBox.Parent = this;
+            backgroundPictureBox.MouseDown += AngryBirdsMainForm_MouseDown;
 
-            // Создание и настройка PictureBox
-            var birdPictureBox = new PictureBox();
-            
-            birdPictureBox.Size = new Size(60, 60); // Установите размеры ваших требований
-            birdPictureBox.BackColor = Color.Transparent; // Используйте Color.Transparent для прозрачного фона
-
+            birdPictureBox = new PictureBox();
+            birdPictureBox.Size = new Size(60, 60); 
+            birdPictureBox.BackColor = Color.Transparent; 
             birdPictureBox.Image = Resources.whiteBird;
             birdPictureBox.SizeMode=PictureBoxSizeMode.StretchImage;
-            // Установка координат в левый нижний угол формы
             birdPictureBox.Location = new Point(0, this.ClientSize.Height - birdPictureBox.Height);
-
             birdPictureBox.Parent = backgroundPictureBox;
-            // Добавление PictureBox на форму
-            //this.Controls.Add(birdPictureBox);
 
-            var pigPictureBox = new PictureBox();
 
-            pigPictureBox.Size = new Size(60, 60); // Установите размеры ваших требований
-            pigPictureBox.BackColor = Color.Transparent; // Используйте Color.Transparent для прозрачного фона
-
+            pigPictureBox = new PictureBox();
+            pigPictureBox.Size = new Size(60, 60); 
+            pigPictureBox.BackColor = Color.Transparent;
             pigPictureBox.Image = Resources.pig;
             pigPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            // Установка координат в левый нижний угол формы
-           // pigPictureBox.Location = new Point(30, this.ClientSize.Height - birdPictureBox.Height);
-
-            ScoreLabel.BackColor=Color.Transparent;
             pigPictureBox.Parent = backgroundPictureBox;
 
+
+            ScoreLabel.BackColor=Color.Transparent;
             ScoreLabel.Parent = backgroundPictureBox;
             ScoreLabel.ForeColor = Color.FromArgb(32, 92, 8);
-            ScoreLabel.Font = new Font(ScoreLabel.Font, FontStyle.Bold);
+            ScoreLabel.Font = new Font(ScoreLabel.Font.FontFamily, 16, FontStyle.Bold);
             ScoreLabel.BackColor = Color.Transparent;
-
-            this.Controls.Add(backgroundPictureBox);
-
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
 
-            if (bird.Intersect(piggy))
+            if (bird.IntersectWithPig(pigPictureBox))
             {
+                collision++;
+                ScoreLabel.Text = $"Score :{collision}";
                 CreateNewBird();
                 CreateNewPig();
             }
@@ -86,7 +76,6 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
                 CreateNewBird();
             }
         }
-
         private void AngryBirdsMainForm_Shown(object sender, EventArgs e)
         {
             this.ScoreLabel.Text = "0";
@@ -101,7 +90,7 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
             {
                 piggy.ClearCatchMe();
             }
-            piggy = new Piggy(this);
+            piggy = new Piggy(this, pigPictureBox);
             piggy.Show();
         }
 
@@ -112,12 +101,11 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
             if (bird != null)
             {
                 bird.Stop();
-                bird.ClearCatchMe();
             }
             bird = new Bird(this, birdPictureBox);
             bird.Show();
-        }
 
+        }
         private void AngryBirdsMainForm_MouseDown(object sender, MouseEventArgs e)
         {
             bird.SetVelocity(e.X, e.Y);
@@ -125,11 +113,6 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
             bird.Start();
            
         }
-        private void AngryBirdsMainForm_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        
+       
     }
 }

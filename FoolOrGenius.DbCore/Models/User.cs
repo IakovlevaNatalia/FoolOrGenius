@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace FoolOrGenius.Db.Models
 {
    public class User

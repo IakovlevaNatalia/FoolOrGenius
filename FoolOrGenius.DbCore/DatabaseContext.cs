@@ -21,7 +21,6 @@ namespace FoolOrGenius.Db
         {
             if (!optionsBuilder.IsConfigured)
             {
-                // Replace "YourConnectionString" with your actual connection string
                 optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=FoolOrGenius; Trusted_Connection=True");
             }
         }

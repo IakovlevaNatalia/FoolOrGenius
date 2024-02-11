@@ -199,6 +199,7 @@ namespace FoolOrGeniusWinFormsApp.Frog
             MainMenuStrip = menuStrip1;
             Name = "FrogMainForm";
             Text = "Frog";
+            Load += FrogMainForm_Load;
             ((System.ComponentModel.ISupportInitialize)leftrPictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)leftrPictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)leftrPictureBox3).EndInit();

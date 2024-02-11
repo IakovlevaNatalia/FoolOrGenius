@@ -6,25 +6,27 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
 {
     public class Bird:RandomMoveBall
     {
-        private float g = 0.2f; //сила тяжести
-        private float elastic = 0.4f; //сила трения
-        protected Brush brush;
+        private float g = 0.2f; 
+        private float elastic = 0.4f; 
         private PictureBox birdPictureBox;
         public Bird(Form form, PictureBox birdPictureBox) :base(form)
         {
-            centerX = LeftSide(); // начальное положение птицы
+            centerX = LeftSide(); 
             centerY = DownSide();
 
-            //var centerX = pictureBox.Location.X + pictureBox.Width / 2;
-            //var centerY = pictureBox.Location.Y + pictureBox.Height / 2;
-
             this.birdPictureBox= birdPictureBox;
-            //brush = Brushes.DarkOrange;
         }
+
+        public override void Move()
+        {
+            HandleEdgeCollision();
+            Go();
+            Show();
+        }
+
         protected override void Go()
         {
             base.Go();
-
 
             if (centerY > DownSide()) //если столкнулись с нижней стенкой
             {
@@ -50,19 +52,21 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
             vx=(x-centerX)/20;
             vy=(y-centerY)/20;
         }
-        //public override void Show()
-        //{
-        //    Draw(brush);
-        //}
 
         public override void Show()
         {
             if (birdPictureBox != null)
             {
-                // Вместо рисования кисточкой используем PictureBox
                 birdPictureBox.Location = new Point((int)(centerX - birdPictureBox.Width / 2), (int)(centerY - birdPictureBox.Height / 2));
             }
         }
+        public bool IntersectWithPig(PictureBox pigPictureBox)
+        {
 
+            Rectangle thisBounds = new Rectangle((int)centerX - birdPictureBox.Width / 2, (int)centerY - birdPictureBox.Height / 2, birdPictureBox.Width, birdPictureBox.Height);
+            Rectangle otherBounds = new Rectangle(pigPictureBox.Location, pigPictureBox.Size);
+
+            return thisBounds.IntersectsWith(otherBounds);
+        }
     }
 }

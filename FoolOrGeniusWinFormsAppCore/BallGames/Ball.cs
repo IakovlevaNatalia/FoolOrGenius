@@ -6,7 +6,6 @@ namespace FoolOrGeniusWinFormsApp.BallGames
 {
     public class Ball
     {
-       private Form mainFormBallGameWinFormsApp;
        private Timer timer;
        protected Form catchMeForm;
        protected float vx = 10; 
@@ -14,8 +13,6 @@ namespace FoolOrGeniusWinFormsApp.BallGames
        protected float centerX = 10;
        protected float centerY = 10;
        protected int radius = 25;
-       protected static Random random = new Random();
-       
 
         public Ball(Form catchMeForm)
         {
@@ -44,7 +41,7 @@ namespace FoolOrGeniusWinFormsApp.BallGames
         {
             Move();
         }
-        public void Move()
+        public virtual void Move()
         {
             ClearCatchMe();
             HandleEdgeCollision();
@@ -85,7 +82,6 @@ namespace FoolOrGeniusWinFormsApp.BallGames
         {
             var brush = Brushes.DarkRed;
             Draw(brush);
-
         }
 
         protected virtual void Go()
@@ -102,7 +98,6 @@ namespace FoolOrGeniusWinFormsApp.BallGames
         public bool OnForm()
         {
             return centerX >= LeftSide() && centerX<=RightSide() && centerY>=TopSide() && centerY<=DownSide();
- 
         }
 
         public bool Contains(int pointX, int pointY)
@@ -124,7 +119,6 @@ namespace FoolOrGeniusWinFormsApp.BallGames
         {
             var graphics = catchMeForm.CreateGraphics();
             var rectangle = new RectangleF(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
-          //  graphics.FillEllipse(brush, rectangle);
         }
     }
 }

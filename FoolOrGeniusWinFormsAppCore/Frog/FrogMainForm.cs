@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FoolOrGeniusWinFormsApp.Frog
 {
@@ -18,7 +10,7 @@ namespace FoolOrGeniusWinFormsApp.Frog
         public FrogMainForm()
         {
             InitializeComponent();
-            this.StartPosition=FormStartPosition.CenterScreen;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -37,7 +29,7 @@ namespace FoolOrGeniusWinFormsApp.Frog
                 }
                 else
                 {
-                    var result = MessageBox.Show("You can improve the result. Would you like to try again?","End of the game.",
+                    var result = MessageBox.Show("You can improve the result. Would you like to try again?", "End of the game.",
                         MessageBoxButtons.YesNo);
 
                     if (result == DialogResult.Yes)
@@ -47,15 +39,15 @@ namespace FoolOrGeniusWinFormsApp.Frog
                 }
             }
         }
-   
+
 
         private bool CanBetter(int moves)
         {
-            return moves == minMoves; 
+            return moves == minMoves;
         }
         private bool EndGame()
         {
- 
+
             if
                 (leftrPictureBox1.Location.X > emptyPictureBox.Location.X &&
                  leftrPictureBox2.Location.X > emptyPictureBox.Location.X &&
@@ -63,15 +55,15 @@ namespace FoolOrGeniusWinFormsApp.Frog
                  leftrPictureBox4.Location.X > emptyPictureBox.Location.X &&
                  emptyPictureBox.Location.X == startLocationXEmptyPictureBox)
             {
-                leftrPictureBox1.Enabled=false;
-                leftrPictureBox2.Enabled=false;
-                leftrPictureBox3.Enabled=false;
-                leftrPictureBox4.Enabled=false;
+                leftrPictureBox1.Enabled = false;
+                leftrPictureBox2.Enabled = false;
+                leftrPictureBox3.Enabled = false;
+                leftrPictureBox4.Enabled = false;
 
-                rightPictureBox1.Enabled=false;
-                rightPictureBox2.Enabled=false;
-                rightPictureBox3.Enabled=false;
-                rightPictureBox4.Enabled=false;
+                rightPictureBox1.Enabled = false;
+                rightPictureBox2.Enabled = false;
+                rightPictureBox3.Enabled = false;
+                rightPictureBox4.Enabled = false;
 
                 return true;
             }
@@ -99,6 +91,11 @@ namespace FoolOrGeniusWinFormsApp.Frog
         {
             MessageBox.Show(
                 "On the swamp, there are 8 frogs. The frogs dream of swapping places. Four frogs want to jump to the right, and four to the left. A frog can jump either to the adjacent empty lily pad, skip one frog, or jump backward. The goal of the game is to rearrange the frogs. The minimum number of moves is 24.");
+        }
+
+        private void FrogMainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

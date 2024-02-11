@@ -34,7 +34,7 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
             }
             else
             {
-                MessageBox.Show("если userFactory или ExistingUser равны null");
+                MessageBox.Show("UserFactory or ExistingUser are null");
                 return;
             }
             if (game2048Type != null)
@@ -43,7 +43,7 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
             }
             else
             {
-                MessageBox.Show("game2048Type равен null");
+                MessageBox.Show("Game2048Type is null");
 
                 return;
             }
