@@ -91,6 +91,7 @@
             // 
             // authorizationLabel
             // 
+            authorizationLabel.BackColor = System.Drawing.Color.FromArgb(1, 26, 39);
             authorizationLabel.Dock = System.Windows.Forms.DockStyle.Left;
             authorizationLabel.Font = new System.Drawing.Font("Times New Roman", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
             authorizationLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -119,7 +120,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = System.Drawing.Color.FromArgb(70, 8, 24);
+            panel1.BackColor = System.Drawing.Color.FromArgb(6, 56, 82);
             panel1.Controls.Add(authorizathionLabel);
             panel1.Controls.Add(userEmailField);
             panel1.Controls.Add(pictureBox5);
@@ -135,7 +136,7 @@
             panel1.Location = new System.Drawing.Point(0, 196);
             panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(726, 549);
+            panel1.Size = new System.Drawing.Size(726, 555);
             panel1.TabIndex = 13;
             panel1.Paint += panel1_Paint;
             panel1.MouseDown += panel1_MouseDown;
@@ -231,7 +232,7 @@
             // 
             // signUpButton
             // 
-            signUpButton.BackColor = System.Drawing.Color.FromArgb(8, 24, 70);
+            signUpButton.BackColor = System.Drawing.Color.FromArgb(1, 26, 39);
             signUpButton.Cursor = System.Windows.Forms.Cursors.Hand;
             signUpButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
             signUpButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Olive;
@@ -298,7 +299,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = System.Drawing.Color.FromArgb(8, 24, 70);
+            panel2.BackColor = System.Drawing.Color.FromArgb(1, 26, 39);
             panel2.Controls.Add(closeButton);
             panel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             panel2.Location = new System.Drawing.Point(664, 0);

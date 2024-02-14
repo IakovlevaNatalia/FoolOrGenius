@@ -97,12 +97,12 @@ namespace FoolOrGeniusWinFormsApp
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(8, 24, 70);
+            panel1.BackColor = Color.FromArgb(1, 26, 39);
             panel1.Controls.Add(closeButton);
             panel1.Controls.Add(questionNumberLabel);
             panel1.Location = new Point(-3, -3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(855, 212);
+            panel1.Size = new Size(713, 212);
             panel1.TabIndex = 5;
             // 
             // closeButton
@@ -142,7 +142,7 @@ namespace FoolOrGeniusWinFormsApp
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = Color.FromArgb(70, 8, 24);
+            BackColor = Color.FromArgb(6, 56, 82);
             ClientSize = new Size(708, 706);
             Controls.Add(solutionPictureBox);
             Controls.Add(questionPictureBox);

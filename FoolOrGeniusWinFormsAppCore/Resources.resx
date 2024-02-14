@@ -166,4 +166,49 @@
   <data name="yellowBird" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\yellowBird.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="2048" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\2048.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="baseball_glove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\baseball-glove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\frog.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frog_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\frog-.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frog_prince" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\frog-prince.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jester_hat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\jester-hat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ninja" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ninja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="frogsPair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\frogsPair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FrogWin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\FrogWin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\reed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reed2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\reed2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reed21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\swap.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reed211" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\reed21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="snail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\snail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\sword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

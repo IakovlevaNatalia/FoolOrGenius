@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using FoolOrGenius.Db;
 using FoolOrGeniusWinFormsApp._2048_Game;
 using FoolOrGeniusWinFormsApp.AngryBirds;
-using FoolOrGeniusWinFormsApp.BallGames;
 using FoolOrGeniusWinFormsApp.CatchMe;
 using FoolOrGeniusWinFormsApp.Firework;
+using FoolOrGeniusWinFormsApp.Frog;
 using FoolOrGeniusWinFormsApp.FruitNinja;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -20,8 +21,21 @@ namespace FoolOrGeniusWinFormsApp
         {
             InitializeComponent();
             this.db = db;
-            this.StartPosition = FormStartPosition.CenterScreen;
+
             this.gameService = gameService;
+
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Size = new Size(726, 748);
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.ControlBox = false;
+
+
+            this.startButton.Location = new Point(269, 514);
+
+            this.chooseGameLabel.Text = "Сhoose your favorite game";
+            this.chooseGameLabel.TextAlign = ContentAlignment.MiddleCenter;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
         }
 
         private void ChooseGame_Load(object sender, EventArgs e)
@@ -34,11 +48,6 @@ namespace FoolOrGeniusWinFormsApp
             ChooseSizeForm chooseSizeForm = new ChooseSizeForm();
             chooseSizeForm.ShowDialog();
             this.Hide();
-
-        }
-
-        private void FoolOrGeniusLabel_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -90,7 +99,43 @@ namespace FoolOrGeniusWinFormsApp
                 var angryBirds = Program.Services.GetRequiredService<AngryBirdsMainForm>();
                 angryBirds.ShowDialog();
             }
+
+            if (FrogRadioButton.Checked)
+            {
+                this.Hide();
+                var frogGame = Program.Services.GetRequiredService<FrogMainForm>();
+                frogGame.ShowDialog();
+            }
         }
 
+        private void authorizationLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chooseGamepanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void chooseGameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void startButton_MouseEnter(object sender, EventArgs e)
+        {
+            startButton.ForeColor = Color.Blue;
+        }
+
+        private void startButton_MouseLeave(object sender, EventArgs e)
+        {
+            startButton.ForeColor = Color.White;
+        }
     }
 }

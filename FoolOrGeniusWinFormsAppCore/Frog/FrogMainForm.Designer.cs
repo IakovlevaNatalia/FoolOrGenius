@@ -30,6 +30,7 @@ namespace FoolOrGeniusWinFormsApp.Frog
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrogMainForm));
             leftrPictureBox1 = new PictureBox();
             leftrPictureBox2 = new PictureBox();
             leftrPictureBox3 = new PictureBox();
@@ -43,6 +44,10 @@ namespace FoolOrGeniusWinFormsApp.Frog
             toolStripMenuItem1 = new ToolStripMenuItem();
             rulesToolStripMenuItem = new ToolStripMenuItem();
             scoreLabel = new Label();
+            label1 = new Label();
+            frogPairPictureBox = new PictureBox();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)leftrPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)leftrPictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)leftrPictureBox3).BeginInit();
@@ -53,6 +58,9 @@ namespace FoolOrGeniusWinFormsApp.Frog
             ((System.ComponentModel.ISupportInitialize)rightPictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)rightPictureBox4).BeginInit();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)frogPairPictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // leftrPictureBox1
@@ -174,17 +182,67 @@ namespace FoolOrGeniusWinFormsApp.Frog
             // scoreLabel
             // 
             scoreLabel.AutoSize = true;
-            scoreLabel.Location = new System.Drawing.Point(403, 341);
+            scoreLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            scoreLabel.ForeColor = System.Drawing.Color.FromArgb(0, 64, 0);
+            scoreLabel.Location = new System.Drawing.Point(604, 398);
             scoreLabel.Name = "scoreLabel";
-            scoreLabel.Size = new System.Drawing.Size(17, 20);
+            scoreLabel.Size = new System.Drawing.Size(35, 41);
             scoreLabel.TabIndex = 11;
             scoreLabel.Text = "0";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label1.ForeColor = System.Drawing.Color.FromArgb(0, 64, 0);
+            label1.Location = new System.Drawing.Point(299, 398);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(299, 41);
+            label1.TabIndex = 12;
+            label1.Text = "Ammount of jumps:";
+            // 
+            // frogPairPictureBox
+            // 
+            frogPairPictureBox.Image = (System.Drawing.Image)resources.GetObject("frogPairPictureBox.Image");
+            frogPairPictureBox.Location = new System.Drawing.Point(344, 242);
+            frogPairPictureBox.Name = "frogPairPictureBox";
+            frogPairPictureBox.Size = new System.Drawing.Size(265, 153);
+            frogPairPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            frogPairPictureBox.TabIndex = 14;
+            frogPairPictureBox.TabStop = false;
+            frogPairPictureBox.Click += pictureBox1_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Resources.reed;
+            pictureBox1.Location = new System.Drawing.Point(645, 230);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(345, 242);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 15;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Resources.reed2;
+            pictureBox2.Location = new System.Drawing.Point(0, 189);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(304, 271);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 16;
+            pictureBox2.TabStop = false;
             // 
             // FrogMainForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.LightSkyBlue;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new System.Drawing.Size(990, 448);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
+            Controls.Add(frogPairPictureBox);
+            Controls.Add(label1);
             Controls.Add(scoreLabel);
             Controls.Add(rightPictureBox4);
             Controls.Add(rightPictureBox3);
@@ -196,9 +254,12 @@ namespace FoolOrGeniusWinFormsApp.Frog
             Controls.Add(leftrPictureBox2);
             Controls.Add(leftrPictureBox1);
             Controls.Add(menuStrip1);
+            ForeColor = System.Drawing.Color.FromArgb(192, 192, 0);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MainMenuStrip = menuStrip1;
             Name = "FrogMainForm";
             Text = "Frog";
+            Load += FrogMainForm_Load;
             ((System.ComponentModel.ISupportInitialize)leftrPictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)leftrPictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)leftrPictureBox3).EndInit();
@@ -210,6 +271,9 @@ namespace FoolOrGeniusWinFormsApp.Frog
             ((System.ComponentModel.ISupportInitialize)rightPictureBox4).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)frogPairPictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -229,5 +293,10 @@ namespace FoolOrGeniusWinFormsApp.Frog
         private ToolStripMenuItem toolStripMenuItem1;
         private ToolStripMenuItem rulesToolStripMenuItem;
         private Label scoreLabel;
+        private Label label1;
+        private Label label2;
+        private PictureBox frogPairPictureBox;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

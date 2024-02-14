@@ -5,7 +5,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-
 namespace FoolOrGeniusWinFormsApp._2048_Game
 {
     public partial class ChooseSizeForm : Form
@@ -21,8 +20,8 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                 FourByFourRadioButton, FiveByFiveRadioButton, SixBySixRadioButton, SevenBySevenRadioButton
             };
             this.StartPosition = FormStartPosition.CenterScreen;
-
         }
+
         private void StartButton_Click(object sender, EventArgs e)
         {
 

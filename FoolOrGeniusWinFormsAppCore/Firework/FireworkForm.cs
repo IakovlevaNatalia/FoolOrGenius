@@ -34,5 +34,6 @@ namespace FoolOrGeniusWinFormsApp.Firework
             ball.TopReached += Ball_TopReached;
             ball.Start();
         }
+
     }
 }

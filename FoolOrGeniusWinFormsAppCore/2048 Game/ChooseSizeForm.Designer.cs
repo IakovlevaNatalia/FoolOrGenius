@@ -106,7 +106,7 @@
             // 
             // StartButton
             // 
-            StartButton.BackColor = System.Drawing.Color.FromArgb(8, 24, 70);
+            StartButton.BackColor = System.Drawing.Color.FromArgb(1, 26, 39);
             StartButton.Cursor = System.Windows.Forms.Cursors.Hand;
             StartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             StartButton.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
@@ -123,7 +123,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = System.Drawing.Color.FromArgb(70, 8, 24);
+            panel1.BackColor = System.Drawing.Color.FromArgb(6, 56, 82);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(StartButton);
             panel1.Controls.Add(FourByFourRadioButton);
@@ -137,7 +137,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = System.Drawing.Color.FromArgb(8, 24, 70);
+            panel2.BackColor = System.Drawing.Color.FromArgb(1, 26, 39);
             panel2.Controls.Add(closeButton);
             panel2.Controls.Add(label1);
             panel2.Location = new System.Drawing.Point(0, 0);
