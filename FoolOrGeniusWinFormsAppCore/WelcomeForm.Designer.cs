@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             userLoginField = new System.Windows.Forms.TextBox();
-            startButton = new System.Windows.Forms.Button();
-            closeButton = new System.Windows.Forms.Label();
-            panel1 = new System.Windows.Forms.Panel();
-            authorizationLabel = new System.Windows.Forms.Label();
             userPasswordField = new System.Windows.Forms.TextBox();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             RegisterLabel = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
-            panel1.SuspendLayout();
+            startButton = new System.Windows.Forms.Button();
+            closeButton = new System.Windows.Forms.Label();
+            authorizationLabel = new System.Windows.Forms.Label();
+            panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // userLoginField
@@ -56,68 +55,6 @@
             userLoginField.TextChanged += userNameTextBox_TextChanged;
             userLoginField.Enter += userLogin_Enter;
             userLoginField.Leave += userLogin_Leave;
-            // 
-            // startButton
-            // 
-            startButton.BackColor = System.Drawing.Color.FromArgb(8, 24, 70);
-            startButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            startButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            startButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Olive;
-            startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            startButton.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
-            startButton.ForeColor = System.Drawing.Color.White;
-            startButton.Location = new System.Drawing.Point(269, 514);
-            startButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            startButton.Name = "startButton";
-            startButton.Size = new System.Drawing.Size(222, 78);
-            startButton.TabIndex = 3;
-            startButton.Text = "Start";
-            startButton.UseVisualStyleBackColor = false;
-            startButton.Click += startButton_Click;
-            startButton.MouseEnter += startButton_MouseEnter;
-            startButton.MouseLeave += startButton_MouseLeave;
-            // 
-            // closeButton
-            // 
-            closeButton.AutoSize = true;
-            closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
-            closeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            closeButton.Location = new System.Drawing.Point(677, 16);
-            closeButton.Name = "closeButton";
-            closeButton.Size = new System.Drawing.Size(37, 36);
-            closeButton.TabIndex = 5;
-            closeButton.Text = "X";
-            closeButton.Click += closeButton_Click;
-            closeButton.MouseEnter += closeButton_MouseEnter;
-            closeButton.MouseLeave += closeButton_MouseLeave;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = System.Drawing.Color.FromArgb(8, 24, 70);
-            panel1.Controls.Add(authorizationLabel);
-            panel1.Controls.Add(closeButton);
-            panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            panel1.Location = new System.Drawing.Point(0, 0);
-            panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(726, 204);
-            panel1.TabIndex = 7;
-            // 
-            // authorizationLabel
-            // 
-            authorizationLabel.Dock = System.Windows.Forms.DockStyle.Left;
-            authorizationLabel.Font = new System.Drawing.Font("Times New Roman", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
-            authorizationLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            authorizationLabel.Location = new System.Drawing.Point(0, 0);
-            authorizationLabel.Name = "authorizationLabel";
-            authorizationLabel.Size = new System.Drawing.Size(667, 204);
-            authorizationLabel.TabIndex = 6;
-            authorizationLabel.Text = "Authorization";
-            authorizationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            authorizationLabel.Click += authorizationLabel_Click;
-            authorizationLabel.MouseDown += authorizationLabel_MouseDown;
-            authorizationLabel.MouseMove += authorizationLabel_MouseMove;
             // 
             // userPasswordField
             // 
@@ -155,7 +92,6 @@
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // RegisterLabel
             // 
@@ -171,23 +107,75 @@
             RegisterLabel.MouseEnter += RegisterLabel_MouseEnter;
             RegisterLabel.MouseLeave += RegisterLabel_MouseLeave;
             // 
-            // label1
+            // startButton
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(580, 625);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(56, 20);
-            label1.TabIndex = 11;
-            label1.Text = "Шарик";
-            label1.Click += label1_Click_1;
+            startButton.BackColor = System.Drawing.Color.FromArgb(1, 26, 39);
+            startButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            startButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            startButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Olive;
+            startButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            startButton.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            startButton.ForeColor = System.Drawing.Color.White;
+            startButton.Location = new System.Drawing.Point(269, 514);
+            startButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            startButton.Name = "startButton";
+            startButton.Size = new System.Drawing.Size(222, 78);
+            startButton.TabIndex = 3;
+            startButton.Text = "Start";
+            startButton.UseVisualStyleBackColor = false;
+            startButton.Click += startButton_Click;
+            startButton.MouseEnter += startButton_MouseEnter;
+            startButton.MouseLeave += startButton_MouseLeave;
+            // 
+            // closeButton
+            // 
+            closeButton.AutoSize = true;
+            closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            closeButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            closeButton.Location = new System.Drawing.Point(677, 18);
+            closeButton.Name = "closeButton";
+            closeButton.Size = new System.Drawing.Size(37, 36);
+            closeButton.TabIndex = 5;
+            closeButton.Text = "X";
+            closeButton.Click += closeButton_Click;
+            closeButton.MouseEnter += closeButton_MouseEnter;
+            closeButton.MouseLeave += closeButton_MouseLeave;
+            // 
+            // authorizationLabel
+            // 
+            authorizationLabel.BackColor = System.Drawing.Color.FromArgb(1, 26, 39);
+            authorizationLabel.Dock = System.Windows.Forms.DockStyle.Left;
+            authorizationLabel.Font = new System.Drawing.Font("Times New Roman", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 204);
+            authorizationLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            authorizationLabel.Location = new System.Drawing.Point(0, 0);
+            authorizationLabel.Name = "authorizationLabel";
+            authorizationLabel.Size = new System.Drawing.Size(665, 204);
+            authorizationLabel.TabIndex = 6;
+            authorizationLabel.Text = "Authorization";
+            authorizationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            authorizationLabel.Click += authorizationLabel_Click;
+            authorizationLabel.MouseDown += authorizationLabel_MouseDown;
+            authorizationLabel.MouseMove += authorizationLabel_MouseMove;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = System.Drawing.Color.FromArgb(1, 26, 39);
+            panel1.Controls.Add(authorizationLabel);
+            panel1.Controls.Add(closeButton);
+            panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            panel1.Location = new System.Drawing.Point(0, 0);
+            panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(726, 204);
+            panel1.TabIndex = 7;
             // 
             // WelcomeForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.FromArgb(70, 8, 24);
+            BackColor = System.Drawing.Color.FromArgb(6, 56, 82);
             ClientSize = new System.Drawing.Size(726, 748);
-            Controls.Add(label1);
             Controls.Add(RegisterLabel);
             Controls.Add(userPasswordField);
             Controls.Add(pictureBox2);
@@ -201,24 +189,23 @@
             Text = "WelcomeForm";
             MouseDown += WelcomeForm_MouseDown;
             MouseMove += WelcomeForm_MouseMove;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         public System.Windows.Forms.TextBox userLoginField;
-        private System.Windows.Forms.Button startButton;
-        private System.Windows.Forms.Label closeButton;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label authorizationLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox userPasswordField;
         private System.Windows.Forms.Label RegisterLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.Label closeButton;
+        private System.Windows.Forms.Label authorizationLabel;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace FoolOrGeniusWinFormsApp.Frog
@@ -11,6 +12,7 @@ namespace FoolOrGeniusWinFormsApp.Frog
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -26,6 +28,7 @@ namespace FoolOrGeniusWinFormsApp.Frog
                 if (CanBetter(Convert.ToInt32(scoreLabel.Text)))
                 {
                     MessageBox.Show("You won with the minimum number of moves");
+
                 }
                 else
                 {
@@ -39,8 +42,6 @@ namespace FoolOrGeniusWinFormsApp.Frog
                 }
             }
         }
-
-
         private bool CanBetter(int moves)
         {
             return moves == minMoves;
@@ -95,6 +96,17 @@ namespace FoolOrGeniusWinFormsApp.Frog
 
         private void FrogMainForm_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            var frogsPairPictureBox = new PictureBox();
+            frogsPairPictureBox.Image = Resources.frogsPair;
+            //frogsPairPictureBox.BackColor = Color.LightSkyBlue;
+            frogsPairPictureBox.Size = new Size(100, 100);
+            frogsPairPictureBox.BackColor = Color.Transparent;
+            this.Controls.Add(frogsPairPictureBox);
 
         }
     }

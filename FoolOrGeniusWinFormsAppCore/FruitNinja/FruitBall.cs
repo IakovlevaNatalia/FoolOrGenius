@@ -24,7 +24,7 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
         }
         protected override void Draw(Brush brush)
         {
-            var graphics = catchMeForm.CreateGraphics();
+            var graphics = form.CreateGraphics();
             var rectangle = new RectangleF(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
             graphics.FillEllipse(brush, rectangle);
         }

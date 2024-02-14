@@ -5,9 +5,6 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
 using FoolOrGenius.Db;
 using FoolOrGenius.Db.Models;
-using FoolOrGeniusWinFormsApp.AngryBirds;
-using FoolOrGeniusWinFormsApp.Frog;
-using FoolOrGeniusWinFormsApp.FruitNinja;
 
 namespace FoolOrGeniusWinFormsApp
 {
@@ -36,6 +33,11 @@ namespace FoolOrGeniusWinFormsApp
             this.mainForm = mainForm;
 
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.ControlBox = false;
+            this.Text = "";
+
+
         }
 
         private void userNameTextBox_TextChanged(object sender, EventArgs e)
@@ -50,11 +52,6 @@ namespace FoolOrGeniusWinFormsApp
         private void restartToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Restart();
-        }
-
-        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void addNewQuestionsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -182,7 +179,7 @@ namespace FoolOrGeniusWinFormsApp
 
         private void RegisterLabel_MouseEnter(object sender, EventArgs e)
         {
-            RegisterLabel.ForeColor = Color.Blue;
+            RegisterLabel.ForeColor = Color.FromArgb(1, 26, 39);
         }
 
         private void RegisterLabel_MouseLeave(object sender, EventArgs e)
@@ -199,8 +196,6 @@ namespace FoolOrGeniusWinFormsApp
             return db.User.FirstOrDefault(x => x.Login == login && x.Password == password);
 
         }
-
-
         private void startButton_Click(object sender, EventArgs e)
         {
             var login = userLoginField.Text;
@@ -213,7 +208,6 @@ namespace FoolOrGeniusWinFormsApp
                 if (existingUser != null)
                 {
                     userFactory.ExistingUser = existingUser;
-
                     MessageBox.Show(userLoginField.Text + " , welcome to the game!");
 
                     this.Hide();
@@ -231,19 +225,5 @@ namespace FoolOrGeniusWinFormsApp
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-            this.Hide();
-            //var frogsGame = Program.Services.GetRequiredService<FrogMainForm>();
-            //frogsGame.ShowDialog();
-            var angryBirds = Program.Services.GetRequiredService<AngryBirdsMainForm>();
-            angryBirds.ShowDialog();
-
-        }
     }
 }

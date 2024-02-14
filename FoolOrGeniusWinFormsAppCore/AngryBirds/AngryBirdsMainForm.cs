@@ -12,7 +12,7 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
         private PictureBox birdPictureBox;
         private PictureBox pigPictureBox;
         private int collision = 0;
- 
+
         Timer timer = new Timer();
 
         public AngryBirdsMainForm()
@@ -26,30 +26,30 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
             PictureBox backgroundPictureBox = new PictureBox();
             backgroundPictureBox.Size = this.ClientSize;
             backgroundPictureBox.Location = new Point(0, 0);
-            backgroundPictureBox.Image = Resources.background; 
+            backgroundPictureBox.Image = Resources.background;
             backgroundPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            backgroundPictureBox.SendToBack(); 
+            backgroundPictureBox.SendToBack();
             backgroundPictureBox.Parent = this;
             backgroundPictureBox.MouseDown += AngryBirdsMainForm_MouseDown;
 
             birdPictureBox = new PictureBox();
-            birdPictureBox.Size = new Size(60, 60); 
-            birdPictureBox.BackColor = Color.Transparent; 
+            birdPictureBox.Size = new Size(60, 60);
+            birdPictureBox.BackColor = Color.Transparent;
             birdPictureBox.Image = Resources.whiteBird;
-            birdPictureBox.SizeMode=PictureBoxSizeMode.StretchImage;
+            birdPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             birdPictureBox.Location = new Point(0, this.ClientSize.Height - birdPictureBox.Height);
             birdPictureBox.Parent = backgroundPictureBox;
 
 
             pigPictureBox = new PictureBox();
-            pigPictureBox.Size = new Size(60, 60); 
+            pigPictureBox.Size = new Size(60, 60);
             pigPictureBox.BackColor = Color.Transparent;
             pigPictureBox.Image = Resources.pig;
             pigPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             pigPictureBox.Parent = backgroundPictureBox;
 
 
-            ScoreLabel.BackColor=Color.Transparent;
+            ScoreLabel.BackColor = Color.Transparent;
             ScoreLabel.Parent = backgroundPictureBox;
             ScoreLabel.ForeColor = Color.FromArgb(32, 92, 8);
             ScoreLabel.Font = new Font(ScoreLabel.Font.FontFamily, 16, FontStyle.Bold);
@@ -79,7 +79,7 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
         private void AngryBirdsMainForm_Shown(object sender, EventArgs e)
         {
             this.ScoreLabel.Text = "0";
-            
+
             CreateNewBird();
             CreateNewPig();
         }
@@ -111,8 +111,8 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
             bird.SetVelocity(e.X, e.Y);
             timer.Start();
             bird.Start();
-           
+
         }
-       
+
     }
 }

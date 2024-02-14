@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FoolOrGeniusWinFormsApp.FruitNinja
 {
-
     public partial class FruitNinjaForm : Form
     {
         private static Random random = new Random();
@@ -16,11 +17,18 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
         public FruitNinjaForm()
         {
             InitializeComponent();
+            InitializeCustomCursor();
             this.Size = new Size(800, 600);
             this.StartPosition = FormStartPosition.CenterScreen;
 
         }
+        private void InitializeCustomCursor()
+        {
 
+                Bitmap customImage = new Bitmap(Resources.sword, new Size(32, 32)); 
+                Cursor customCursor = new Cursor(customImage.GetHicon());
+                this.Cursor = customCursor;
+        }
         private void FruitNinjaForm_Load(object sender, EventArgs e)
         {
             timer.Interval = 20;
@@ -29,10 +37,10 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
 
             CreateBalls(5);
         }
-       
+
         private void FruitNinjaForm_MouseMove(object sender, MouseEventArgs e)
         {
-            foreach (var fruit in fruits)
+            foreach (var fruit in fruits.ToList())
             {
                 if (fruit.IsMovable() && fruit.Contains(e.X, e.Y))
                 {
@@ -56,10 +64,9 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
                 }
             }
         }
-
         private void Win()
         {
-            
+
             MessageBox.Show("Congratulations! You caught all balls and won the game!");
         }
         private void EndGame()
@@ -94,11 +101,23 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
 
             timer.Interval = random.Next(2000, 5000);
         }
-
         private void rulesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
                 "Catch as many fruits as possible. Avoid the bomb, which is a black-colored sphere. Score points. Good luck!");
+        }
+
+        private void restartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure you want to restart the game?", "Restart Game",
+                MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                var fruitNinjaForm = Program.Services.GetRequiredService<FruitNinjaForm>();
+                fruitNinjaForm.ShowDialog();
+                this.Hide();
+            }
         }
     }
 }
