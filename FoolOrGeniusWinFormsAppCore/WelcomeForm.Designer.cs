@@ -37,6 +37,7 @@
             closeButton = new System.Windows.Forms.Label();
             authorizationLabel = new System.Windows.Forms.Label();
             panel1 = new System.Windows.Forms.Panel();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -170,12 +171,23 @@
             panel1.Size = new System.Drawing.Size(726, 204);
             panel1.TabIndex = 7;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(606, 602);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(50, 20);
+            label1.TabIndex = 11;
+            label1.Text = "label1";
+            label1.Click += label1_Click;
+            // 
             // WelcomeForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(6, 56, 82);
             ClientSize = new System.Drawing.Size(726, 748);
+            Controls.Add(label1);
             Controls.Add(RegisterLabel);
             Controls.Add(userPasswordField);
             Controls.Add(pictureBox2);
@@ -207,5 +219,6 @@
         private System.Windows.Forms.Label closeButton;
         private System.Windows.Forms.Label authorizationLabel;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }

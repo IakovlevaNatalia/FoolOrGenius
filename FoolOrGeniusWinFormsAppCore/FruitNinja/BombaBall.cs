@@ -15,5 +15,7 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
         {
             brush = Brushes.Black;
         }
+
+        
     }
 }
