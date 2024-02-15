@@ -54,7 +54,7 @@
             menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             menuStrip1.Location = new System.Drawing.Point(0, 28);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new System.Drawing.Size(800, 24);
+            menuStrip1.Size = new System.Drawing.Size(1008, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -64,7 +64,7 @@
             menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { rulesToolStripMenuItem, toolStripMenuItem1, toolStripMenuItem2, restartToolStripMenuItem });
             menuStrip2.Location = new System.Drawing.Point(0, 0);
             menuStrip2.Name = "menuStrip2";
-            menuStrip2.Size = new System.Drawing.Size(800, 28);
+            menuStrip2.Size = new System.Drawing.Size(1008, 28);
             menuStrip2.TabIndex = 2;
             menuStrip2.Text = "menuStrip2";
             // 
@@ -97,7 +97,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            ClientSize = new System.Drawing.Size(800, 450);
+            ClientSize = new System.Drawing.Size(1008, 549);
             Controls.Add(scoreLabel);
             Controls.Add(menuStrip1);
             Controls.Add(menuStrip2);
@@ -105,6 +105,7 @@
             Name = "FruitNinjaForm";
             Text = "FruitNinjaForm";
             Load += FruitNinjaForm_Load;
+            MouseClick += FruitNinjaForm_MouseClick;
             MouseMove += FruitNinjaForm_MouseMove;
             menuStrip2.ResumeLayout(false);
             menuStrip2.PerformLayout();

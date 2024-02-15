@@ -208,6 +208,9 @@
   <data name="snail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\snail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fruitNinjaBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\fruitNinjaBackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\sword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

@@ -173,6 +173,16 @@ namespace FoolOrGeniusWinFormsApp {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fruitNinjaBackground {
+            get {
+                object obj = ResourceManager.GetObject("fruitNinjaBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icognito {
             get {
                 object obj = ResourceManager.GetObject("icognito", resourceCulture);

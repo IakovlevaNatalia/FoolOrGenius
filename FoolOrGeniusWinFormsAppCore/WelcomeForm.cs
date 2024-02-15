@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
 using FoolOrGenius.Db;
 using FoolOrGenius.Db.Models;
+using FoolOrGeniusWinFormsApp.FruitNinja;
 
 namespace FoolOrGeniusWinFormsApp
 {
@@ -225,5 +226,11 @@ namespace FoolOrGeniusWinFormsApp
             }
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FruitNinjaForm form = Program.Services.GetRequiredService<FruitNinjaForm>();
+            form.Show();
+        }
     }
 }
