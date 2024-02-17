@@ -45,7 +45,7 @@ namespace FoolOrGeniusWinFormsApp.BallGames
         }
         public virtual void Move()
         {
-            ClearCatchMe();
+            Clear();
             HandleEdgeCollision();
             Go();
             Show();
@@ -62,6 +62,7 @@ namespace FoolOrGeniusWinFormsApp.BallGames
         public int TopSide()
         {
             return radius;
+
         }
         public int DownSide()
         {
@@ -79,6 +80,7 @@ namespace FoolOrGeniusWinFormsApp.BallGames
             {
                 vy = -vy; 
             }
+
         }
         public virtual void Show()
         {
@@ -92,7 +94,7 @@ namespace FoolOrGeniusWinFormsApp.BallGames
             centerY += vy;
         }
 
-        public void ClearCatchMe()
+        public virtual void Clear()
         {
             var brush = new SolidBrush(form.BackColor);
             Draw(brush);
@@ -117,7 +119,7 @@ namespace FoolOrGeniusWinFormsApp.BallGames
             var dy=centerY-other.centerY;
            return dx*dx+dy*dy<=(radius+other.radius)* (radius + other.radius);
         }
-        protected virtual void Draw(Brush brush)
+        public virtual void Draw(Brush brush)
         {
             var graphics = form.CreateGraphics();
             var rectangle = new RectangleF(centerX - radius, centerY - radius, 2 * radius, 2 * radius);

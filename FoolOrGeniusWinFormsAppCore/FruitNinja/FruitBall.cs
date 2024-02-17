@@ -1,46 +1,63 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 using FoolOrGeniusWinFormsApp.BallGames;
 
 namespace FoolOrGeniusWinFormsApp.FruitNinja
 {
     public class FruitBall : RandomMoveBall
-
     {
         private float g = 0.2f;
         protected Brush brush;
-        private float speed = 5.0f;
-        private float originalVelocity;
-        private Timer slowdownTimer = new Timer();
+        private Graphics graphics;
         private bool isSlowedDown = false;
-        private const int slowdownDuration = 5000; // 5 секунд в миллисекундах
-
-
+        public bool IsSliced { get; set; }
         public FruitBall(Form form) : base(form)
         {
             brush = new SolidBrush(Color.FromArgb(random.Next(256), random.Next(256), random.Next(256)));
-            //radius = 20;
-            radius = random.Next(10, 30);
+            radius = random.Next(10, 35);
             centerY = form.ClientSize.Height - radius;
             vy = (float)random.NextDouble() * -6 - 7;
-            originalVelocity = (float)random.NextDouble() * -6 - 7;
-           // decreaseVelosity = originalVelocity - 2.0f;
 
+            graphics = form.CreateGraphics();
         }
 
         public override void Show()
         {
             Draw(brush);
         }
-        protected override void Draw(Brush brush)
+
+        public override void Clear()
         {
-            var graphics = form.CreateGraphics();
-            var rectangle = new RectangleF(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
-            graphics.FillEllipse(brush, rectangle);
+            if (IsSliced)
+            {
+                var whiteBrush = Brushes.White;
+
+                DrawSliced(whiteBrush);
+            }
+            else
+            {
+                base.Clear();
+            }
         }
 
+        public override void Draw(Brush brush)
+        {
+            if (brush == null)
+            {
+                return;
+            }
+
+            var rectangle = new RectangleF(centerX - radius, centerY - radius, 2 * radius, 2 * radius);
+
+            if (IsSliced)
+            {
+                DrawSliced(brush);
+            }
+            else
+            {
+                graphics.FillEllipse(brush, rectangle);
+            }
+        }
         protected override void Go()
         {
             base.Go();
@@ -56,24 +73,65 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
         {
             if (!isSlowedDown)
             {
-                vy = 0.01f; // Уменьшаем вертикальную скорость
-                vx = 0.01f; // Уменьшаем горизонтальную скорость
+                vy = 0.01f; 
+                vx = 0.01f; 
 
                 isSlowedDown = true;
 
-                slowdownTimer.Start();
             }
         }
-
         public void RestoreSpeed()
         {
             vy = (float)random.NextDouble() * -6 - 7;
             isSlowedDown =false;
         }
 
-        public void SetSlowdown()
+        private void DrawSliced(Brush brush)
         {
-            slowdownTimer.Start();
+            var sliceWidth = 10; 
+            var lineWidth = 10;
+
+           var firstHalf = new Rectangle((int)centerX - radius - sliceWidth / 2, (int)centerY - radius, radius + sliceWidth / 2, radius * 2);
+            graphics.FillPie(brush, firstHalf, (float)45, 180);
+
+           var secondHalf = new Rectangle((int)centerX - radius + sliceWidth / 2, (int)centerY - radius, radius + sliceWidth / 2, radius * 2);
+            graphics.FillPie(brush, secondHalf, 225, 180);
+
+            var linePen = new Pen(Color.Transparent, lineWidth);
+            graphics.DrawLine(linePen, (int)centerX - radius - sliceWidth / 2, (int)centerY, (int)centerX + radius + sliceWidth / 2, (int)centerY);
+        }
+
+        public void SetSliced()
+        {
+            IsSliced = true;
+
+            vx = 0f;
+            vy = 1f;
+
+        }
+
+        public override void Move()
+        {
+            base.Move();
+
+            vy += g;
+        }
+
+        protected override void HandleEdgeCollision()
+        {
+            if (IsSliced)
+            {
+                if (centerY <= 0 || centerY + radius > form.ClientSize.Height)
+                {
+                    Stop();
+
+                    brush = Brushes.White;
+                }
+            }
+            else
+            {
+                base.HandleEdgeCollision();
+            }
         }
     }
 }

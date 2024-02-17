@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -26,7 +27,8 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
 
         private Timer slowdownTimer = new Timer();
         private bool isSlowedDown = false;
-        private const int slowdownDuration = 5000; // 5 секунд в миллисекундах
+        private const int slowdownDuration = 5000; 
+        private Brush brush;
 
         public FruitNinjaForm()
         {
@@ -43,8 +45,6 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
 
             slowdownTimer.Interval = slowdownDuration;
             slowdownTimer.Tick += SlowdownTimer_Tick;
-
-
         }
         private void LineDisappearTimer_Tick(object sender, EventArgs e)
         {
@@ -73,14 +73,13 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
 
         private void MainForm_Paint(object sender, PaintEventArgs e)
         {
-            //if (points.Count > 1)
-            //{
-            //    e.Graphics.DrawCurve(pen, points.ToArray(), tension: 0f);
-            //}
 
-            if (drawing && points.Count > 1)
+            foreach (var fruit in fruits)
             {
-                e.Graphics.DrawCurve(pen, points.ToArray(), tension: 0f);
+                if (!fruit.IsSliced)
+                {
+                    fruit.Draw(brush);
+                }
             }
         }
 
@@ -120,13 +119,13 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
         }
     
 
-           private void FruitNinjaForm_Load(object sender, EventArgs e)
+        private void FruitNinjaForm_Load(object sender, EventArgs e)
         {
             timer.Interval = 20;
             timer.Tick += Timer_Tick;
             timer.Start();
 
-            bananaTimer.Interval = 12000; // Интервал в миллисекундах (12секунд в данном примере)
+            bananaTimer.Interval = 12000; 
             bananaTimer.Tick += BananaTimer_Tick;
             bananaTimer.Start();
 
@@ -139,8 +138,7 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
             BananaFruitBall bananaBall = new BananaFruitBall(this);
             fruits.Add(bananaBall);
             bananaBall.Start();
-            bananaBall.SetSlowdown(fruits.OfType<FruitBall>());
-        }
+       }
 
         private void BananaTimer_Tick(object sender, EventArgs e)
         {
@@ -150,20 +148,14 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
             {
                 CreateBananaBall();
             }
-            else if (!bananaBall.IsMovable())
-            {
-                // Если существующий экземпляр BananaFruitBall не двигается (остановлен), запустите его заново
-                bananaBall.Start();
-            }
         }
 
-        private void FruitNinjaForm_MouseMove(object sender, MouseEventArgs e)
+       private void FruitNinjaForm_MouseMove(object sender, MouseEventArgs e)
         {
             foreach (var fruit in fruits.ToList())
             {
-                if (fruit.IsMovable() && fruit.Contains(e.X, e.Y))
+                if (fruit.IsMovable() && fruit.Contains(e.X, e.Y) && !fruit.IsSliced)
                 {
-                    fruit.Stop();
 
                     if (fruit is BombaBall)
                     {
@@ -171,34 +163,42 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
                         return;
                     }
 
-                    fruit.ClearCatchMe();
+                    fruit.Clear();
                     caughtBallsCount++;
 
-                    if (caughtBallsCount == 20)
+                    if (caughtBallsCount == 2000)
                     {
                         Win();
                         fruit.Stop();
                     }
+
                     scoreLabel.Text = (Convert.ToInt32(scoreLabel.Text) + 1).ToString();
 
                     if (fruit is BananaFruitBall)
                     {
-                        // Если касание с BananaFruitBall, активируем замедление
                         if (!isSlowedDown)
                         {
                             isSlowedDown = true;
                             slowdownTimer.Start();
 
-                            // Замедлить скорость всех обычных шаров
+                            fruit.SetSliced(); 
+
                             foreach (var otherFruit in fruits.OfType<FruitBall>())
                             {
                                 otherFruit.DecreaseVelocity();
                             }
                         }
                     }
+                    else
+                    {
+                        fruit.SetSliced(); 
+                    }
+
+                    fruits.Remove(fruit);
                 }
             }
         }
+
         private void Win()
         {
 
@@ -226,56 +226,7 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            //for (int i = 0; i < random.Next(4, 10); i++)
-            //{
-            //    //var bombNumber = random.Next(5);
-            //    //var ball = bombNumber == 4 ? new BombaBall(this) : new FruitBall(this);
-            //    var randomNumber = random.Next(101);
-            //    FruitBall fruitBall;
-
-            //    if (randomNumber < 10)
-            //    {
-            //        fruitBall = new BananaFruitBall(this);
-            //    }
-            //    else if (randomNumber < 10 + 15)
-            //    {
-            //        fruitBall = new BombaBall(this);
-            //    }
-            //    else
-            //    {
-            //        fruitBall = new FruitBall(this);
-            //    }
-            //    fruits.Add(fruitBall);
-            //    fruitBall.Start();
-            //}
-
-            //timer.Interval = random.Next(2000, 5000);
-
-            // Далее, вы можете продолжить создание других шаров в соответствии с вашей логикой
-            //for (int i = 0; i < random.Next(4, 7); i++)
-            //{
-            //    int randomNumber = random.Next(101);
-            //    FruitBall fruitBall;
-
-            //    if (randomNumber < 10)
-            //    {
-            //        // Пропускаем создание нового BananaFruitBall, так как он уже есть на форме
-            //        continue;
-            //    }
-            //    else if (randomNumber < 10 + 5)
-            //    {
-            //        fruitBall = new BombaBall(this);
-            //    }
-            //    else
-            //    {
-            //        fruitBall = new FruitBall(this);
-            //    }
-
-            //    fruits.Add(fruitBall);
-            //    fruitBall.Start();
-            //}
-
-            //timer.Interval = random.Next(2000, 5000);
+           
             for (int i = 0; i < random.Next(4, 7); i++)
             {
                 int randomNumber = random.Next(101);
@@ -288,7 +239,6 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
                         fruitBall = new BananaFruitBall(this);
                         fruits.Add(fruitBall);
                         fruitBall.Start();
-                        fruitBall.SetSlowdown(); // Добавьте вызов SetSlowdown() для BananaFruitBall
                     }
                 }
                 else if (randomNumber < 10 + 5)
@@ -302,7 +252,6 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
                     fruitBall = new FruitBall(this);
                     fruits.Add(fruitBall);
                     fruitBall.Start();
-                    fruitBall.SetSlowdown(); // Добавьте вызов SetSlowdown() для обычных FruitBall
                 }
             }
 
@@ -343,6 +292,7 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
             isSlowedDown = false;
             slowdownTimer.Stop();
         }
+
 
     }
 }
