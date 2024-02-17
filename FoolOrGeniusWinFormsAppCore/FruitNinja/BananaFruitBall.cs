@@ -14,22 +14,9 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
         {
             brush = Brushes.Yellow;
             radius = 40;
+            
             centerY = form.ClientSize.Height - radius;
             // vy = (float)random.NextDouble() * -6 - 7;
         }
-
-        public  void SetSlowdown(IEnumerable<FruitBall> otherFruits)
-        {
-            // Реализация замедления для BananaFruitBall
-            // Например, уменьшение скорости движения
-            //this.vel= 2; // Пример значения скорости для замедления
-            foreach (var fruit in otherFruits)
-            {
-                //fruit.DecreaseVelocity();
-                fruit.SetSlowdown();
-            }
-        }
-
-       
     }
 }

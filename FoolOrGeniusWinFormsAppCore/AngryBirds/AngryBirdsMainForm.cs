@@ -88,7 +88,7 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
         {
             if (piggy != null)
             {
-                piggy.ClearCatchMe();
+                piggy.Clear();
             }
             piggy = new Piggy(this, pigPictureBox);
             piggy.Show();

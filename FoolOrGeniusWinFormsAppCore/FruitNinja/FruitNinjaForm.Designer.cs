@@ -96,7 +96,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            BackColor = System.Drawing.Color.White;
             ClientSize = new System.Drawing.Size(1008, 549);
             Controls.Add(scoreLabel);
             Controls.Add(menuStrip1);

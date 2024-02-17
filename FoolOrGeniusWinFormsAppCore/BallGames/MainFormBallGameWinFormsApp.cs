@@ -44,7 +44,7 @@ namespace FoolOrGeniusWinFormsApp.BallGames
         {
             foreach (var ball in moveBalls)
             {
-                ball.ClearCatchMe();
+                ball.Clear();
             }
 
             clearButton.Enabled = false;

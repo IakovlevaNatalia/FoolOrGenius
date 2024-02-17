@@ -19,7 +19,7 @@ namespace FoolOrGeniusWinFormsApp.Firework
             if (vy > 0)
             {
                 Stop();
-                ClearCatchMe();
+                Clear();
                 TopReached?.Invoke(this, new TopReachedEventArgs(centerX, centerY));
             }
         }
