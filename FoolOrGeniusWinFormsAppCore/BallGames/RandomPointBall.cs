@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 
-
 namespace FoolOrGeniusWinFormsApp.BallGames
 {
    public class RandomPointBall:Ball

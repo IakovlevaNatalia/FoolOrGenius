@@ -28,14 +28,11 @@ namespace FoolOrGeniusWinFormsApp
             this.Size = new Size(726, 748);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.ControlBox = false;
-
-
             this.startButton.Location = new Point(269, 514);
-
             this.chooseGameLabel.Text = "Сhoose your favorite game";
             this.chooseGameLabel.TextAlign = ContentAlignment.MiddleCenter;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-
+            this.ControlBox = false;
+            this.Text = "";
         }
 
         private void ChooseGame_Load(object sender, EventArgs e)

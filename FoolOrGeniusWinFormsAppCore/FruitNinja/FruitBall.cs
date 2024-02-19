@@ -31,7 +31,6 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
             if (IsSliced)
             {
                 var whiteBrush = Brushes.White;
-
                 DrawSliced(whiteBrush);
             }
             else

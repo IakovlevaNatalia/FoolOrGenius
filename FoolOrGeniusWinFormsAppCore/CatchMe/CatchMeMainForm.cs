@@ -14,6 +14,8 @@ namespace FoolOrGeniusWinFormsApp.CatchMe
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.ControlBox = false;
+            this.Text = "";
         }
 
         private void startButton_Click(object sender, EventArgs e)

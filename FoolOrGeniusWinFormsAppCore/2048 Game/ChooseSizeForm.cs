@@ -20,6 +20,8 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                 FourByFourRadioButton, FiveByFiveRadioButton, SixBySixRadioButton, SevenBySevenRadioButton
             };
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.ControlBox = false;
+            this.Text = "";
         }
 
         private void StartButton_Click(object sender, EventArgs e)

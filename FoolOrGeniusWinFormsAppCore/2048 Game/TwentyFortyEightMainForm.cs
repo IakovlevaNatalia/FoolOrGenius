@@ -34,13 +34,14 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
             this.userFactory = userFactory;
             this.game2048Type= game2048Type;
             this.gameService2048 = gameService2048;
+            this.ControlBox = false;
+            this.Text = "";
         }
 
         public void Init(int chosenSize)
         {
             mapSize = chosenSize;
         }
-
         private void TwentyFortyEightMainFormLoad(object sender, EventArgs e)
 
         {
@@ -63,7 +64,6 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
             var bestScore = db.Game2048.Where(x => x.UserId == userFactory.ExistingUser.Id).Select(x => x.Score).DefaultIfEmpty().Max();
             yoursBestScoreLabel.Text = bestScore.ToString();
         }
-
         private void ShowScore()
         {
             scoreLabel.Text = score.ToString();
@@ -207,37 +207,7 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                 return;
             }
         }
-       
-        //private bool EndGame()
-        //{
-        //    for (int i = 0; i < mapSize; i++)
-        //    {
-        //        for (int j = 0; j < mapSize; j++)
-        //        {
-        //            if (labelsMap[i, j].Text == "")
-        //            {
-        //                return false;
-        //            }
-
-        //        }
-        //    }
-
-        //    for (int i = 0; i < mapSize - 1; i++)
-        //    {
-        //        for (int j = 0; j < mapSize - 1; j++)
-        //        {
-        //            if (labelsMap[i, j].Text == labelsMap[i, j + 1].Text || labelsMap[i, j].Text == labelsMap[i + 1, j].Text)
-        //                //(labelsMap[i, j].Text == labelsMap[i, j + 1].Text || labelsMap[i, j].Text == labelsMap[i + 1, j].Text || labelsMap[i + 1, j].Text == labelsMap[i + 1, j + 1].Text)
-        //            {
-        //                return false;
-        //            }
-        //        }
-        //    }
-
-        //    return true;
-        //}
-
-        private bool EndGame()
+      private bool EndGame()
         {
             for (int i = 0; i < mapSize; i++)
             {
@@ -262,9 +232,8 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                     }
                 }
             }
-            return true; 
+            return true;
         }
-
         private bool Win()
         {
             for (int i = 0; i < mapSize; i++)
@@ -280,8 +249,6 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
             }
             return false;
         }
-
- 
         private void MoveRight()
         {
             for (int i = 0; i < mapSize; i++)
@@ -300,7 +267,6 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                                     var number = int.Parse(labelsMap[i, j].Text);
                                     score += number * 2;
                                     labelsMap[i, j].Text = (number * 2).ToString();
-                                    //GenerateBackColor(labelsMap[i, j], number * 2);
                                     labelsMap[i, k].Text = String.Empty;
                                     labelsMap[i, k].BackColor = SystemColors.AppWorkspace;
                                 }
@@ -313,34 +279,32 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                 }
             }
 
-
             for (int i = 0; i < mapSize; i++)
+            {
+                for (int j = mapSize - 1; j >= 0; j--)
                 {
-                    for (int j = mapSize - 1; j >= 0; j--)
+                    if (labelsMap[i, j].Text == String.Empty)
                     {
-                        if (labelsMap[i, j].Text == String.Empty)
+                        for (int k = j - 1; k >= 0; k--)
                         {
-                            for (int k = j - 1; k >= 0; k--)
-                            {
 
-                                if (labelsMap[i, j].Text != labelsMap[i, k].Text)
-                                {
-                                    labelsMap[i, j].Text = labelsMap[i, k].Text;
-                                    // GenerateBackColor(labelsMap[i, j], int.Parse(labelsMap[i, j].Text) * 2);
-                                    labelsMap[i, k].Text = String.Empty;
-                                    labelsMap[i, k].BackColor = SystemColors.AppWorkspace;
-                                    break;
-                                }
+                            if (labelsMap[i, j].Text != labelsMap[i, k].Text)
+                            {
+                                labelsMap[i, j].Text = labelsMap[i, k].Text;
+                                // GenerateBackColor(labelsMap[i, j], int.Parse(labelsMap[i, j].Text) * 2);
+                                labelsMap[i, k].Text = String.Empty;
+                                labelsMap[i, k].BackColor = SystemColors.AppWorkspace;
+                                break;
                             }
                         }
                     }
                 }
             }
-
+        }
             private void MoveLeft()
             {
                  for (int i = 0; i < mapSize; i++)
-                    {
+                 {
                         for (int j = 0; j < mapSize; j++)
                         {
                             if (labelsMap[i, j].Text != String.Empty)
@@ -354,7 +318,6 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                                             var number = int.Parse(labelsMap[i, j].Text);
                                             score += number * 2;
                                             labelsMap[i, j].Text = (number * 2).ToString();
-                                            // GenerateBackColor(labelsMap[i, j], number * 2);
                                             labelsMap[i, k].Text = String.Empty;
                                             labelsMap[i, k].BackColor = SystemColors.AppWorkspace;
                                         }
@@ -364,10 +327,9 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                                 }
                             }
                         }
-                    }
-
-                    for (int i = 0; i < mapSize; i++)
-                    {
+                 }
+                   for (int i = 0; i < mapSize; i++)
+                   {
                         for (int j = 0; j < mapSize; j++)
                         {
                             if (labelsMap[i, j].Text == String.Empty)
@@ -378,7 +340,6 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                                     if (labelsMap[i, j].Text != labelsMap[i, k].Text)
                                     {
                                         labelsMap[i, j].Text = labelsMap[i, k].Text;
-                                        // GenerateBackColor(labelsMap[i, j], int.Parse(labelsMap[i, j].Text) * 2);
                                         labelsMap[i, k].Text = String.Empty;
                                         labelsMap[i, k].BackColor = SystemColors.AppWorkspace;
                                         break;
@@ -386,11 +347,10 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                                 }
                             }
                         }
-                    }
-
+                   }
+                    
                 
             }
-
             private void MoveUp()
             {
                
@@ -445,7 +405,7 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
             private void MoveDown()
             {
                    for (int i = mapSize - 1; i >= 0; i--)
-                    {
+                   {
                         for (int j = mapSize - 1; j >= 0; j--)
                         {
                             if (labelsMap[i, j].Text != String.Empty)
@@ -491,7 +451,7 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                             }
                         }
                     
-                }
+                    }
             }
             private void restartToolStripMenuItem_Click(object sender, EventArgs e)
             {
@@ -513,8 +473,6 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                 var tileResultsForm = new TileResultsForm();
                 tileResultsForm.ShowDialog();
             }
-
-        
     }
 }
 

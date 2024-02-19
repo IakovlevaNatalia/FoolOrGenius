@@ -74,7 +74,6 @@
             button1.TabIndex = 1;
             button1.Text = "Remove Exsisting Question";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // QuestionsListForm
             // 
@@ -87,7 +86,6 @@
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "QuestionsListForm";
             Text = "QuestionsListForm";
-            Load += QuestionsListForm_Load;
             ((System.ComponentModel.ISupportInitialize)questionsDataGridView).EndInit();
             ResumeLayout(false);
         }
