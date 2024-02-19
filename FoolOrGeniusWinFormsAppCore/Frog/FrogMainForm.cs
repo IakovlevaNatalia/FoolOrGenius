@@ -12,6 +12,8 @@ namespace FoolOrGeniusWinFormsApp.Frog
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.ControlBox = false;
+            this.Text = "";
 
         }
 

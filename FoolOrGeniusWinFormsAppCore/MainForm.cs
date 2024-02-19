@@ -26,6 +26,8 @@ namespace FoolOrGeniusWinFormsApp
             this.userFactory = userFactory;
             this.gameService = gameService;
 
+            this.ControlBox = false;
+            this.Text = "";
         }
         private void questionNumberLabel_Click(object sender, EventArgs e)
         {

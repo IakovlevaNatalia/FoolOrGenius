@@ -28,7 +28,7 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
         {
             base.Go();
 
-            if (centerY > DownSide()) //если столкнулись с нижней стенкой
+            if (centerY > DownSide()) 
             {
                 vy = -vy;
                 centerY= DownSide();

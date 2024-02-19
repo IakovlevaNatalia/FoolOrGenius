@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -21,11 +19,9 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
         private List<Point> points;
         private Pen pen;
 
-        private Timer lineDisappearTimer = new Timer();
         private Timer bananaTimer = new Timer();
-        private int lineDisappearTime = 3000;
-
         private Timer slowdownTimer = new Timer();
+       
         private bool isSlowedDown = false;
         private const int slowdownDuration = 5000; 
         private Brush brush;
@@ -40,40 +36,30 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
             this.Size = new Size(1000, 600);
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            lineDisappearTimer.Interval = lineDisappearTime;
-            lineDisappearTimer.Tick += LineDisappearTimer_Tick;
 
             slowdownTimer.Interval = slowdownDuration;
             slowdownTimer.Tick += SlowdownTimer_Tick;
-        }
-        private void LineDisappearTimer_Tick(object sender, EventArgs e)
-        {
-            drawing = false;
-            lineDisappearTimer.Stop();
-            points.Clear();
-            this.Invalidate();
+            this.ControlBox = false;
+            this.Text = "";
+
         }
         private void InitializeDrawing()
         {
             drawing = false;
             points = new List<Point>();
             this.Paint += MainForm_Paint;
-            this.MouseDown += MainForm_MouseDown;
             this.MouseMove += MainForm_MouseMove;
             this.MouseUp += MainForm_MouseUp;
         }
 
         private void InitializeCustomCursor()
         {
-
             Bitmap customImage = new Bitmap(Resources.sword, new Size(32, 32));
             Cursor customCursor = new Cursor(customImage.GetHicon());
             this.Cursor = customCursor;
         }
-
         private void MainForm_Paint(object sender, PaintEventArgs e)
         {
-
             foreach (var fruit in fruits)
             {
                 if (!fruit.IsSliced)
@@ -82,18 +68,6 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
                 }
             }
         }
-
-        private void MainForm_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                drawing = true;
-                points.Clear();
-                points.Add(e.Location);
-                lineDisappearTimer.Start();
-            }
-        }
-
         private void MainForm_MouseMove(object sender, MouseEventArgs e)
         {
             if (drawing)
@@ -102,7 +76,6 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
                 this.Invalidate();
             }
         }
-
         private void MainForm_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -117,8 +90,6 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
             base.OnFormClosing(e);
             pen.Dispose();
         }
-    
-
         private void FruitNinjaForm_Load(object sender, EventArgs e)
         {
             timer.Interval = 20;
@@ -130,7 +101,6 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
             bananaTimer.Start();
 
             CreateBalls(5);
-            CreateBananaBall();
         }
 
         private void CreateBananaBall()
@@ -150,7 +120,7 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
             }
         }
 
-       private void FruitNinjaForm_MouseMove(object sender, MouseEventArgs e)
+        private void FruitNinjaForm_MouseMove(object sender, MouseEventArgs e)
         {
             foreach (var fruit in fruits.ToList())
             {
@@ -181,24 +151,18 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
                             isSlowedDown = true;
                             slowdownTimer.Start();
 
-                            fruit.SetSliced(); 
-
                             foreach (var otherFruit in fruits.OfType<FruitBall>())
                             {
                                 otherFruit.DecreaseVelocity();
                             }
                         }
                     }
-                    else
-                    {
-                        fruit.SetSliced(); 
-                    }
 
+                    fruit.SetSliced();
                     fruits.Remove(fruit);
                 }
             }
         }
-
         private void Win()
         {
 
@@ -260,7 +224,7 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
         private void rulesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
-                "Catch as many fruits as possible. Avoid the bomb, which is a black-colored sphere. Score points. Good luck!");
+                "Catch as many fruits as possible. Avoid the bomb, which is a black-colored sphere. The yellow ball slows down the movement of the balls and lowers them down. Score points. Good luck!");
         }
 
         private void restartToolStripMenuItem_Click(object sender, EventArgs e)
@@ -280,10 +244,8 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
         {
 
         }
-
         private void SlowdownTimer_Tick(object sender, EventArgs e)
         {
-            // Восстановить скорость всех обычных шаров через 5 секунд
             foreach (var fruit in fruits.OfType<FruitBall>())
             {
                 fruit.RestoreSpeed();

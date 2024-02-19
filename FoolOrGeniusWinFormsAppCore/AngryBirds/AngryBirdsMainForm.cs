@@ -54,6 +54,9 @@ namespace FoolOrGeniusWinFormsApp.AngryBirds
             ScoreLabel.ForeColor = Color.FromArgb(32, 92, 8);
             ScoreLabel.Font = new Font(ScoreLabel.Font.FontFamily, 16, FontStyle.Bold);
             ScoreLabel.BackColor = Color.Transparent;
+
+            this.ControlBox = false;
+            this.Text = "";
         }
 
         private void Timer_Tick(object sender, EventArgs e)

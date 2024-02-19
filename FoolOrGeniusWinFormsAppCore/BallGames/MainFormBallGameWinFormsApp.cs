@@ -12,6 +12,8 @@ namespace FoolOrGeniusWinFormsApp.BallGames
         public MainFormBallGameWinFormsApp()
         {
             InitializeComponent();
+            this.ControlBox = false;
+            this.Text = "";
         }
 
         private void MainFormBallGameWinFormsApp_MouseDown(object sender, MouseEventArgs e)
