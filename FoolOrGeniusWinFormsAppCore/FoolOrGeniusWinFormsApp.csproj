@@ -12,7 +12,6 @@
   <ItemGroup>
     <Folder Include="Controls\" />
     <Folder Include="images\" />
-    <Folder Include="FoolOrGenius\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BouncyCastle.Cryptography" Version="2.2.1" />
@@ -29,6 +28,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
     <PackageReference Include="System.Management" Version="8.0.0" />
     <PackageReference Include="ZstdSharp.Port" Version="0.7.1" />
   </ItemGroup>
@@ -40,6 +40,11 @@
     <EmbeddedResource Remove="ResultsForm - Copy.resx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="2048GameDataSet.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>2048GameDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
@@ -58,6 +63,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Update="2048GameDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>2048GameDataSet.Designer.cs</LastGenOutput>
+    </None>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

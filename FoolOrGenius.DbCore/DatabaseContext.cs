@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
 using FoolOrGenius.Db.Models;
 using FoolOrGenius.DbCore.Models;
 
@@ -30,6 +31,7 @@ namespace FoolOrGenius.Db
 
         public DbSet<Game2048> Game2048 { get; set; }
         public DbSet<Game2048Type>Game2048Type { get; set; }
+
 
     }
 

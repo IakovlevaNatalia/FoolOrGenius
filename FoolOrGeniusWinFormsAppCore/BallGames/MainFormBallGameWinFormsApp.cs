@@ -31,7 +31,7 @@ namespace FoolOrGeniusWinFormsApp.BallGames
                     countBalls++;
                 }
             }
-            MessageBox.Show("Вы поймали + countBalls + balls");
+            MessageBox.Show("You catch + countBalls + balls");
             stopButton.Enabled = false;
             clearButton.Enabled = true;
         }

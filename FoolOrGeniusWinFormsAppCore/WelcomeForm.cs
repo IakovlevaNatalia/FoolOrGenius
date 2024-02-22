@@ -13,8 +13,8 @@ namespace FoolOrGeniusWinFormsApp
     {
         DatabaseContext db;
         UserFactory userFactory;
-        private mainForm mainForm;
-        public WelcomeForm(DatabaseContext db, UserFactory userFactory, mainForm mainForm)
+        private MainForm mainForm;
+        public WelcomeForm(DatabaseContext db, UserFactory userFactory, MainForm mainForm)
         {
             InitializeComponent();
 

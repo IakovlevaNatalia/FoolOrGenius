@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
 using System.Linq;
-using System.Windows.Forms;
 using FoolOrGenius.Db;
 using FoolOrGenius.DbCore.Models;
-using Microsoft.VisualBasic;
 using Question = FoolOrGenius.DbCore.Models.Question;
 
 namespace FoolOrGeniusWinFormsApp
@@ -100,7 +97,7 @@ namespace FoolOrGeniusWinFormsApp
             db.Diagnosis.Update(diagnosis);
             db.SaveChanges();
 
-            return userFactory.ExistingUser.FirstName + ", Your diagnosis is: " + diagnosis.DiagnosisName;
+            return userFactory.ExistingUser.FirstName + ", your diagnosis is: " + diagnosis.DiagnosisName;
         }
 
 

@@ -33,7 +33,6 @@
             Game2048RadioButton = new System.Windows.Forms.RadioButton();
             startButton = new System.Windows.Forms.Button();
             easyBallRadioButton = new System.Windows.Forms.RadioButton();
-            FireworkRadioButton = new System.Windows.Forms.RadioButton();
             FruitNinjaRadioButton = new System.Windows.Forms.RadioButton();
             angryBirdsRadioButton = new System.Windows.Forms.RadioButton();
             FrogRadioButton = new System.Windows.Forms.RadioButton();
@@ -65,7 +64,6 @@
             foolOrGeniusRadioButton.TabStop = true;
             foolOrGeniusRadioButton.Text = "Fool Or Genius";
             foolOrGeniusRadioButton.UseVisualStyleBackColor = true;
-            foolOrGeniusRadioButton.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // Game2048RadioButton
             // 
@@ -112,17 +110,6 @@
             easyBallRadioButton.TabStop = true;
             easyBallRadioButton.Text = "Catch Me";
             easyBallRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // FireworkRadioButton
-            // 
-            FireworkRadioButton.AutoSize = true;
-            FireworkRadioButton.Location = new System.Drawing.Point(255, 445);
-            FireworkRadioButton.Name = "FireworkRadioButton";
-            FireworkRadioButton.Size = new System.Drawing.Size(92, 24);
-            FireworkRadioButton.TabIndex = 7;
-            FireworkRadioButton.TabStop = true;
-            FireworkRadioButton.Text = "Fireworks";
-            FireworkRadioButton.UseVisualStyleBackColor = true;
             // 
             // FruitNinjaRadioButton
             // 
@@ -267,7 +254,6 @@
             Controls.Add(FrogRadioButton);
             Controls.Add(angryBirdsRadioButton);
             Controls.Add(FruitNinjaRadioButton);
-            Controls.Add(FireworkRadioButton);
             Controls.Add(easyBallRadioButton);
             Controls.Add(startButton);
             Controls.Add(Game2048RadioButton);
@@ -290,7 +276,6 @@
         private System.Windows.Forms.RadioButton Game2048RadioButton;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.RadioButton easyBallRadioButton;
-        private System.Windows.Forms.RadioButton FireworkRadioButton;
         private System.Windows.Forms.RadioButton FruitNinjaRadioButton;
         private System.Windows.Forms.RadioButton angryBirdsRadioButton;
         private System.Windows.Forms.RadioButton FrogRadioButton;

@@ -5,7 +5,7 @@ using FoolOrGenius.Db;
 using FoolOrGeniusWinFormsApp._2048_Game;
 using FoolOrGeniusWinFormsApp.AngryBirds;
 using FoolOrGeniusWinFormsApp.CatchMe;
-using FoolOrGeniusWinFormsApp.Firework;
+using FoolOrGeniusWinFormsApp.FoolOrGenius;
 using FoolOrGeniusWinFormsApp.Frog;
 using FoolOrGeniusWinFormsApp.FruitNinja;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,7 +23,6 @@ namespace FoolOrGeniusWinFormsApp
             this.db = db;
 
             this.gameService = gameService;
-
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Size = new Size(726, 748);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -34,12 +33,6 @@ namespace FoolOrGeniusWinFormsApp
             this.ControlBox = false;
             this.Text = "";
         }
-
-        private void ChooseGame_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void TwentyFortyEightGameLabel_Click(object sender, EventArgs e)
         {
             ChooseSizeForm chooseSizeForm = new ChooseSizeForm();
@@ -47,19 +40,13 @@ namespace FoolOrGeniusWinFormsApp
             this.Hide();
 
         }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void startButton_Click(object sender, EventArgs e)
         {
             if (foolOrGeniusRadioButton.Checked)
             {
                 this.Hide();
-                var mainForm = Program.Services.GetRequiredService<mainForm>();
-                mainForm.ShowDialog();
+                var form = Program.Services.GetRequiredService<FoolOrGeniusRulesAndResults>();
+                form.ShowDialog();
             }
 
             if (Game2048RadioButton.Checked)
@@ -74,13 +61,6 @@ namespace FoolOrGeniusWinFormsApp
                 this.Hide();
                 var catchMeForm = Program.Services.GetRequiredService<CatchMeMainForm>();
                 catchMeForm.ShowDialog();
-            }
-
-            if (FireworkRadioButton.Checked)
-            {
-                this.Hide();
-                var firework = Program.Services.GetRequiredService<FireworkForm>();
-                firework.ShowDialog();
             }
 
             if (FruitNinjaRadioButton.Checked)
@@ -104,22 +84,6 @@ namespace FoolOrGeniusWinFormsApp
                 frogGame.ShowDialog();
             }
         }
-
-        private void authorizationLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chooseGamepanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void chooseGameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -133,6 +97,10 @@ namespace FoolOrGeniusWinFormsApp
         private void startButton_MouseLeave(object sender, EventArgs e)
         {
             startButton.ForeColor = Color.White;
+        }
+        private void ChooseGame_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

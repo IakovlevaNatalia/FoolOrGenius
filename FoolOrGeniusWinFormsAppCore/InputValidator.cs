@@ -6,7 +6,6 @@ namespace FoolOrGeniusWinFormsApp
     {
         public static bool TryParseToNumber(string input, out int number, out string errorMessage)
         {
-
                 try
                 {
                     number = Convert.ToInt32(input);
