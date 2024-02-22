@@ -10,6 +10,7 @@ using FoolOrGeniusWinFormsApp.AngryBirds;
 using FoolOrGeniusWinFormsApp.BallGames;
 using FoolOrGeniusWinFormsApp.CatchMe;
 using FoolOrGeniusWinFormsApp.Firework;
+using FoolOrGeniusWinFormsApp.FoolOrGenius;
 using FoolOrGeniusWinFormsApp.Frog;
 using FoolOrGeniusWinFormsApp.FruitNinja;
 using Microsoft.EntityFrameworkCore;
@@ -36,7 +37,7 @@ namespace FoolOrGeniusWinFormsApp
                     services.AddSingleton<UserFactory>();
                     services.AddTransient<WelcomeForm>();
                     services.AddTransient<RegisterForm>();
-                    services.AddTransient<mainForm>();
+                    services.AddTransient<MainForm>();
                     services.AddTransient<GameService>();
                     services.AddSingleton<DiagnoseCalculator>();
                     services.AddTransient<Game2048>();
@@ -52,6 +53,9 @@ namespace FoolOrGeniusWinFormsApp
                     services.AddTransient<FruitNinjaForm>();
                     services.AddTransient<AngryBirdsMainForm>();
                     services.AddTransient<FrogMainForm>();
+                    services.AddTransient<DataGridView2048Game>();
+                    services.AddTransient<DataGridViewFoolOrGeniusForm>();
+                    services.AddTransient<FoolOrGeniusRulesAndResults>();
                     services.AddDbContext<DatabaseContext>(options =>
                         options.UseSqlServer(connection), ServiceLifetime.Singleton);
                 })

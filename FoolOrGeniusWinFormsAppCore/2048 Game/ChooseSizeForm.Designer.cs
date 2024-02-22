@@ -48,9 +48,9 @@
             label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             label1.Location = new System.Drawing.Point(161, 59);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(374, 45);
+            label1.Size = new System.Drawing.Size(392, 45);
             label1.TabIndex = 0;
-            label1.Text = "Choose The Fild Size";
+            label1.Text = "Choose The Field Size";
             // 
             // FourByFourRadioButton
             // 

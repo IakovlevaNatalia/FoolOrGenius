@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using FoolOrGenius.Db;
 using FoolOrGenius.DbCore.Models;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FoolOrGeniusWinFormsApp._2048_Game
 {
@@ -30,9 +31,9 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            this.db=db;
+            this.db = db;
             this.userFactory = userFactory;
-            this.game2048Type= game2048Type;
+            this.game2048Type = game2048Type;
             this.gameService2048 = gameService2048;
             this.ControlBox = false;
             this.Text = "";
@@ -57,7 +58,7 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
         private void ShowBestScore()
         {
             var bestScore = db.Game2048.Select(x => x.Score).DefaultIfEmpty().Max();
-            bestScoreLabel.Text= bestScore.ToString();
+            bestScoreLabel.Text = bestScore.ToString();
         }
         private void ShowYourBestScore()
         {
@@ -108,8 +109,8 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
         }
         private void InitMap(int size)
         {
-            this.mapSize=size;
-            this.ClientSize = new Size(startX+(labelSize+padding)*mapSize, startY+(labelSize+padding)*mapSize);
+            this.mapSize = size;
+            this.ClientSize = new Size(startX + (labelSize + padding) * mapSize, startY + (labelSize + padding) * mapSize);
 
             labelsMap = new Label[mapSize, mapSize];
 
@@ -132,11 +133,12 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
             label.ForeColor = SystemColors.ButtonHighlight;
             label.Size = new Size(labelSize, labelSize);
             label.TextAlign = ContentAlignment.MiddleCenter;
-            int x = startX + indexColumn *(labelSize+padding);
-            int y = startY + indexRow * (labelSize+padding);
+            int x = startX + indexColumn * (labelSize + padding);
+            int y = startY + indexRow * (labelSize + padding);
             label.Location = new Point(x, y);
-
             label.TextChanged += Label_TextChanged;
+
+
             return label;
         }
 
@@ -191,13 +193,13 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
 
             GenerateNumber();
             ShowScore();
-            
+
             if (Win())
             {
                 gameService2048.SaveGameResult(mapSize, score, true);
                 MessageBox.Show("Congratulations!!! You are the winner!!!");
 
-               return;
+                return;
             }
 
             if (EndGame())
@@ -207,7 +209,7 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                 return;
             }
         }
-      private bool EndGame()
+        private bool EndGame()
         {
             for (int i = 0; i < mapSize; i++)
             {
@@ -215,7 +217,7 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                 {
                     if (labelsMap[i, j].Text == string.Empty)
                     {
-                        return false; 
+                        return false;
                     }
                 }
             }
@@ -228,7 +230,7 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                         labelsMap[i, j].Text.Equals(labelsMap[i + 1, j].Text) ||
                         labelsMap[i + 1, j].Text.Equals(labelsMap[i + 1, j + 1].Text))
                     {
-                        return false; 
+                        return false;
                     }
                 }
             }
@@ -291,7 +293,6 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                             if (labelsMap[i, j].Text != labelsMap[i, k].Text)
                             {
                                 labelsMap[i, j].Text = labelsMap[i, k].Text;
-                                // GenerateBackColor(labelsMap[i, j], int.Parse(labelsMap[i, j].Text) * 2);
                                 labelsMap[i, k].Text = String.Empty;
                                 labelsMap[i, k].BackColor = SystemColors.AppWorkspace;
                                 break;
@@ -301,178 +302,179 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                 }
             }
         }
-            private void MoveLeft()
+        private void MoveLeft()
+        {
+            for (int i = 0; i < mapSize; i++)
             {
-                 for (int i = 0; i < mapSize; i++)
-                 {
-                        for (int j = 0; j < mapSize; j++)
-                        {
-                            if (labelsMap[i, j].Text != String.Empty)
-                            {
-                                for (int k = j + 1; k < mapSize; k++)
-                                {
-                                    if (labelsMap[i, k].Text != String.Empty)
-                                    {
-                                        if (labelsMap[i, j].Text == labelsMap[i, k].Text)
-                                        {
-                                            var number = int.Parse(labelsMap[i, j].Text);
-                                            score += number * 2;
-                                            labelsMap[i, j].Text = (number * 2).ToString();
-                                            labelsMap[i, k].Text = String.Empty;
-                                            labelsMap[i, k].BackColor = SystemColors.AppWorkspace;
-                                        }
-
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                 }
-                   for (int i = 0; i < mapSize; i++)
-                   {
-                        for (int j = 0; j < mapSize; j++)
-                        {
-                            if (labelsMap[i, j].Text == String.Empty)
-                            {
-                                for (int k = j + 1; k < mapSize; k++)
-                                {
-
-                                    if (labelsMap[i, j].Text != labelsMap[i, k].Text)
-                                    {
-                                        labelsMap[i, j].Text = labelsMap[i, k].Text;
-                                        labelsMap[i, k].Text = String.Empty;
-                                        labelsMap[i, k].BackColor = SystemColors.AppWorkspace;
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                   }
-                    
-                
-            }
-            private void MoveUp()
-            {
-               
-                    for (int i = 0; i < mapSize; i++)
+                for (int j = 0; j < mapSize; j++)
+                {
+                    if (labelsMap[i, j].Text != String.Empty)
                     {
-                        for (int j = 0; j < mapSize; j++)
+                        for (int k = j + 1; k < mapSize; k++)
                         {
-                            if (labelsMap[i, j].Text != String.Empty)
+                            if (labelsMap[i, k].Text != String.Empty)
                             {
-                                for (int k = i + 1; k < mapSize; k++)
+                                if (labelsMap[i, j].Text == labelsMap[i, k].Text)
                                 {
-                                    if (labelsMap[k, j].Text != String.Empty)
-                                    {
-                                        if (labelsMap[i, j].Text == labelsMap[k, j].Text)
-                                        {
-                                            var number = int.Parse(labelsMap[k, j].Text);
-                                            score += number * 2;
-                                            labelsMap[i, j].Text = (number * 2).ToString();
-                                            labelsMap[k, j].Text = String.Empty;
-                                            labelsMap[k, j].BackColor = SystemColors.AppWorkspace;
-                                        }
-
-                                        break;
-                                    }
+                                    var number = int.Parse(labelsMap[i, j].Text);
+                                    score += number * 2;
+                                    labelsMap[i, j].Text = (number * 2).ToString();
+                                    labelsMap[i, k].Text = String.Empty;
+                                    labelsMap[i, k].BackColor = SystemColors.AppWorkspace;
                                 }
+
+                                break;
                             }
                         }
                     }
-
-                    for (int i = 0; i < mapSize; i++)
+                }
+            }
+            for (int i = 0; i < mapSize; i++)
+            {
+                for (int j = 0; j < mapSize; j++)
+                {
+                    if (labelsMap[i, j].Text == String.Empty)
                     {
-                        for (int j = 0; j < mapSize; j++)
+                        for (int k = j + 1; k < mapSize; k++)
                         {
-                            if (labelsMap[i, j].Text == String.Empty)
-                            {
-                                for (int k = i + 1; k < mapSize; k++)
-                                {
 
-                                    if (labelsMap[i, j].Text != labelsMap[k, j].Text)
-                                    {
-                                        labelsMap[i, j].Text = labelsMap[k, j].Text;
-                                        labelsMap[k, j].Text = String.Empty;
-                                        labelsMap[k, j].BackColor = SystemColors.AppWorkspace;
-                                        break;
-                                    }
-                                }
+                            if (labelsMap[i, j].Text != labelsMap[i, k].Text)
+                            {
+                                labelsMap[i, j].Text = labelsMap[i, k].Text;
+                                labelsMap[i, k].Text = String.Empty;
+                                labelsMap[i, k].BackColor = SystemColors.AppWorkspace;
+                                break;
                             }
                         }
                     }
-                
+                }
             }
-            private void MoveDown()
+
+
+        }
+        private void MoveUp()
+        {
+
+            for (int i = 0; i < mapSize; i++)
             {
-                   for (int i = mapSize - 1; i >= 0; i--)
-                   {
-                        for (int j = mapSize - 1; j >= 0; j--)
-                        {
-                            if (labelsMap[i, j].Text != String.Empty)
-                            {
-                                for (int k = i - 1; k >= 0; k--)
-                                {
-                                    if (labelsMap[k, j].Text != String.Empty)
-                                    {
-                                        if (labelsMap[i, j].Text == labelsMap[k, j].Text)
-                                        {
-                                            var number = int.Parse(labelsMap[k, j].Text);
-                                            score += number * 2;
-                                            labelsMap[i, j].Text = (number * 2).ToString();
-                                            //GenerateBackColor(labelsMap[i, j], number * 2);
-                                            labelsMap[k, j].Text = String.Empty;
-                                            labelsMap[k, j].BackColor = SystemColors.AppWorkspace;
-                                        }
-
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    for (int i = mapSize - 1; i >= 0; i--)
+                for (int j = 0; j < mapSize; j++)
+                {
+                    if (labelsMap[i, j].Text != String.Empty)
                     {
-                        for (int j = mapSize - 1; j >= 0; j--)
+                        for (int k = i + 1; k < mapSize; k++)
                         {
-                            if (labelsMap[i, j].Text == String.Empty)
+                            if (labelsMap[k, j].Text != String.Empty)
                             {
-                                for (int k = i - 1; k >= 0; k--)
+                                if (labelsMap[i, j].Text == labelsMap[k, j].Text)
                                 {
-
-                                    if (labelsMap[i, j].Text != labelsMap[k, j].Text)
-                                    {
-                                        labelsMap[i, j].Text = labelsMap[k, j].Text;
-                                        labelsMap[k, j].Text = String.Empty;
-                                        labelsMap[k, j].BackColor = SystemColors.AppWorkspace;
-                                        break;
-                                    }
+                                    var number = int.Parse(labelsMap[k, j].Text);
+                                    score += number * 2;
+                                    labelsMap[i, j].Text = (number * 2).ToString();
+                                    labelsMap[k, j].Text = String.Empty;
+                                    labelsMap[k, j].BackColor = SystemColors.AppWorkspace;
                                 }
+
+                                break;
                             }
                         }
-                    
                     }
-            }
-            private void restartToolStripMenuItem_Click(object sender, EventArgs e)
-            {
-                Application.Restart();
+                }
             }
 
-            private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+            for (int i = 0; i < mapSize; i++)
             {
-                Application.Exit();
+                for (int j = 0; j < mapSize; j++)
+                {
+                    if (labelsMap[i, j].Text == String.Empty)
+                    {
+                        for (int k = i + 1; k < mapSize; k++)
+                        {
+
+                            if (labelsMap[i, j].Text != labelsMap[k, j].Text)
+                            {
+                                labelsMap[i, j].Text = labelsMap[k, j].Text;
+                                labelsMap[k, j].Text = String.Empty;
+                                labelsMap[k, j].BackColor = SystemColors.AppWorkspace;
+                                break;
+                            }
+                        }
+                    }
+                }
             }
 
-            private void rulesToolStripMenuItem_Click(object sender, EventArgs e)
+        }
+        private void MoveDown()
+        {
+            for (int i = mapSize - 1; i >= 0; i--)
             {
-                MessageBox.Show("The goal of 2048 is to combine enough tiles to total 2048 before you run out of empty squares. Use your arrow keys to move the tiles left, right, up or down .\r\n\r\nThe objective of the game is to keep combining like numbers until one tile totals 2048.Two numbers will be given: usually two number twos, or maybe one number four. Move the tiles up or down, left or right, trying to join two equal numbered tiles. When two equal numbers touch, they will add together and become one tile with the sum of the original two.\r\n\r\nIf you run out of equal numbers on the grid, or you are unable to touch two equal numbers, the game will automatically add another numbered tile to an empty square so you can continue. If there are no empty squares left on the grid, the game will end. By adding numbers together, you will get continually get larger numbers until you (hopefully) can combine two tiles of 1024 to make one tile totaling 2048. Good luck!");
+                for (int j = mapSize - 1; j >= 0; j--)
+                {
+                    if (labelsMap[i, j].Text != String.Empty)
+                    {
+                        for (int k = i - 1; k >= 0; k--)
+                        {
+                            if (labelsMap[k, j].Text != String.Empty)
+                            {
+                                if (labelsMap[i, j].Text == labelsMap[k, j].Text)
+                                {
+                                    var number = int.Parse(labelsMap[k, j].Text);
+                                    score += number * 2;
+                                    labelsMap[i, j].Text = (number * 2).ToString();
+                                    labelsMap[k, j].Text = String.Empty;
+                                    labelsMap[k, j].BackColor = SystemColors.AppWorkspace;
+                                }
+
+                                break;
+                            }
+                        }
+                    }
+                }
             }
 
-            private void showResultsToolStripMenuItem_Click(object sender, EventArgs e)
+            for (int i = mapSize - 1; i >= 0; i--)
             {
-                var tileResultsForm = new TileResultsForm();
-                tileResultsForm.ShowDialog();
+                for (int j = mapSize - 1; j >= 0; j--)
+                {
+                    if (labelsMap[i, j].Text == String.Empty)
+                    {
+                        for (int k = i - 1; k >= 0; k--)
+                        {
+
+                            if (labelsMap[i, j].Text != labelsMap[k, j].Text)
+                            {
+                                labelsMap[i, j].Text = labelsMap[k, j].Text;
+                                labelsMap[k, j].Text = String.Empty;
+                                labelsMap[k, j].BackColor = SystemColors.AppWorkspace;
+                                break;
+                            }
+                        }
+                    }
+                }
             }
+        }
+        private void restartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var newGame2048 = Program.Services.GetRequiredService<ChooseSizeForm>();
+            newGame2048.ShowDialog();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void rulesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("The goal of 2048 is to combine enough tiles to total 2048 before you run out of empty squares. Use your arrow keys to move the tiles left, right, up or down .\r\n\r\nThe objective of the game is to keep combining like numbers until one tile totals 2048.Two numbers will be given: usually two number twos, or maybe one number four. Move the tiles up or down, left or right, trying to join two equal numbered tiles. When two equal numbers touch, they will add together and become one tile with the sum of the original two.\r\n\r\nIf you run out of equal numbers on the grid, or you are unable to touch two equal numbers, the game will automatically add another numbered tile to an empty square so you can continue. If there are no empty squares left on the grid, the game will end. By adding numbers together, you will get continually get larger numbers until you (hopefully) can combine two tiles of 1024 to make one tile totaling 2048. Good luck!");
+        }
+
+        private void bestResultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var bestResultsForm = Program.Services.GetRequiredService<DataGridView2048Game>(); 
+            bestResultsForm.Show();
+
+        }
     }
 }
 

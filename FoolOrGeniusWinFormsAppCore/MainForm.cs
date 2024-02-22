@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using FoolOrGenius.Db;
-using Microsoft.EntityFrameworkCore.Storage;
+using FoolOrGeniusWinFormsApp.FoolOrGenius;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FoolOrGeniusWinFormsApp
 {
-    public partial class mainForm : Form
+    public partial class MainForm : Form
     {
         UserFactory userFactory;
         GameService gameService;
@@ -17,28 +16,15 @@ namespace FoolOrGeniusWinFormsApp
         private int countQuestions;
 
         DatabaseContext db; 
-
-        public mainForm(UserFactory userFactory, GameService gameService)
+        public MainForm(UserFactory userFactory, GameService gameService)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-
             this.userFactory = userFactory;
             this.gameService = gameService;
-
             this.ControlBox = false;
             this.Text = "";
         }
-        private void questionNumberLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UserAnswerTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void QuestionTextLabel_Click(object sender, EventArgs e)
         {
             questionTextLabel.AutoSize = false;
@@ -96,7 +82,6 @@ namespace FoolOrGeniusWinFormsApp
                 }
             }
         }
-
         private void ShowNextQuestion()
         {
             UserAnswerTextBox.Text = "";
@@ -110,17 +95,20 @@ namespace FoolOrGeniusWinFormsApp
         {
             Application.Exit();
         }
-
         private void nextbutton_MouseEnter(object sender, EventArgs e)
         {
             nextbutton.ForeColor = Color.Blue;
 
         }
-
         private void nextbutton_MouseLeave(object sender, EventArgs e)
         {
             nextbutton.ForeColor = Color.White;
         }
-      
+        //private void userResultsToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    var userResultsForm = Program.Services.GetRequiredService<DataGridViewFoolOrGeniusForm>();
+        //    userResultsForm.Show();
+
+        //}
     }
 }

@@ -2,7 +2,7 @@
 
 namespace FoolOrGeniusWinFormsApp
 {
-    partial class mainForm
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -72,7 +72,6 @@ namespace FoolOrGeniusWinFormsApp
             questionNumberLabel.Size = new Size(326, 62);
             questionNumberLabel.TabIndex = 1;
             questionNumberLabel.Text = "Question №1";
-            questionNumberLabel.Click += questionNumberLabel_Click;
             // 
             // questionTextLabel
             // 
@@ -93,7 +92,6 @@ namespace FoolOrGeniusWinFormsApp
             UserAnswerTextBox.Name = "UserAnswerTextBox";
             UserAnswerTextBox.Size = new Size(111, 34);
             UserAnswerTextBox.TabIndex = 3;
-            UserAnswerTextBox.TextChanged += UserAnswerTextBox_TextChanged;
             // 
             // panel1
             // 
@@ -138,7 +136,7 @@ namespace FoolOrGeniusWinFormsApp
             solutionPictureBox.TabIndex = 7;
             solutionPictureBox.TabStop = false;
             // 
-            // mainForm
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -151,7 +149,7 @@ namespace FoolOrGeniusWinFormsApp
             Controls.Add(questionTextLabel);
             Controls.Add(nextbutton);
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            Name = "mainForm";
+            Name = "MainForm";
             Text = "Fool or Genius";
             Load += mainForm_Load;
             panel1.ResumeLayout(false);

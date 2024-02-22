@@ -155,7 +155,6 @@
             authorizationLabel.TabIndex = 6;
             authorizationLabel.Text = "Authorization";
             authorizationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            authorizationLabel.Click += authorizationLabel_Click;
             authorizationLabel.MouseDown += authorizationLabel_MouseDown;
             authorizationLabel.MouseMove += authorizationLabel_MouseMove;
             // 

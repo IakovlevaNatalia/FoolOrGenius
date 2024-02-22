@@ -40,6 +40,7 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
             rulesToolStripMenuItem = new ToolStripMenuItem();
             restartToolStripMenuItem = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
+            bestResultToolStripMenuItem = new ToolStripMenuItem();
             label2 = new Label();
             yoursBestScoreLabel = new Label();
             label3 = new Label();
@@ -68,7 +69,7 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, bestResultToolStripMenuItem });
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 2, 0, 2);
@@ -86,23 +87,30 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
             // rulesToolStripMenuItem
             // 
             rulesToolStripMenuItem.Name = "rulesToolStripMenuItem";
-            rulesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            rulesToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
             rulesToolStripMenuItem.Text = "Rules";
             rulesToolStripMenuItem.Click += rulesToolStripMenuItem_Click;
             // 
             // restartToolStripMenuItem
             // 
             restartToolStripMenuItem.Name = "restartToolStripMenuItem";
-            restartToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            restartToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
             restartToolStripMenuItem.Text = "Restart";
             restartToolStripMenuItem.Click += restartToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            exitToolStripMenuItem.Size = new System.Drawing.Size(138, 26);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            // 
+            // bestResultToolStripMenuItem
+            // 
+            bestResultToolStripMenuItem.Name = "bestResultToolStripMenuItem";
+            bestResultToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
+            bestResultToolStripMenuItem.Text = "Best Results";
+            bestResultToolStripMenuItem.Click += bestResultToolStripMenuItem_Click;
             // 
             // label2
             // 
@@ -134,7 +142,7 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
             // bestScoreLabel
             // 
             bestScoreLabel.AutoSize = true;
-            bestScoreLabel.Location = new System.Drawing.Point(383, 49);
+            bestScoreLabel.Location = new System.Drawing.Point(393, 49);
             bestScoreLabel.Name = "bestScoreLabel";
             bestScoreLabel.Size = new System.Drawing.Size(17, 20);
             bestScoreLabel.TabIndex = 6;
@@ -145,7 +153,7 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
             AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = System.Drawing.Color.FromArgb(187, 173, 160);
-            ClientSize = new System.Drawing.Size(900, 449);
+            ClientSize = new System.Drawing.Size(900, 469);
             Controls.Add(bestScoreLabel);
             Controls.Add(label3);
             Controls.Add(yoursBestScoreLabel);
@@ -179,6 +187,7 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
         private Label yoursBestScoreLabel;
         private Label label3;
         private Label bestScoreLabel;
+        private ToolStripMenuItem bestResultToolStripMenuItem;
     }
 
 }
