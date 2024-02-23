@@ -16,12 +16,6 @@ namespace FoolOrGeniusWinFormsApp.Frog
             this.Text = "";
 
         }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void PictureBox_Click(object sender, EventArgs e)
         {
             Swap((PictureBox)sender);
@@ -96,16 +90,10 @@ namespace FoolOrGeniusWinFormsApp.Frog
                 "On the swamp, there are 8 frogs. The frogs dream of swapping places. Four frogs want to jump to the right, and four to the left. A frog can jump either to the adjacent empty lily pad, skip one frog, or jump backward. The goal of the game is to rearrange the frogs. The minimum number of moves is 24.");
         }
 
-        private void FrogMainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             var frogsPairPictureBox = new PictureBox();
             frogsPairPictureBox.Image = Resources.frogsPair;
-            //frogsPairPictureBox.BackColor = Color.LightSkyBlue;
             frogsPairPictureBox.Size = new Size(100, 100);
             frogsPairPictureBox.BackColor = Color.Transparent;
             this.Controls.Add(frogsPairPictureBox);

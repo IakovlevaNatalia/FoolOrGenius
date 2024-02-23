@@ -101,7 +101,6 @@
             authorizationLabel.TabIndex = 7;
             authorizationLabel.Text = "Registration";
             authorizationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            authorizationLabel.Click += authorizationLabel_Click_1;
             authorizationLabel.MouseDown += authorizationLabel_MouseDown_1;
             authorizationLabel.MouseMove += authorizationLabel_MouseMove_1;
             // 
@@ -138,7 +137,6 @@
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(726, 555);
             panel1.TabIndex = 13;
-            panel1.Paint += panel1_Paint;
             panel1.MouseDown += panel1_MouseDown;
             panel1.MouseMove += panel1_MouseMove;
             // 
@@ -182,7 +180,7 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Resources.icognito2;
+            pictureBox4.Image = Resources.icognito;
             pictureBox4.Location = new System.Drawing.Point(160, 159);
             pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox4.Name = "pictureBox4";
@@ -212,7 +210,6 @@
             userLoginField.Name = "userLoginField";
             userLoginField.Size = new System.Drawing.Size(303, 39);
             userLoginField.TabIndex = 13;
-            userLoginField.TextChanged += userLoginField_TextChanged;
             userLoginField.Enter += userLoginField_Enter;
             userLoginField.Leave += userLoginField_Leave;
             // 
@@ -226,7 +223,6 @@
             userFirstNameField.Name = "userFirstNameField";
             userFirstNameField.Size = new System.Drawing.Size(303, 39);
             userFirstNameField.TabIndex = 12;
-            userFirstNameField.TextChanged += userFirstNameField_TextChanged;
             userFirstNameField.Enter += userFirstNameField_Enter;
             userFirstNameField.Leave += userFirstNameField_Leave;
             // 
@@ -282,7 +278,6 @@
             userLastNameField.Name = "userLastNameField";
             userLastNameField.Size = new System.Drawing.Size(303, 39);
             userLastNameField.TabIndex = 8;
-            userLastNameField.TextChanged += userLastName_TextChanged;
             userLastNameField.Enter += userLastNameField_Enter;
             userLastNameField.Leave += userLastNameField_Leave;
             // 

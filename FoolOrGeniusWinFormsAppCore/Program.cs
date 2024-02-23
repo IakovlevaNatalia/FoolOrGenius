@@ -3,7 +3,6 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Windows.Forms;
 using FoolOrGenius.Db;
 using System.Configuration;
-using FoolOrGenius.Db.Models;
 using FoolOrGenius.DbCore.Models;
 using FoolOrGeniusWinFormsApp._2048_Game;
 using FoolOrGeniusWinFormsApp.AngryBirds;

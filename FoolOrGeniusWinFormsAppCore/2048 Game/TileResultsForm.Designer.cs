@@ -36,6 +36,7 @@
             // 
             // TileResultsDataGridView
             // 
+            TileResultsDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(6, 56, 82);
             TileResultsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             TileResultsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Column1, Column2 });
             TileResultsDataGridView.Location = new System.Drawing.Point(27, 13);
@@ -62,11 +63,11 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(6, 56, 82);
             ClientSize = new System.Drawing.Size(800, 450);
             Controls.Add(TileResultsDataGridView);
             Name = "TileResultsForm";
             Text = "TileResultsForm";
-            //Load += TileResultsForm_Load;
             ((System.ComponentModel.ISupportInitialize)TileResultsDataGridView).EndInit();
             ResumeLayout(false);
         }

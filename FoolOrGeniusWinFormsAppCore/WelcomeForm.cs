@@ -5,7 +5,6 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
 using FoolOrGenius.Db;
 using FoolOrGenius.Db.Models;
-using FoolOrGeniusWinFormsApp.FruitNinja;
 
 namespace FoolOrGeniusWinFormsApp
 {
@@ -38,12 +37,6 @@ namespace FoolOrGeniusWinFormsApp
             this.ControlBox = false;
             this.Text = "";
 
-
-        }
-
-        private void userNameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -55,32 +48,10 @@ namespace FoolOrGeniusWinFormsApp
             Application.Restart();
         }
 
-        private void addNewQuestionsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var newQuestionForm = new AddNewQuestionForm();
-            newQuestionForm.ShowDialog();
-        }
-
-        private void listOfAllQuestionsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var questionListForm = new QuestionsListForm();
-            questionListForm.ShowDialog();
-        }
-
         private void closeButton_Click(object sender, EventArgs e)
         {
 
             Application.Exit();
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void passwordFieldTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void startButton_MouseEnter(object sender, EventArgs e)
@@ -132,11 +103,6 @@ namespace FoolOrGeniusWinFormsApp
             lastPoint = new Point(e.X, e.Y);
         }
 
-        private void authorizationLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void userLogin_Enter(object sender, EventArgs e)
         {
 
@@ -162,14 +128,12 @@ namespace FoolOrGeniusWinFormsApp
                 userPasswordField.ForeColor = Color.Black;
             }
         }
-
         private void passwordField_Leave(object sender, EventArgs e)
         {
             if (userPasswordField.Text == "")
                 userPasswordField.Text = "Password";
             userPasswordField.ForeColor = Color.Gray;
         }
-
         private void RegisterLabel_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -177,7 +141,6 @@ namespace FoolOrGeniusWinFormsApp
             registerForm.Show();
 
         }
-
         private void RegisterLabel_MouseEnter(object sender, EventArgs e)
         {
             RegisterLabel.ForeColor = Color.FromArgb(1, 26, 39);
@@ -226,11 +189,5 @@ namespace FoolOrGeniusWinFormsApp
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FruitNinjaForm form = Program.Services.GetRequiredService<FruitNinjaForm>();
-            form.Show();
-        }
     }
 }

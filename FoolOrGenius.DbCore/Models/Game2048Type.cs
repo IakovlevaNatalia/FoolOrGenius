@@ -6,7 +6,9 @@ namespace FoolOrGenius.DbCore.Models
     {
         [Key]
         public int GameTypeId { get; set; }
+
         public string GameType { get; set; }
+
         public int MapSize { get; set; }
 
     }

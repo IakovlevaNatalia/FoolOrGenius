@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using FoolOrGenius.Db;
 using FoolOrGeniusWinFormsApp._2048_Game;
 using FoolOrGeniusWinFormsApp.AngryBirds;
 using FoolOrGeniusWinFormsApp.CatchMe;
-using FoolOrGeniusWinFormsApp.FoolOrGenius;
 using FoolOrGeniusWinFormsApp.Frog;
 using FoolOrGeniusWinFormsApp.FruitNinja;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,15 +12,10 @@ namespace FoolOrGeniusWinFormsApp
 {
     public partial class ChooseGameForm : Form
     {
-        UserFactory userFactory;
-        GameService gameService;
-        private DatabaseContext db;
-        public ChooseGameForm(DatabaseContext db, GameService gameService)
+        public ChooseGameForm()
         {
             InitializeComponent();
-            this.db = db;
 
-            this.gameService = gameService;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Size = new Size(726, 748);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -45,36 +38,36 @@ namespace FoolOrGeniusWinFormsApp
             if (foolOrGeniusRadioButton.Checked)
             {
                 this.Hide();
-                var form = Program.Services.GetRequiredService<FoolOrGeniusRulesAndResults>();
+                var form = Program.Services.GetRequiredService<MainForm>();
                 form.ShowDialog();
             }
 
             if (Game2048RadioButton.Checked)
             {
                 this.Hide();
-                ChooseSizeForm chooseSizeForm = new ChooseSizeForm();
-                chooseSizeForm.ShowDialog();
+                var form = Program.Services.GetRequiredService<ChooseSizeForm>();
+                form.ShowDialog();
             }
 
             if (easyBallRadioButton.Checked)
             {
                 this.Hide();
-                var catchMeForm = Program.Services.GetRequiredService<CatchMeMainForm>();
-                catchMeForm.ShowDialog();
+                var form = Program.Services.GetRequiredService<CatchMeMainForm>();
+                form.ShowDialog();
             }
 
             if (FruitNinjaRadioButton.Checked)
             {
                 this.Hide();
-                var fruitNinja = Program.Services.GetRequiredService<FruitNinjaForm>();
-                fruitNinja.ShowDialog();
+                var form= Program.Services.GetRequiredService<FruitNinjaForm>();
+                form.ShowDialog();
             }
 
             if (angryBirdsRadioButton.Checked)
             {
                 this.Hide();
-                var angryBirds = Program.Services.GetRequiredService<AngryBirdsMainForm>();
-                angryBirds.ShowDialog();
+                var form= Program.Services.GetRequiredService<AngryBirdsMainForm>();
+                form.ShowDialog();
             }
 
             if (FrogRadioButton.Checked)
@@ -98,9 +91,6 @@ namespace FoolOrGeniusWinFormsApp
         {
             startButton.ForeColor = Color.White;
         }
-        private void ChooseGame_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }

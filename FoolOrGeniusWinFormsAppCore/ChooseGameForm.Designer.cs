@@ -260,7 +260,6 @@
             Controls.Add(foolOrGeniusRadioButton);
             Name = "ChooseGameForm";
             Text = "ChooseGameForm";
-            Load += ChooseGame_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

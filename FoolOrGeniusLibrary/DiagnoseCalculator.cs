@@ -1,6 +1,4 @@
-﻿using FoolOrGeniusLibrary;
-
-namespace FoolOrGeniusLibrary
+﻿namespace FoolOrGeniusLibrary
 {
     public class DiagnoseCalculator
     {
@@ -22,8 +20,6 @@ namespace FoolOrGeniusLibrary
             diagnoses[4] = "talent";
             diagnoses[5] = "genius";
 
-            //var userDiagnose = diagnoses[user.CountRightAnswers];
-            //return user.Name + ", Ваш диагноз: " + userDiagnose;
             return diagnoses;
         }
     }

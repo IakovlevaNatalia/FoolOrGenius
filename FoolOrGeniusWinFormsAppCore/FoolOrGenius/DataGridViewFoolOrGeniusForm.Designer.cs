@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             dataGridView1 = new System.Windows.Forms.DataGridView();
+            sqlDataAdapter1 = new Microsoft.Data.SqlClient.SqlDataAdapter();
+            game2048BindingSource = new System.Windows.Forms.BindingSource(components);
             loginColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             DiagnosisColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)game2048BindingSource).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
@@ -41,11 +45,12 @@
             dataGridView1.Location = new System.Drawing.Point(11, 6);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new System.Drawing.Size(300, 188);
+            dataGridView1.Size = new System.Drawing.Size(777, 432);
             dataGridView1.TabIndex = 0;
             // 
             // loginColumn
             // 
+            loginColumn.DataPropertyName = "Login";
             loginColumn.HeaderText = "Login";
             loginColumn.MinimumWidth = 6;
             loginColumn.Name = "loginColumn";
@@ -53,6 +58,7 @@
             // 
             // DiagnosisColumn
             // 
+            DiagnosisColumn.DataPropertyName = "Diagnosis";
             DiagnosisColumn.HeaderText = "Diagnosis";
             DiagnosisColumn.MinimumWidth = 6;
             DiagnosisColumn.Name = "DiagnosisColumn";
@@ -67,12 +73,15 @@
             Name = "DataGridViewFoolOrGeniusForm";
             Text = "DataGridViewFoolOrGeniusForm";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)game2048BindingSource).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private Microsoft.Data.SqlClient.SqlDataAdapter sqlDataAdapter1;
+        private System.Windows.Forms.BindingSource game2048BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn loginColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiagnosisColumn;
     }

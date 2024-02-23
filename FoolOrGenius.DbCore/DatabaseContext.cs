@@ -1,5 +1,4 @@
-﻿using System.Windows.Forms;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using FoolOrGenius.Db.Models;
 using FoolOrGenius.DbCore.Models;
 

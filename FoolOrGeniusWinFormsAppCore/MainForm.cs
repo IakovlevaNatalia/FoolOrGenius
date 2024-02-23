@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 using FoolOrGenius.Db;
 using FoolOrGeniusWinFormsApp.FoolOrGenius;
@@ -15,7 +14,7 @@ namespace FoolOrGeniusWinFormsApp
         private int questionNumber = 0;
         private int countQuestions;
 
-        DatabaseContext db; 
+        DatabaseContext db;
         public MainForm(UserFactory userFactory, GameService gameService)
         {
             InitializeComponent();
@@ -28,29 +27,6 @@ namespace FoolOrGeniusWinFormsApp
         private void QuestionTextLabel_Click(object sender, EventArgs e)
         {
             questionTextLabel.AutoSize = false;
-        }
-        public string GetDiagnosis(int countQuestions, int countRightAnswers)
-        {
-            var percentRightAnswers = countRightAnswers * 100 / countQuestions;
-
-            var diagnosisId = CalculateDiagnosis(percentRightAnswers);
-
-            var diagnosisName = GetDiagnosisName(diagnosisId);
-
-            return diagnosisName;
-        }
-
-        private int CalculateDiagnosis(int percentRightAnswers)
-        {
-
-            return (percentRightAnswers / 20) + 1;
-        }
-
-        private string GetDiagnosisName(int diagnosisId)
-        {
-            var diagnosis = db.Diagnosis.FirstOrDefault(d => d.Id == diagnosisId);
-
-            return diagnosis?.DiagnosisName;
         }
         private void mainForm_Load(object sender, EventArgs e)
         {
@@ -104,11 +80,12 @@ namespace FoolOrGeniusWinFormsApp
         {
             nextbutton.ForeColor = Color.White;
         }
-        //private void userResultsToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    var userResultsForm = Program.Services.GetRequiredService<DataGridViewFoolOrGeniusForm>();
-        //    userResultsForm.Show();
 
-        //}
+        private void userResultsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+            var resultsForm = Program.Services.GetRequiredService<DataGridViewFoolOrGeniusForm>();
+            resultsForm.Show();
+        }
     }
 }

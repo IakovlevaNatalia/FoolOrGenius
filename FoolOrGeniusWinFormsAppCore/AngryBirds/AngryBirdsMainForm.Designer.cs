@@ -1,6 +1,4 @@
-﻿using FoolOrGeniusWinFormsApp.Controls;
-
-namespace FoolOrGeniusWinFormsApp.AngryBirds
+﻿namespace FoolOrGeniusWinFormsApp.AngryBirds
 {
     partial class AngryBirdsMainForm
     {

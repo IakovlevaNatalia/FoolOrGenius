@@ -21,8 +21,11 @@ namespace FoolOrGenius.DbCore.Models
         public User User { get; set; }
 
         public string Login { get; set; }
+
         public int Score { get; set; }
+
         public bool Result { get; set; }
+
         public DateTime GameDateTime { get; set; }
     }
 }
