@@ -33,26 +33,20 @@
             dataGridView1 = new System.Windows.Forms.DataGridView();
             loginColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             bestScoreColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            gameIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            gameTypeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            gameTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            userDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            scoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            resultDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            gameDateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             game2048BindingSource = new System.Windows.Forms.BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)game2048BindingSource).BeginInit();
             SuspendLayout();
+            // 
+            // sqlDataAdapter1
+            // 
             // 
             // dataGridView1
             // 
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(204, 192, 179);
             dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { loginColumn, bestScoreColumn, gameIdDataGridViewTextBoxColumn, gameTypeIdDataGridViewTextBoxColumn, userIdDataGridViewTextBoxColumn, gameTypeDataGridViewTextBoxColumn, userDataGridViewTextBoxColumn, loginDataGridViewTextBoxColumn, scoreDataGridViewTextBoxColumn, resultDataGridViewCheckBoxColumn, gameDateTimeDataGridViewTextBoxColumn });
+            dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { loginColumn, bestScoreColumn });
             dataGridView1.DataSource = game2048BindingSource;
             dataGridView1.Location = new System.Drawing.Point(2, 12);
             dataGridView1.Name = "dataGridView1";
@@ -75,83 +69,6 @@
             bestScoreColumn.MinimumWidth = 6;
             bestScoreColumn.Name = "bestScoreColumn";
             bestScoreColumn.Width = 125;
-            // 
-            // gameIdDataGridViewTextBoxColumn
-            // 
-            gameIdDataGridViewTextBoxColumn.DataPropertyName = "GameId";
-            gameIdDataGridViewTextBoxColumn.HeaderText = "GameId";
-            gameIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            gameIdDataGridViewTextBoxColumn.Name = "gameIdDataGridViewTextBoxColumn";
-            gameIdDataGridViewTextBoxColumn.ReadOnly = true;
-            gameIdDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // gameTypeIdDataGridViewTextBoxColumn
-            // 
-            gameTypeIdDataGridViewTextBoxColumn.DataPropertyName = "GameTypeId";
-            gameTypeIdDataGridViewTextBoxColumn.HeaderText = "GameTypeId";
-            gameTypeIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            gameTypeIdDataGridViewTextBoxColumn.Name = "gameTypeIdDataGridViewTextBoxColumn";
-            gameTypeIdDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // userIdDataGridViewTextBoxColumn
-            // 
-            userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
-            userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
-            userIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-            userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
-            userIdDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // gameTypeDataGridViewTextBoxColumn
-            // 
-            gameTypeDataGridViewTextBoxColumn.DataPropertyName = "GameType";
-            gameTypeDataGridViewTextBoxColumn.HeaderText = "GameType";
-            gameTypeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            gameTypeDataGridViewTextBoxColumn.Name = "gameTypeDataGridViewTextBoxColumn";
-            gameTypeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // userDataGridViewTextBoxColumn
-            // 
-            userDataGridViewTextBoxColumn.DataPropertyName = "User";
-            userDataGridViewTextBoxColumn.HeaderText = "User";
-            userDataGridViewTextBoxColumn.MinimumWidth = 6;
-            userDataGridViewTextBoxColumn.Name = "userDataGridViewTextBoxColumn";
-            userDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // loginDataGridViewTextBoxColumn
-            // 
-            loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
-            loginDataGridViewTextBoxColumn.HeaderText = "Login";
-            loginDataGridViewTextBoxColumn.MinimumWidth = 6;
-            loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
-            loginDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // scoreDataGridViewTextBoxColumn
-            // 
-            scoreDataGridViewTextBoxColumn.DataPropertyName = "Score";
-            scoreDataGridViewTextBoxColumn.HeaderText = "Score";
-            scoreDataGridViewTextBoxColumn.MinimumWidth = 6;
-            scoreDataGridViewTextBoxColumn.Name = "scoreDataGridViewTextBoxColumn";
-            scoreDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // resultDataGridViewCheckBoxColumn
-            // 
-            resultDataGridViewCheckBoxColumn.DataPropertyName = "Result";
-            resultDataGridViewCheckBoxColumn.HeaderText = "Result";
-            resultDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            resultDataGridViewCheckBoxColumn.Name = "resultDataGridViewCheckBoxColumn";
-            resultDataGridViewCheckBoxColumn.Width = 125;
-            // 
-            // gameDateTimeDataGridViewTextBoxColumn
-            // 
-            gameDateTimeDataGridViewTextBoxColumn.DataPropertyName = "GameDateTime";
-            gameDateTimeDataGridViewTextBoxColumn.HeaderText = "GameDateTime";
-            gameDateTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            gameDateTimeDataGridViewTextBoxColumn.Name = "gameDateTimeDataGridViewTextBoxColumn";
-            gameDateTimeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // game2048BindingSource
-            // 
-            //game2048BindingSource.DataSource = typeof(FoolOrGenius.DbCore.Models.Game2048);
             // 
             // DataGridView2048Game
             // 

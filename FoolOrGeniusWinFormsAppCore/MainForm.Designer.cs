@@ -38,9 +38,14 @@ namespace FoolOrGeniusWinFormsApp
             closeButton = new System.Windows.Forms.Label();
             questionPictureBox = new System.Windows.Forms.PictureBox();
             solutionPictureBox = new System.Windows.Forms.PictureBox();
+            menuStrip1 = new System.Windows.Forms.MenuStrip();
+            userResultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)questionPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)solutionPictureBox).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // nextbutton
@@ -109,7 +114,7 @@ namespace FoolOrGeniusWinFormsApp
             closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             closeButton.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
             closeButton.ForeColor = SystemColors.ButtonHighlight;
-            closeButton.Location = new Point(662, 12);
+            closeButton.Location = new Point(662, 47);
             closeButton.Name = "closeButton";
             closeButton.Size = new Size(37, 36);
             closeButton.TabIndex = 14;
@@ -136,12 +141,43 @@ namespace FoolOrGeniusWinFormsApp
             solutionPictureBox.TabIndex = 7;
             solutionPictureBox.TabStop = false;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { userResultsToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(708, 28);
+            menuStrip1.TabIndex = 8;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // userResultsToolStripMenuItem
+            // 
+            userResultsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { exitToolStripMenuItem, exitToolStripMenuItem1 });
+            userResultsToolStripMenuItem.Name = "userResultsToolStripMenuItem";
+            userResultsToolStripMenuItem.Size = new Size(102, 24);
+            userResultsToolStripMenuItem.Text = "User Results";
+            userResultsToolStripMenuItem.Click += userResultsToolStripMenuItem_Click_1;
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(138, 26);
+            exitToolStripMenuItem.Text = "Restart";
+            // 
+            // exitToolStripMenuItem1
+            // 
+            exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            exitToolStripMenuItem1.Size = new Size(138, 26);
+            exitToolStripMenuItem1.Text = "Exit";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = Color.FromArgb(6, 56, 82);
             ClientSize = new Size(708, 706);
+            Controls.Add(menuStrip1);
             Controls.Add(solutionPictureBox);
             Controls.Add(questionPictureBox);
             Controls.Add(panel1);
@@ -156,6 +192,8 @@ namespace FoolOrGeniusWinFormsApp
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)questionPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)solutionPictureBox).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -170,6 +208,10 @@ namespace FoolOrGeniusWinFormsApp
         private System.Windows.Forms.Label closeButton;
         private System.Windows.Forms.PictureBox questionPictureBox;
         private System.Windows.Forms.PictureBox solutionPictureBox;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem userResultsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
     }
 }
 

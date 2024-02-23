@@ -44,6 +44,7 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                 }
             }
         }
+
     }
 
 }

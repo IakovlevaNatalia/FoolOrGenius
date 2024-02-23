@@ -10,7 +10,6 @@
     <ProjectReference Include="..\FoolOrGenius.DbCore\FoolOrGenius.DbCore.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\" />
     <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,4 @@
-﻿using System.Data;
-using System.Linq;
+﻿using System.Linq;
 using FoolOrGenius.Db;
 using FoolOrGenius.DbCore.Models;
 

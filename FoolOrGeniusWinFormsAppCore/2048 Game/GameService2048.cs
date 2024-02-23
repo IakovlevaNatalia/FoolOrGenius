@@ -17,7 +17,6 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
             this.userFactory = userFactory;
             this.db = db;
         }
-
         public void SaveGameResult(int mapSize, int score, bool isVictory)
         {
             var game2048Type = db.Game2048Type.Single(x => x.MapSize == mapSize);

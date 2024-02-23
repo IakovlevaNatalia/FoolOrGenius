@@ -123,16 +123,6 @@ namespace FoolOrGeniusWinFormsApp {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap frog {
-            get {
-                object obj = ResourceManager.GetObject("frog", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap frog_ {
             get {
                 object obj = ResourceManager.GetObject("frog_", resourceCulture);
@@ -143,9 +133,9 @@ namespace FoolOrGeniusWinFormsApp {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap frog_prince {
+        internal static System.Drawing.Bitmap frog_1 {
             get {
-                object obj = ResourceManager.GetObject("frog_prince", resourceCulture);
+                object obj = ResourceManager.GetObject("frog_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +146,26 @@ namespace FoolOrGeniusWinFormsApp {
         internal static System.Drawing.Bitmap frogsPair {
             get {
                 object obj = ResourceManager.GetObject("frogsPair", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap frogsPair1 {
+            get {
+                object obj = ResourceManager.GetObject("frogsPair1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap frogsPair2 {
+            get {
+                object obj = ResourceManager.GetObject("frogsPair2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +203,9 @@ namespace FoolOrGeniusWinFormsApp {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icognito2 {
+        internal static System.Drawing.Bitmap icognito1 {
             get {
-                object obj = ResourceManager.GetObject("icognito2", resourceCulture);
+                object obj = ResourceManager.GetObject("icognito1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +243,29 @@ namespace FoolOrGeniusWinFormsApp {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ninja1 {
+            get {
+                object obj = ResourceManager.GetObject("ninja1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pig {
             get {
                 object obj = ResourceManager.GetObject("pig", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pig1 {
+            get {
+                object obj = ResourceManager.GetObject("pig1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -356,6 +386,16 @@ namespace FoolOrGeniusWinFormsApp {
         internal static System.Drawing.Bitmap whiteBird {
             get {
                 object obj = ResourceManager.GetObject("whiteBird", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap whiteBird1 {
+            get {
+                object obj = ResourceManager.GetObject("whiteBird1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

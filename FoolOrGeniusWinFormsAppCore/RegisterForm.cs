@@ -35,27 +35,6 @@ namespace FoolOrGeniusWinFormsApp
 
             this.StartPosition = FormStartPosition.CenterScreen;
         }
-
-        private void authorizationLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void closeButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -77,11 +56,6 @@ namespace FoolOrGeniusWinFormsApp
             lastPoint = new Point(e.X, e.Y);
         }
 
-        private void authorizationLabel_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void authorizationLabel_MouseDown_1(object sender, MouseEventArgs e)
         {
             lastPoint = new Point(e.X, e.Y);
@@ -94,11 +68,6 @@ namespace FoolOrGeniusWinFormsApp
                 this.Left += e.X - lastPoint.X;
                 this.Top += e.Y - lastPoint.Y;
             }
-        }
-
-        private void userFirstNameField_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void userFirstNameField_Enter(object sender, EventArgs e)
@@ -117,11 +86,6 @@ namespace FoolOrGeniusWinFormsApp
             userFirstNameField.ForeColor = Color.Gray;
         }
 
-        private void userLastName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void userLastNameField_Enter(object sender, EventArgs e)
         {
             if (userLastNameField.Text == "Last name")
@@ -134,11 +98,6 @@ namespace FoolOrGeniusWinFormsApp
             if (userLastNameField.Text == "")
                 userLastNameField.Text = "Last name";
             userLastNameField.ForeColor = Color.Gray;
-
-        }
-
-        private void userLoginField_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
