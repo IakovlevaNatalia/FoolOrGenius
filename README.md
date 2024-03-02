@@ -5,6 +5,8 @@
 -To showcase user game scores retrieved from the MS SQL Server database, the graphical component DataGridView was utilized  
 -To enhance modularity, increase code reusability, the Dependency Injection (DI) design pattern was employed  
 -Base class Ball has been implemented, allowing other objects to inherit and override behavior  
+<img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/8ae6a3bd-ae16-41db-8177-102704a356d2" width="425" height="225"/>  
+
 
 ### Games  
 🐦AngryBirds  
