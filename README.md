@@ -41,7 +41,12 @@ To showcase user game scores retrieved from the MS SQL Server database, the grap
 ![2048Rules](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/7598cdd0-fe89-4ae0-8af0-d47f0a5e9cb6)  
 
 Used LINQ
-![LINQ Query](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/acba46a8-66ed-4341-b68f-b4d276e1461a)
+![LINQ Query](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/acba46a8-66ed-4341-b68f-b4d276e1461a)  
+
+🐦AngryBirds  
+A replica of the "Angry Birds game". Experminents with animation. The PictureBox component is used for working with images.
+![ezgif-7-e5be0e9036](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/3ac42537-2e47-47c0-99ad-d4dcb4513759)
+
 
 
 
