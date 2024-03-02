@@ -25,6 +25,12 @@
 •LINQ  
 •Dependency Injection  
 
+### Registration
+![Registration](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/b339958c-ca87-4731-b4a7-f05bca59bc9e)
+![Registration2](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/696686e0-7b7e-4cb2-9795-206fc9eb5ab5)
+
+
+
 ### Game
 A replica of the '2048' game developed while learning Windows Forms technology. To showcase user game scores retrieved from the MS SQL Server database, the graphical component DataGridView was used.
 
