@@ -32,7 +32,7 @@ MS SQL Server was used to save user credentials
 ![HarperEvansCreateNewCredentials](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/0e36348f-7a06-4d42-9f2a-cee7caee7b61)  
 After successful authentication, users are prompted to choose a game
 ![SuccessAuthorization](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/1bc9b23f-0455-4cfe-9262-343557a11479)  
-### 2048 Game
+🎆2048 Game  
 A replica of the "2048" game developed while learning Windows Forms technology. To showcase user game scores retrieved from the MS SQL Server database, the graphical component DataGridView was used.  
 <img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/405beafa-c052-48c4-92bc-cdd8fef3cb71" width="425" height="475"/>  
 To showcase user game scores retrieved from the MS SQL Server database, the WinForms graphical component DataGridView was used. Users can choose the size of the game board  
@@ -61,11 +61,11 @@ There are 8 frogs on the swamp. The frogs dream of swapping places. Four frogs w
 <img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/29a1e1ab-d65d-4483-b33b-c656db461c3e" width="600" height="271"/>  
 
 🐦AngryBirds  
-A replica of the "Angry Birds game". Experminents with animation. The WinForms pictureBox component is used for working with images  
+A replica of the "Angry Birds game" developed during the learning process of Windows Forms technology. Experminents with animation. The WinForms pictureBox component is used for working with images  
 ![ezgif-7-e5be0e9036](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/3ac42537-2e47-47c0-99ad-d4dcb4513759)  
 
 🥷🏼FruitNinja  
-A replica of the "Fruit ninja game". Cut as many fruits as possible. Avoid the bomb, which is a black-colored sphere. The yellow ball slows down the movement of the balls and lowers them down. Score points. Good luck!  
+A replica of the "Fruit ninja game" developed during the learning process of Windows Forms technology. Cut as many fruits as possible. Avoid the bomb, which is a black-colored sphere. The yellow ball slows down the movement of the balls and lowers them down. Score points. Good luck!  
 
 ![FruitNinja](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/f6d31c7e-eac9-4a42-8265-ad35dd4a9570)
 
