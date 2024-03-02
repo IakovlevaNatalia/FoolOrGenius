@@ -33,17 +33,12 @@ MS SQL Server was used to save user credentials
 After successful authentication, users are prompted to choose a game
 ![SuccessAuthorization](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/1bc9b23f-0455-4cfe-9262-343557a11479)  
 ### 2048 Game
-A replica of the '2048' game developed while learning Windows Forms technology. To showcase user game scores retrieved from the MS SQL Server database, the graphical component DataGridView was used.
-![2048Gif](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/405beafa-c052-48c4-92bc-cdd8fef3cb71)  
-
-
-To showcase user game scores retrieved from the MS SQL Server database, the WinForms graphical component DataGridView was used. Users can choose the size of the game board.  
+A replica of the "2048" game developed while learning Windows Forms technology. To showcase user game scores retrieved from the MS SQL Server database, the graphical component DataGridView was used.  
+<img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/405beafa-c052-48c4-92bc-cdd8fef3cb71" width="425" height="475"/>  
+To showcase user game scores retrieved from the MS SQL Server database, the WinForms graphical component DataGridView was used. Users can choose the size of the game board  
 ![2048Rules (1)](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/f8e8016a-bb26-427e-9c90-901709bf6e2a)  
-
-
 To get the best results retrieved from the MS SQL Server database, LINQ was used  
 ![LINQ](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/6f8baae0-6478-47be-b129-9bbe5b57f215)  
-
 
 🐦AngryBirds  
 A replica of the "Angry Birds game". Experminents with animation. The WinForms pictureBox component is used for working with images.
