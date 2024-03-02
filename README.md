@@ -34,8 +34,8 @@ After successful authentication, users are prompted to choose a game
 ![SuccessAuthorization](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/1bc9b23f-0455-4cfe-9262-343557a11479)  
 ### 2048 Game
 A replica of the '2048' game developed while learning Windows Forms technology. To showcase user game scores retrieved from the MS SQL Server database, the graphical component DataGridView was used.
+![2048Gif](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/405beafa-c052-48c4-92bc-cdd8fef3cb71)  
 
-<img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/e6284c1b-b147-441e-a4db-a880277d3fec" width="250" height="275"/>
 
 To showcase user game scores retrieved from the MS SQL Server database, the WinForms graphical component DataGridView was used. Users can choose the size of the game board.  
 ![2048Rules (1)](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/f8e8016a-bb26-427e-9c90-901709bf6e2a)  
@@ -64,6 +64,10 @@ To showcase user diagnoses retrieved from the MS SQL Server database, the WinFor
 
 🐸Frogs   
 A game "Frogs" developed during the learning process of Windows Forms technology  
+![frogs](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/3ef71d23-3d56-4069-8aac-e33b3eeb5402)
+
+The WinForms pictureBox component is used for working with images  
+
 
 
 
