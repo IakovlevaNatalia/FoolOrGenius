@@ -41,7 +41,7 @@ To get the best results retrieved from the MS SQL Server database, LINQ was used
 ![LINQ](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/6f8baae0-6478-47be-b129-9bbe5b57f215)  
 
 🐦AngryBirds  
-A replica of the "Angry Birds game". Experminents with animation. The WinForms pictureBox component is used for working with images.
+A replica of the "Angry Birds game". Experminents with animation. The WinForms pictureBox component is used for working with images  
 ![ezgif-7-e5be0e9036](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/3ac42537-2e47-47c0-99ad-d4dcb4513759)
 
 🤪Fool or Genius  
