@@ -7,12 +7,12 @@
 -Base class Ball has been implemented, allowing other objects to inherit and override behavior  
 
 ### Games  
-AngryBirds
-Catch Me if You Can  
-Firework
-Fool or Genius
-Frogs
-FruitNinja  
+🐦AngryBirds  
+🟣Catch Me if You Can    
+🎆2048 Game  
+🤪Fool or Genius  
+🐸Frogs  
+🥷🏼FruitNinja    
 
 ### Technologies used  
 •C#  
