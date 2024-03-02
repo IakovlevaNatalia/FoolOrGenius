@@ -67,8 +67,7 @@ A game "Frogs" developed during the learning process of Windows Forms technology
 ![frogs](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/cd55d38d-97a6-462b-9a04-7a1fa017723c)  
 
 There are 8 frogs on the swamp. The frogs dream of swapping places. Four frogs want to jump to the right, and four to the left. A frog can jump either to the adjacent empty lily pad, skip one frog, or jump backward. The goal of the game is to rearrange the frogs. The minimum number of moves is 24  
-![FrogsBestResult](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/29a1e1ab-d65d-4483-b33b-c656db461c3e)
-<img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/29a1e1ab-d65d-4483-b33b-c656db461c3e" width="425" height="475"/>  
+<img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/29a1e1ab-d65d-4483-b33b-c656db461c3e" width="600" height="271"/>  
 
 
 
