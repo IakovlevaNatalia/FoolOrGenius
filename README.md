@@ -28,8 +28,11 @@ A replica of the '2048' game developed while learning Windows Forms technology. 
 
 <img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/e6284c1b-b147-441e-a4db-a880277d3fec" width="250" height="275"/>
 
-To showcase user game scores retrieved from the MS SQL Server database, the graphical component DataGridView was used.
-<img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/91e277a6-91ff-4441-a50e-5c5893e902f1" width="450" height="350"/>
+To showcase user game scores retrieved from the MS SQL Server database, the graphical component DataGridView was used  
+
+<img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/5e5e042b-3a68-4755-a0ae-b60373da506a" width="450" height="350"/>
+
+
 
 
 
