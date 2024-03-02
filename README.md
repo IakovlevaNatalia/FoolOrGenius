@@ -40,10 +40,6 @@ To showcase user game scores retrieved from the MS SQL Server database, the WinF
 To get the best results retrieved from the MS SQL Server database, LINQ was used  
 ![LINQ](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/6f8baae0-6478-47be-b129-9bbe5b57f215)  
 
-🐦AngryBirds  
-A replica of the "Angry Birds game". Experminents with animation. The WinForms pictureBox component is used for working with images  
-![ezgif-7-e5be0e9036](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/3ac42537-2e47-47c0-99ad-d4dcb4513759)
-
 🤪Fool or Genius  
 A humorous game 'Fool or Genius' for assessing intellectual abilities, developed during the learning process of Windows Forms technology  
 ![Questions](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/e84f909b-1cf9-4598-a99c-92353effd77a)
@@ -63,6 +59,18 @@ A game "Frogs" developed during the learning process of Windows Forms technology
 
 There are 8 frogs on the swamp. The frogs dream of swapping places. Four frogs want to jump to the right, and four to the left. A frog can jump either to the adjacent empty lily pad, skip one frog, or jump backward. The goal of the game is to rearrange the frogs. The minimum number of moves is 24  
 <img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/29a1e1ab-d65d-4483-b33b-c656db461c3e" width="600" height="271"/>  
+
+🐦AngryBirds  
+A replica of the "Angry Birds game". Experminents with animation. The WinForms pictureBox component is used for working with images  
+![ezgif-7-e5be0e9036](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/3ac42537-2e47-47c0-99ad-d4dcb4513759)  
+
+🥷🏼FruitNinja  
+A replica of the "Fruit ninja game". Cut as many fruits as possible. Avoid the bomb, which is a black-colored sphere. The yellow ball slows down the movement of the balls and lowers them down. Score points. Good luck!  
+
+![FruitNinja](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/f6d31c7e-eac9-4a42-8265-ad35dd4a9570)
+
+
+
 
 
 
