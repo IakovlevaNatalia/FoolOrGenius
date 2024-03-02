@@ -63,10 +63,13 @@ To showcase user diagnoses retrieved from the MS SQL Server database, the WinFor
 ![Results](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/9d6922c0-f4fc-4e29-97cd-d1223c453574)
 
 🐸Frogs   
-A game "Frogs" developed during the learning process of Windows Forms technology  
-![frogs](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/3ef71d23-3d56-4069-8aac-e33b3eeb5402)
+A game "Frogs" developed during the learning process of Windows Forms technology. The WinForms pictureBox component is used for working with images  
+![frogs](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/cd55d38d-97a6-462b-9a04-7a1fa017723c)  
 
-The WinForms pictureBox component is used for working with images  
+There are 8 frogs on the swamp. The frogs dream of swapping places. Four frogs want to jump to the right, and four to the left. A frog can jump either to the adjacent empty lily pad, skip one frog, or jump backward. The goal of the game is to rearrange the frogs. The minimum number of moves is 24  
+![FrogsBestResult](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/29a1e1ab-d65d-4483-b33b-c656db461c3e)
+<img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/29a1e1ab-d65d-4483-b33b-c656db461c3e" width="425" height="475"/>  
+
 
 
 
