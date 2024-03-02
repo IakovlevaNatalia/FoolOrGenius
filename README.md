@@ -15,13 +15,13 @@ Frogs
 FruitNinja
 
 👩🏻‍💻### Technologies used
-C#
-OOP
-WinForms
-MS SQL Server
-Entity Framework
-LINQ
-Dependency Injection
+•C#
+•OOP
+•WinForms
+•MS SQL Server
+•Entity Framework
+•LINQ
+•Dependency Injection
 
 2️⃣0️⃣4️⃣8️⃣ ### Game
 A replica of the '2048' game developed while learning Windows Forms technology. To showcase user game scores retrieved from the MS SQL Server database, the graphical component DataGridView was used.
