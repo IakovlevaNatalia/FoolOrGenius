@@ -61,7 +61,8 @@ There are 8 frogs on the swamp. The frogs dream of swapping places. Four frogs w
 <img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/29a1e1ab-d65d-4483-b33b-c656db461c3e" width="600" height="271"/>  
 
 🐦AngryBirds  
-A replica of the "Angry Birds game" developed during the learning process of Windows Forms technology. Experminents with animation. The WinForms pictureBox component is used for working with images  
+A replica of the "Angry Birds game" developed during the learning process of Windows Forms technology. Experminents with animation. The WinForms pictureBox component is used for working with images 
+
 ![ezgif-7-e5be0e9036](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/3ac42537-2e47-47c0-99ad-d4dcb4513759)  
 
 🥷🏼FruitNinja  
