@@ -32,6 +32,8 @@ To showcase user game scores retrieved from the MS SQL Server database, the grap
 
 <img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/5e5e042b-3a68-4755-a0ae-b60373da506a" width="450" height="350"/>
 
+<img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/03bdba6e-7e76-43a2-8785-84a884dbfd9e" width="450" height="350"/>
+
 
 
 
