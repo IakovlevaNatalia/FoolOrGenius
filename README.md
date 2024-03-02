@@ -6,24 +6,24 @@
 -To enhance modularity, increase code reusability, the Dependency Injection (DI) design pattern was employed  
 -Base class Ball has been implemented, allowing other objects to inherit and override behavior  
 
-🎮### Games
+### Games  
 AngryBirds
-Catch Me if You Can
+Catch Me if You Can  
 Firework
 Fool or Genius
 Frogs
-FruitNinja
+FruitNinja  
 
-👩🏻‍💻### Technologies used
-•C#
-•OOP
-•WinForms
-•MS SQL Server
-•Entity Framework
-•LINQ
-•Dependency Injection
+### Technologies used  
+•C#  
+•OOP  
+•WinForms  
+•MS SQL Server  
+•Entity Framework  
+•LINQ  
+•Dependency Injection  
 
-2️⃣0️⃣4️⃣8️⃣ ### Game
+### Game
 A replica of the '2048' game developed while learning Windows Forms technology. To showcase user game scores retrieved from the MS SQL Server database, the graphical component DataGridView was used.
 
 <img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/e6284c1b-b147-441e-a4db-a880277d3fec" width="250" height="275"/>
