@@ -224,7 +224,7 @@ namespace FoolOrGeniusWinFormsApp.FruitNinja
         private void rulesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
-                "Catch as many fruits as possible. Avoid the bomb, which is a black-colored sphere. The yellow ball slows down the movement of the balls and lowers them down. Score points. Good luck!");
+                "Cut as many fruits as possible. Avoid the bomb, which is a black-colored sphere. The yellow ball slows down the movement of the balls and lowers them down. Score points. Good luck!");
         }
 
         private void restartToolStripMenuItem_Click(object sender, EventArgs e)
