@@ -2,7 +2,7 @@
 **Fool or Genius** is a collection of six games developed during the learning process of WinForms technology.
 
 -The project is implemented following the principles of object-oriented programming  
--To showcase user game scores retrieved from the MS SQL Server database, the WinForms graphical component DataGridView was utilized  
+-To showcase user game scores retrieved from the MS SQL Server database, the WinForms control DataGridView was utilized  
 -To enhance modularity, increase code reusability, the Dependency Injection (DI) design pattern was employed  
 -Base class Ball has been implemented, allowing other objects to inherit and override behavior  
 <img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/8ae6a3bd-ae16-41db-8177-102704a356d2" width="425" height="225"/>  
@@ -35,7 +35,7 @@ After successful authentication, users are prompted to choose a game
 🎆2048 Game  
 A replica of the "2048" game developed while learning Windows Forms technology. To showcase user game scores retrieved from the MS SQL Server database, the graphical component DataGridView was used.  
 <img src="https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/405beafa-c052-48c4-92bc-cdd8fef3cb71" width="425" height="475"/>  
-To showcase user game scores retrieved from the MS SQL Server database, the WinForms graphical component DataGridView was used. Users can choose the size of the game board  
+To showcase user game scores stored in the MS SQL Server database, the WinForms control DataGridView was used. Users can choose the size of the game board  
 ![2048Rules (1)](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/f8e8016a-bb26-427e-9c90-901709bf6e2a)  
 To get the best results retrieved from the MS SQL Server database, LINQ was used  
 ![LINQ](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/6f8baae0-6478-47be-b129-9bbe5b57f215)  
@@ -50,7 +50,7 @@ MS SQL Server has been used for handling questions and answers
 To retrieve user diagnoses from the MS SQL Server database, LINQ was used  
 ![LINQ2](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/b11f4d63-8a41-4ed0-97e6-60e67ae4a10d)  
 
-To showcase user diagnoses retrieved from the MS SQL Server database, the WinForms graphical component DataGridView was used  
+To showcase user diagnoses retrieved from the MS SQL Server database, the WinForms control DataGridView was used  
 ![Results](https://github.com/IakovlevaNatalia/FoolOrGenius/assets/69373349/9d6922c0-f4fc-4e29-97cd-d1223c453574)
 
 🐸Frogs   
