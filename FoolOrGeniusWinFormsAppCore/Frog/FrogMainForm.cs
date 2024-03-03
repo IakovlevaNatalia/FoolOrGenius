@@ -28,7 +28,7 @@ namespace FoolOrGeniusWinFormsApp.Frog
                 }
                 else
                 {
-                    var result = MessageBox.Show("You can improve the result. Would you like to try again?", "End of the game.",
+                    var result = MessageBox.Show("You can improve the result. Would you like to try again?", "End of the game",
                         MessageBoxButtons.YesNo);
 
                     if (result == DialogResult.Yes)
@@ -87,7 +87,7 @@ namespace FoolOrGeniusWinFormsApp.Frog
         private void rulesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
-                "On the swamp, there are 8 frogs. The frogs dream of swapping places. Four frogs want to jump to the right, and four to the left. A frog can jump either to the adjacent empty lily pad, skip one frog, or jump backward. The goal of the game is to rearrange the frogs. The minimum number of moves is 24.");
+                "There are 8 frogs on the swamp. The frogs dream of swapping places. Four frogs want to jump to the right, and four to the left. A frog can jump either to the adjacent empty lily pad, skip one frog, or jump backward. The goal of the game is to rearrange the frogs. The minimum number of moves is 24.");
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

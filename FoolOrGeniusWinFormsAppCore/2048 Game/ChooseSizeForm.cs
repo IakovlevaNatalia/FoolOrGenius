@@ -43,6 +43,7 @@ namespace FoolOrGeniusWinFormsApp._2048_Game
                     this.Close();
                     var twentyFortyEightMainForm = Program.Services.GetRequiredService<TwentyFortyEightMainForm>();
                     twentyFortyEightMainForm.Init(selectedSize);
+                    this.Hide();
                     twentyFortyEightMainForm.ShowDialog();
                 }
             }
