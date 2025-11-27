@@ -1,4 +1,4 @@
-## FoolOrGenius
+## Desktop Game Suite
 **Fool or Genius** is a collection of six games developed during the learning process of WinForms technology.
 
 -The project is implemented following the principles of object-oriented programming  
